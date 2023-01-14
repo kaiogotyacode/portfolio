@@ -14,7 +14,8 @@
 
     body {
         background-color: #07090a;
-    }      
+        overflow-x: hidden;
+    }
 
     /* ======================================= NAVBAR CSS ======================================= */
 
@@ -71,7 +72,7 @@
             margin-right: 1vw;
         }
 
-    ul > li:hover > img {
+    .flags:hover{
         filter: saturate(150%);
         filter: drop-shadow(2px 2px 10px #fff);
     }
@@ -98,23 +99,28 @@
     .menu {
         display: none;
         transition: 0.5s;
-        height: 7.5vw;         
-    }  
-
-    .menu:hover{
-        cursor: pointer;
-        color: #000;
-        background-color: #ffffff;
+        height: 7.5vw;
     }
+
+        .menu:hover {
+            cursor: pointer;
+            color: #000;
+            background-color: #ffffff;
+        }
 
     @@font-face {
         font-family: codeBold;
         src: url('/font/CODEBold.otf');
     }
-    
+
     @@font-face {
         font-family: codeLight;
         src: url('/font/CODELight.otf');
+    }
+
+    @@font-face {
+        font-family: chill;
+        src: url('/font/Chill.ttf');
     }
 
 
@@ -142,12 +148,12 @@
             height: 7vh;
         }
 
-            nav>ul{
+            nav > ul {
                 display: none;
-            position: absolute;
-            top: 8vh;
-            left: 0;
-        }
+                position: absolute;
+                top: 8vh;
+                left: 0;
+            }
 
         .menu {
             width: 10vw;
@@ -158,7 +164,7 @@
             align-self: end;
             right: 0 !important;
         }
-        
+
 
 
 
@@ -172,36 +178,67 @@
     /* TELA XS */
 
     @@media(max-width: 479px) {
-         nav {            
+        nav {
             height: 8vh;
         }
 
-        nav>ul{
-            display: flex;
-            position: absolute;
-            top: 8vh;
-            height: auto;
-            align-items: center;
-            justify-content: start;
-            flex-direction: column;
-            background-color: #747d8c;
-        }   
-        
-        .li-options > a{
-            font-size: 3vw;     
-            font-family: codeLight;
+            nav > ul {
+                display: flex;
+                position: absolute;
+                top: 8vh;
+                height: auto;
+                align-items: center;
+                justify-content: start;
+                flex-direction: column;
+                /*background-color: rgba(0, 0, 0, .4);*/
+                background-color: #3742fa;
+            }
+
+
+        .li-options > a {
+            font-size: 4vw;
+            font-family: codeBold;
         }
 
+        .li-options {
+            padding-top: 3vh;
+            padding-bottom: 3vh;
+            padding-right: 100%;
+            padding-left: 100%;
+        }
+
+        .li-flags {
+            padding-top: 3vh;
+            padding-bottom: 3vh;
+        }
+
+        .flags {
+            width: 10vw;
+        }
+
+        .flags:first-child{
+            margin-right: 3vw;
+        }   
+        .flags:last-child{
+            margin-left: 3vw;
+        }
+
+        .li-options:hover {
+            background-color: #ffffff;
+        }
+
+            .li-options:hover > a {
+                color: #000000;
+            }
 
         .menu {
-            width: 10vw;
+            width: 14vw;
             display: flex;
             height: 8vh;
             justify-content: center;
-            align-items: center;   
+            align-items: center;
         }
 
-     
         .nav-logo {
             width: 70vw;
         }
@@ -212,38 +249,39 @@
 
 </style>
 
-<script> 
+<script>
+
     /* ======================================= MENU JS ======================================= */
-    
+
     window.addEventListener("load",  () =>{
 
         var menu = document.getElementById("menu");
         var navOptions = document.getElementById("nav-options");
         var handle = false;
-    
+
         menu.addEventListener("click", () =>{
             if(handle){
-                navOptions.style.cssText  += "display: none;";            
+                navOptions.style.cssText  += "display: none;";
                 menu.style.cssText += "background-color: transparent;color: #ffffff";
                 handle = false;
             }else{
                 navOptions.style.cssText  += "display: flex;";
                 menu.style.cssText += "background-color: #f1f2f6;color: #000";
-                
+
                 handle = true;
             }
         });
 
 
-        //para MD >> toda vez que o Menu tiver o display modificado, forçar o display flex da NAV 
+        //para MD >> toda vez que o Menu tiver o display modificado, forçar o display flex da NAV
         window.addEventListener("resize", () =>{
-            if(window.innerWidth>767){      
-               navOptions.style.cssText  += "display: flex;";  
+            if(window.innerWidth>767){
+               navOptions.style.cssText  += "display: flex;";
                menu.style.cssText += "background-color: transparent;color: #ffffff";
                handle = false;
             }
-            if(window.innerWidth<767){      
-               navOptions.style.cssText  += "display: none;";  
+            if(window.innerWidth<767){
+               navOptions.style.cssText  += "display: none;";
                menu.style.cssText += "background-color: transparent;color: #ffffff";
                handle = false;
             }
@@ -272,10 +310,8 @@
                 </li>
 
                 <li class="li-flags">
-                    <img class="img-fluid flags" src="~/images/brazil.png" />
-                </li>
-                <li class="li-flags">
-                    <img class="img-fluid flags" src="~/images/usa.png" />
+                    <img onclick="alert('Brazil')" class="img-fluid flags" src="~/images/brazil.png" />            
+                    <img onclick="alert('Brazil')" class="img-fluid flags" src="~/images/usa.png" />
                 </li>
             </ul>
             <div id="menu" class="menu">
