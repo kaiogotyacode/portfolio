@@ -72,7 +72,7 @@
             margin-right: 1vw;
         }
 
-    .flags:hover{
+    .flags:hover {
         filter: saturate(150%);
         filter: drop-shadow(2px 2px 10px #fff);
     }
@@ -178,8 +178,25 @@
     /* TELA XS */
 
     @@media(max-width: 479px) {
+
+        #menu{
+            z-index: 101;
+        }
+
+        .nav-logo{
+            z-index: 100;
+        }
+
+        #nav-options{
+            z-index: 99;
+        }
+
+        
+
         nav {
+            background-color: #07090a;
             height: 8vh;
+            z-index: 102 !important;
         }
 
             nav > ul {
@@ -193,7 +210,11 @@
                 /*background-color: rgba(0, 0, 0, .4);*/
                 background-color: #3742fa;
             }
-
+        
+        ul#nav-options{
+            animation-name: dropdown-xs;
+            animation-duration: .75s;
+        }
 
         .li-options > a {
             font-size: 4vw;
@@ -210,18 +231,20 @@
         .li-flags {
             padding-top: 3vh;
             padding-bottom: 3vh;
+            margin: 0px;
         }
 
         .flags {
             width: 10vw;
         }
 
-        .flags:first-child{
-            margin-right: 3vw;
-        }   
-        .flags:last-child{
-            margin-left: 3vw;
-        }
+            .flags:first-child {
+                margin-right: 3vw;
+            }
+
+            .flags:last-child {
+                margin-left: 3vw;
+            }
 
         .li-options:hover {
             background-color: #ffffff;
@@ -244,6 +267,16 @@
         }
     }
 
+
+    @@keyframes dropdown-xs {
+        0%{
+            margin-top: -100vw;
+        }
+        100% {
+            margin-top: 0;
+        }
+    }
+    
 
     /* ======================================= NAVBAR CSS ======================================= */
 
@@ -294,10 +327,9 @@
 <body>
 
     <header>
-        <nav>
-            <a>
-                <img class="nav-logo" src="~/images/official_mark.png" />
-            </a>
+        <nav>            
+             <img class="nav-logo" src="~/images/official_mark.png" />
+                
             <ul id="nav-options">
                 <li class="li-options">
                     <a> APRESENTAÇÃO </a>
@@ -310,8 +342,8 @@
                 </li>
 
                 <li class="li-flags">
-                    <img onclick="alert('Brazil')" class="img-fluid flags" src="~/images/brazil.png" />            
-                    <img onclick="alert('Brazil')" class="img-fluid flags" src="~/images/usa.png" />
+                    <img onclick="alert('Brazil')" class="img-fluid flags" src="~/images/brazil.png" />
+                    <img onclick="alert('U.S.A')" class="img-fluid flags" src="~/images/usa.png" />
                 </li>
             </ul>
             <div id="menu" class="menu">
