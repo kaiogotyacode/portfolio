@@ -1,0 +1,326 @@
+﻿/* ======================================= NAVBAR CSS ======================================= */
+
+header {
+    height: 8vh;
+}
+
+nav, nav > ul {
+    display: flex;
+    color: #FFF;
+}
+
+nav {
+    height: 8vh;
+}
+
+    nav > ul {
+        width: 100%;
+        justify-content: end;
+        height: 8vh;
+        transition: 0.25s;
+    }
+
+        nav > ul > li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+.nav-logo {
+    height: 8vh;
+    width: 30vw;
+}
+
+
+.li-options {
+    color: #fff;
+}
+
+
+.li-flags {
+    color: white;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.flags {
+    transition: .25s;
+    width: 3vw;
+    height: auto;
+}
+
+.li-flags {
+    margin-left: 1vw;
+}
+
+.flags:first-child {
+    margin-right: 1vw;
+}
+
+.flags:last-child {
+    margin-right: 2vw;
+    margin-left: 1vw;
+}
+
+.flags:hover {
+    filter: saturate(150%);
+    filter: drop-shadow(2px 2px 10px #fff);
+}
+
+
+ul > .li-options {
+    transition: 0.25s !important;
+    width: 10vw;
+    font-family: codeBold;
+    letter-spacing: 2px;
+    font-size: 1vw;
+}
+
+
+.li-options:first-child {
+    margin-right: 2vw;
+}
+
+li > a {
+    transition: 0.25s;
+}
+
+ul > .li-options > a:hover {
+    cursor: pointer;
+    color: #ff3838 !important;
+}
+
+.menu {
+    display: none;
+    transition: 0.5s;
+    height: 8vh;
+}
+
+    .menu:hover {
+        cursor: pointer;
+        color: #000;
+        background-color: #ffffff;
+    }
+
+@font-face {
+    font-family: codeBold;
+    src: url('../font/CODEBold.otf');
+}
+
+@font-face {
+    font-family: codeLight;
+    src: url('../font/CODELight.otf');
+}
+
+@font-face {
+    font-family: chill;
+    src: url('../font/Chill.ttf');
+}
+
+
+/* TELA MD */
+
+@media(max-width: 1279px) {
+
+    ul > .li-options {
+        font-size: 1.3vw;
+    }
+
+    .nav-logo {
+        width: 60vw;
+    }
+}
+
+
+/* FIXING DETAILS*/
+@media (min-width: 768px) and (max-width: 1200px) {
+    
+    /* aumentar o tamanho da fonte das opções. tal como as bandeiras (se necessário) ~ Diminuir a logo proporcionalmente until MENU */
+
+    /*limitar a altura/largura mínima da nav (logo) para não quebrar*/
+
+    /* trabalhar com 3 tipos de imagens > small 9 : 16 (estudar as proporções) / tablet sm/md > xx:xx  && MANTER a 16  : 9*/
+
+
+}
+
+/* TELA SM */
+
+@media(max-width: 767px) {
+
+
+    nav {
+        background-color: #07090a;
+        justify-content: space-between;
+        height: 8vh;
+    }
+
+        nav > ul {
+            display: flex;
+            position: absolute;
+            top: 8vh;
+            height: auto;
+            align-items: center;
+            justify-content: start;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, .4);
+        }
+
+    ul#nav-options {
+        animation-name: dropdown;
+        animation-duration: .75s;
+    }
+
+    .li-options > a {
+        font-size: 2.5vw;
+        font-family: codeBold;
+    }
+
+    .li-options {
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+        padding-right: 100%;
+        padding-left: 100%;
+    }
+
+        .li-options:first-child {
+            margin-right: 0px;
+        }
+
+    .li-flags {
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+        margin: 0px;
+    }
+
+    .flags {
+        width: 7vw;
+    }
+
+        .flags:first-child {
+            margin-right: 3vw;
+        }
+
+        .flags:last-child {
+            margin-left: 3vw;
+        }
+
+    .li-options:hover {
+        background-color: #ffffff;
+    }
+
+        .li-options:hover > a {
+            color: #000000;
+        }
+
+
+    .menu {
+        width: 14vw;
+        display: flex;
+        height: 8vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-logo {
+        width: 70vw;
+        height: 8vh;
+    }
+}
+
+
+/* TELA XS */
+
+@media(max-width: 479px) {
+
+    nav {
+        background-color: #07090a;
+        height: 8vh;
+    }
+
+        nav > ul {
+            display: flex;
+            position: absolute;
+            top: 8vh;
+            height: auto;
+            align-items: center;
+            justify-content: start;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, .4);
+        }
+
+    ul#nav-options {
+        animation-name: dropdown;
+        animation-duration: .75s;
+    }
+
+    .li-options > a {
+        font-size: 4vw;
+        font-family: codeBold;
+    }
+
+    .li-options {
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+        padding-right: 100%;
+        padding-left: 100%;
+    }
+
+    .li-flags {
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+        margin: 0px;
+    }
+
+    .flags {
+        width: 10vw;
+    }
+
+        .flags:first-child {
+            margin-right: 3vw;
+        }
+
+        .flags:last-child {
+            margin-left: 3vw;
+        }
+
+    .li-options:hover {
+        background-color: #ffffff;
+    }
+
+        .li-options:hover > a {
+            color: #000000;
+        }
+
+    .menu {
+        width: 14vw;
+        display: flex;
+        height: 8vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-logo {
+        width: 86vw;
+    }
+}
+
+
+@keyframes dropdown {
+    0% {
+        margin-top: -100vw;
+        z-index: -1;
+    }
+
+    99% {
+        margin-top: 0;
+        z-index: -1;
+    }
+
+    100% {
+        z-index: 0;
+    }
+}
+
+/* ======================================= NAVBAR CSS ======================================= */
+
