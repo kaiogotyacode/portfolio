@@ -2,6 +2,7 @@
 
 header {
     height: 8vh;
+    min-height: 63.36px;
 }
 
 nav, nav > ul {
@@ -10,10 +11,12 @@ nav, nav > ul {
 }
 
 nav {
+    min-height: 63.36px;
     height: 8vh;
 }
 
     nav > ul {
+        min-height: 63.36px;
         width: 100%;
         justify-content: end;
         height: 8vh;
@@ -29,6 +32,7 @@ nav {
 .nav-logo {
     height: 8vh;
     width: 30vw;
+    min-height: 63.36px;
 }
 
 
@@ -94,6 +98,7 @@ ul > .li-options > a:hover {
     display: none;
     transition: 0.5s;
     height: 8vh;
+    min-height: 63.36px;
 }
 
     .menu:hover {
@@ -131,18 +136,6 @@ ul > .li-options > a:hover {
     }
 }
 
-
-/* FIXING DETAILS*/
-@media (min-width: 768px) and (max-width: 1200px) {
-    
-    /* aumentar o tamanho da fonte das opções. tal como as bandeiras (se necessário) ~ Diminuir a logo proporcionalmente until MENU */
-
-    /*limitar a altura/largura mínima da nav (logo) para não quebrar*/
-
-    /* trabalhar com 3 tipos de imagens > small 9 : 16 (estudar as proporções) / tablet sm/md > xx:xx  && MANTER a 16  : 9*/
-
-
-}
 
 /* TELA SM */
 
@@ -324,3 +317,38 @@ ul > .li-options > a:hover {
 
 /* ======================================= NAVBAR CSS ======================================= */
 
+/* CSS PRIORITY */
+
+/* FIXING DETAILS*/
+
+@media (min-width: 1201px) and (max-width: 1600px) {
+    .li-options > a {
+        font-size: 1.3vw;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 623.5px) {
+    .nav-logo{
+        width: 80vw;
+    }
+}
+
+@media (min-width: 623.5px) and (max-width: 767px ) {
+    .nav-logo {
+        width: 60vw;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+
+    .li-options > a {
+        font-size: 1.5vw;
+    }
+
+    .nav-logo {
+        width: 53vw;
+    }
+
+    /* trabalhar com 3 tipos de imagens > small 9 : 16 (estudar as proporções) / tablet sm/md > xx:xx  && MANTER a 16  : 9*/
+
+}

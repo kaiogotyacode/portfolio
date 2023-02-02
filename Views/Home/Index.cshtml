@@ -3,7 +3,7 @@
 }
 
 <style>
-    #mainscreen{
+    #mainscreen {
         top: 0;
         position: absolute;
         width: 100vw;
@@ -11,12 +11,45 @@
         z-index: -2;
     }
 
-    .foto{       
+    .foto {
         width: 100%;
         height: auto;
+    }
+
+    @@media (max-width: 768px) {
+        #widescreen {
+            display: none;
+        }
+
+        #mediumscreen {
+            display: none;
+        }
+    }
+
+
+    @@media (min-width: 769px) and (max-width: 1268px) {
+        #smallscreen {
+            display: none;
+        }
+
+        #widescreen {
+            display: none;
+        }
+    }
+
+    @@media (min-width: 1269px) {
+        #smallscreen {
+            display: none;
+        }
+
+        #mediumscreen {
+            display: none;
+        }
     }
 </style>
 
 <div id="mainscreen">
-    <img src="~/images/pc.jpg" class="img-fluid foto"/>
+    <img id="widescreen" src="~/images/pc.jpg" class="img-fluid foto" />
+    <img id="mediumscreen" src="~/images/mediumDevices.jpg" class="img-fluid foto" />
+    <img id="smallscreen" src="~/images/smallDevices.jpg" class="img-fluid foto" />
 </div>
