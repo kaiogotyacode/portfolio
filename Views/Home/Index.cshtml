@@ -16,40 +16,71 @@
         height: auto;
     }
 
-    @@media (max-width: 768px) {
-        #widescreen {
-            display: none;
+
+
+    /* TELAS SMALL A */
+    @@media (max-width: 499px) {
+
+        #mainscreen {
+            height: 92vh;
+            margin-top: 8vh;
         }
 
-        #mediumscreen {
+        #widescreen, #mediumscreen, #smallBscreen {
             display: none;
         }
     }
+    /* ↑ TELAS SMALL A ↑ */
 
 
+    /* TELAS SMALL B */
+    @@media (min-width: 500px) and (max-width: 768px) {
+
+        #mainscreen {
+            height: 92vh;
+            margin-top: 8vh;
+        }
+
+        .foto {
+            height: 100%;
+        }
+
+        #smallAscreen, #mediumscreen, #widescreen {
+            display: none;
+        }
+    }
+    /* ↑ TELAS SMALL B ↑ */
+
+
+    /* TELAS MEDIUM */
     @@media (min-width: 769px) and (max-width: 1268px) {
-        #smallscreen {
+        #smallAscreen, #smallBscreen, #widescreen {
             display: none;
         }
 
-        #widescreen {
-            display: none;
+        .foto {
+            height: 100%;
         }
     }
+    /* ↑ TELAS MEDIUM  ↑*/
 
+    /* TELAS WIDE */
     @@media (min-width: 1269px) {
-        #smallscreen {
+        #smallAscreen, #smallBscreen, #mediumscreen {
             display: none;
+        }
+          .foto{
+            height: 100%;
         }
 
-        #mediumscreen {
-            display: none;
-        }
     }
+    /* ↑ TELAS WIDE  ↑*/
+
 </style>
 
 <div id="mainscreen">
-    <img id="widescreen" src="~/images/pc.jpg" class="img-fluid foto" />
-    <img id="mediumscreen" src="~/images/mediumDevices.jpg" class="img-fluid foto" />
-    <img id="smallscreen" src="~/images/smallDevices.jpg" class="img-fluid foto" />
+    <img id="widescreen" src="~/images/wideImage.jpg" class="img-fluid foto" />
+    <img id="mediumscreen" src="~/images/mediumImage.jpg" class="img-fluid foto" />
+    <img id="smallBscreen" src="~/images/smallBImage.jpg" class="img-fluid foto" />
+    <img id="smallAscreen" src="~/images/onwork/smallA.png" class="img-fluid foto" />
 </div>
