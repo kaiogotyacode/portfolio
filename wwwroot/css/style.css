@@ -322,7 +322,7 @@ ul > .li-options > a:hover {
 /* FIXING DETAILS*/
 
 @media (min-width: 1201px) and (max-width: 1600px) {
-    .li-options > a {
+    .li-options > a { 
         font-size: 1.3vw;
     }
 }
