@@ -327,7 +327,7 @@ ul > .li-options > a:hover {
     }
 }
 
-@media (min-width: 480px) and (max-width: 623.5px) {
+@media (min-width: 480px) and (max-width: 623.5px) { 
     .nav-logo{
         width: 80vw;
     }
