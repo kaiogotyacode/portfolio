@@ -317,18 +317,14 @@ ul > .li-options > a:hover {
 
 /* ======================================= NAVBAR CSS ======================================= */
 
-/* CSS PRIORITY */
-
-/* FIXING DETAILS*/
-
 @media (min-width: 1201px) and (max-width: 1600px) {
-    .li-options > a { 
+    .li-options > a {
         font-size: 1.3vw;
     }
 }
 
-@media (min-width: 480px) and (max-width: 623.5px) { 
-    .nav-logo{
+@media (min-width: 480px) and (max-width: 623.5px) {
+    .nav-logo {
         width: 80vw;
     }
 }
@@ -348,7 +344,221 @@ ul > .li-options > a:hover {
     .nav-logo {
         width: 53vw;
     }
-
-    /* trabalhar com 3 tipos de imagens > small 9 : 16 (estudar as proporções) / tablet sm/md > xx:xx  && MANTER a 16  : 9*/
-
 }
+
+/* =======================================  ======================================= */
+
+/* ================================= MAINSCREEN CSS ================================= */
+
+#mainscreen {
+    top: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+}
+
+.foto {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ======= TELA SMALL A ======= */
+@media (max-width: 499px) {
+
+    #mainscreen {        
+        height: 92vh;
+        margin-top: 8vh;
+    }
+
+
+    #widescreen, #mediumscreen, #smallBscreen {
+        display: none;
+    }
+}
+/* ================ /
+
+
+        /* ======= TELA SMALL B ======= */
+@media (min-width: 500px) and (max-width: 768px) {
+
+    #mainscreen {
+        height: 92vh;
+        margin-top: 8vh;
+    }
+
+    .foto {
+        height: 100%;
+    }
+
+    #smallAscreen, #mediumscreen, #widescreen {
+        display: none;
+    }
+}
+/* ================ /
+
+
+        /* ======= TELA MEDIUM ======= */
+@media (min-width: 769px) and (max-width: 1268px) {
+    #smallAscreen, #smallBscreen, #widescreen {
+        display: none;
+    }
+
+    .foto {
+        height: 100%;
+    }
+}
+/* ================ /
+
+        /* ======= TELA WIDE =======*/
+@media (min-width: 1269px) {
+    #smallAscreen, #smallBscreen, #mediumscreen {
+        display: none;
+    }
+
+    .foto {
+        height: 100%;
+    }
+}
+/* ================ /
+
+/* =======================================  ======================================= */
+
+/* ================================ TEXT POSITIONS ================================ */
+
+/* SMALL A*/
+@media (max-width: 768px){
+   .introduce-text {
+       height: 92vh;
+       font-family: codeBold;
+       position: absolute;
+       top: 0;
+       left: 0;
+       color: #FFFFFF;
+
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: space-around;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+   .name{
+       font-size: 3.5em;
+   }
+   .act-on{
+       width: 100vw;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+   }
+   .act-on > h2{
+       font-size: 1.5em;
+   }
+
+    .introduce-text > h1 {
+        color: #ecf0f1;
+    }
+
+    w {
+        color: #7e080c;
+    }
+
+   .introduce-text > .name{
+
+   }
+}
+
+/* =======================================  ======================================= */
+
+/* ============== BUG FIX: DROPDOWN MENU NOT FITTING ============== */
+
+@media (max-height: 781px){
+    #nav-options{
+        top: 63.36px;
+    }       
+}
+
+/* =======================================  ======================================= */
+
+
+
+/* ============== Typing Effect ============== */
+
+texto {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;    
+    animation: typing 2s steps(7), 
+                cursor 2.5s;
+}
+
+@keyframes typing {
+    from {
+        width: 0;        
+    }
+}
+
+@keyframes cursor{
+    12.5% {
+        text-shadow: 0 0 10px #000;
+        border-color: transparent;
+    }
+
+    25% {
+        border-right: 3px solid;
+        border-color: #fff;
+    }
+
+    50% {
+        border-color: transparent;
+    }
+    60% {
+        text-shadow: 0 0 10px #000;
+        border-right: 3px solid;
+        border-color: #fff;
+    }
+
+    80% {
+        border-color: transparent;
+        text-shadow: 0 0 10px #fff;
+    }
+
+    90% {        
+        border-right: 3px solid;
+        border-color: #fff;
+    }
+
+    100% {
+        border-color: transparent;
+    }
+}
+
+/* =======================================  ======================================= */
+
+/* Formatar tamanho do texto "Welcome" */
+
+@media (max-width: 768px) and (max-height: 717px){
+    h1{
+        font-size: 5.5vh;
+    }
+}
+
+@media (max-width: 768px) and (min-height: 718px) {
+    h1 {
+        font-size: 6vh;
+    }
+}
+
+/* width <= 768  and max-height: 700px e trabalha com o font-size by VHeight */
+
+/* =======================================  ======================================= */
+

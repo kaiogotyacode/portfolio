@@ -2,88 +2,34 @@
     ViewData["Title"] = "Página Inicial";
 }
 
-<style>
-    #mainscreen {
-        top: 0;
-        position: absolute;
-        width: 100vw;
-        height: 100vh;
-        z-index: -2;
-    }
-
-    .foto {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        object-position: center;
-    }
-
-
-
-    /* TELAS SMALL A */
-    @@media (max-width: 499px) {
-
-        #mainscreen {
-            height: 92vh;
-            margin-top: 8vh;
-        }     
-                
-
-        #widescreen, #mediumscreen, #smallBscreen {
-            display: none;
-        }
-    }
-    /* ↑ TELAS SMALL A ↑ */
-
-
-    /* TELAS SMALL B */
-    @@media (min-width: 500px) and (max-width: 768px) {
-
-        #mainscreen {
-            height: 92vh;
-            margin-top: 8vh;
-        }
-
-        .foto {
-            height: 100%;           
-        }
-
-        #smallAscreen, #mediumscreen, #widescreen {
-            display: none;
-        }
-    }
-    /* ↑ TELAS SMALL B ↑ */
-
-
-    /* TELAS MEDIUM */
-    @@media (min-width: 769px) and (max-width: 1268px) {
-        #smallAscreen, #smallBscreen, #widescreen {
-            display: none;
-        }
-
-        .foto {
-            height: 100%;
-        }
-    }
-    /* ↑ TELAS MEDIUM  ↑*/
-
-    /* TELAS WIDE */
-    @@media (min-width: 1269px) {
-        #smallAscreen, #smallBscreen, #mediumscreen {
-            display: none;
-        }
-
-        .foto {
-            height: 100%;
-        }
-    }
-    /* ↑ TELAS WIDE  ↑*/
-
-</style>
-
 <div id="mainscreen">
     <img id="widescreen" src="~/images/onwork/large/large.png" class="img-fluid foto" />
     <img id="mediumscreen" src="~/images/onwork/medium/medium.png" class="img-fluid foto" />
     <img id="smallBscreen" src="~/images/onwork/medium/medium.png" class="img-fluid foto" />
     <img id="smallAscreen" src="~/images/onwork/smallA/smallA.png" class="img-fluid foto" />
+
+    <div class="introduce-text">
+        <h1>
+            <texto>
+                <w>W</w>elcome
+            </texto>
+        </h1>
+        <h2 class="name">
+           &nbsp;
+        </h2>
+        <div class="act-on">
+            <h2> Junior Software Engineer </h2>
+            <h2> IT Student at FATEC </h2>
+            <h2>Personal Graphic Designer</h2>
+        </div>
+    </div>
+
 </div>
+
+
+<!-- 
+
+whitespace nowrap 
+overflow hidden
+
+-->
