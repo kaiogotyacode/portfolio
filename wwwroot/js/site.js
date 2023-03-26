@@ -35,14 +35,65 @@ window.addEventListener("load", () => {
     })
 
     var t1 = document.getElementById("t1");
-    t1.classList.add("podioText");
 
     var t2 = document.getElementById("t2");
-    t2.classList.add("sndText");
 
     var t3 = document.getElementById("t3");
-    t3.classList.add("trdText");
-    //t1.classList.remove("podioText");
+
+    var fase = 1;
+        
+    function animacaoAct() {
+        //first loop
+        if (fase == 1) {
+            
+                t1.classList.remove("sndText")
+                t1.classList.remove("podioText")
+
+                t1.classList.add("podioText");
+
+                t2.classList.remove("trdText");
+                t2.classList.remove("sndText");
+
+                t2.classList.add("sndText");
+
+                t3.classList.remove("podioText");
+                t3.classList.remove("trdText");
+
+            t3.classList.add("trdText");
+
+            fase++;
+
+         
+        } else if (fase == 2) {
+         
+                t1.classList.remove("podioText")
+                t1.classList.add("trdText");
+
+                t2.classList.remove("sndText");
+                t2.classList.add("podioText");
+
+                t3.classList.remove("trdText");
+                t3.classList.add("sndText");
+            fase++;
+                  
+        } else {
+            fase = 1;
+        
+                t1.classList.remove("trdText")
+                t1.classList.add("sndText");
+
+                t2.classList.remove("podioText");
+                t2.classList.add("trdText");
+
+                t3.classList.remove("sndText");
+                t3.classList.add("podioText");
+    
+        }
+
+    }
+
+        setInterval(animacaoAct, 5000);
+
 
 })
 
