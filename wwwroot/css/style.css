@@ -587,7 +587,8 @@ texto {
     margin-top: -6vh;
     color: #fff;
     text-shadow: 2px 2px 1.5px #000;
-    animation:  podioEffect ease-in-out 1s;
+    animation: podioEffect ease-in-out 1s;
+    font-size: 3vh !important;
 }
 
 .sndText{
@@ -601,20 +602,31 @@ texto {
     color: rgba(255,255,255, .1);
 }
 
-@media (max-width: 768px) {
-   
-  /*    Adicionar efeito ShadowColor BLACK para destacar. Aplicar color H1Z1. 
-        Subir ao pódio o Destaque e retornar o antecessor para a última posição do pódio 
-        color: rgba(255,255,255,.5 para o último)
-        color: rgba(255,255,255,.75 para o penúltimo)
-        color: rgba(255,255,255, 1 para o pódio)
-  */
+
+
+/* =======================================  BUG FIX PODIO EFFECT HEIGHT======================================= */
+@media (max-height: 717px){
+    .podioText {
+        font-size: 1.5em !important;
+    }
+
+    .sndText {
+        font-size: 1em !important;
+    }
+
+    .trdText {
+        font-size: 0.5em !important;
+    }
+
+    .act-on{
+        height: 24vh;
+    }
 }
 
 /* =======================================  ======================================= */
 
 
-/* Adicionar os 4 botões laterais de navegação */
+/* Adicionar os 4 botões laterais de navegação: 30m */ 
 
 @media (max-width: 768px) {
 
@@ -623,7 +635,7 @@ texto {
 /* =======================================  ======================================= */
 
 
-/* Adicionar o botão Ver mais. Centralizado no meio (inferior) */
+/* Adicionar o botão Ver mais. Centralizado no meio (inferior): 30m meia lua */
 
 @media (max-width: 768px) {
 }
