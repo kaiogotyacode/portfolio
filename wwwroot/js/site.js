@@ -34,6 +34,17 @@ window.addEventListener("load", () => {
         }
     })
 
+    var t1 = document.getElementById("t1");
+    t1.classList.add("podioText");
+
+    var t2 = document.getElementById("t2");
+    t2.classList.add("sndText");
+
+    var t3 = document.getElementById("t3");
+    t3.classList.add("trdText");
+    //t1.classList.remove("podioText");
+
 })
 
 /* ======================================= MENU JS ======================================= */
+

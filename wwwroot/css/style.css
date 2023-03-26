@@ -1,5 +1,9 @@
 ﻿/* ======================================= NAVBAR CSS ======================================= */
 
+* {
+    user-select: none;
+}
+
 header {
     height: 8vh;
     min-height: 63.36px;
@@ -94,7 +98,7 @@ ul > .li-options > a:hover {
     color: #ff3838 !important;
 }
 
-.menu {
+.menu {    
     display: none;
     transition: 0.5s;
     height: 8vh;
@@ -544,7 +548,7 @@ texto {
 
 /* =======================================  ======================================= */
 
-/* Formatar tamanho do texto "Welcome" */
+/* Formatar tamanho do texto "Welcome"  MENU DROPDOWN SCREEN*/
 
 @media (max-width: 768px) and (max-height: 717px){
     h1{
@@ -561,4 +565,52 @@ texto {
 /* width <= 768  and max-height: 700px e trabalha com o font-size by VHeight */
 
 /* =======================================  ======================================= */
+
+
+/* Adicionar efeito para os textos Act-on ~ VIA JS... */
+
+.podioText {
+    color: #fff;
+    text-shadow: 0 0 15px #000;
+}
+
+.sndText{
+    color: rgba(255,255,255, .5);
+    font-size: 1.5vh !important;
+}
+
+.trdText {
+    font-size: 1vh  !important;
+    color: rgba(255,255,255, .1);
+}
+
+@media (max-width: 768px) {
+   
+  /*    Adicionar efeito ShadowColor BLACK para destacar. Aplicar color H1Z1. 
+        Subir ao pódio o Destaque e retornar o antecessor para a última posição do pódio 
+        color: rgba(255,255,255,.5 para o último)
+        color: rgba(255,255,255,.75 para o penúltimo)
+        color: rgba(255,255,255, 1 para o pódio)
+  */
+}
+
+/* =======================================  ======================================= */
+
+
+/* Adicionar os 4 botões laterais de navegação */
+
+@media (max-width: 768px) {
+
+}
+
+/* =======================================  ======================================= */
+
+
+/* Adicionar o botão Ver mais. Centralizado no meio (inferior) */
+
+@media (max-width: 768px) {
+}
+
+/* =======================================  ======================================= */
+
 
