@@ -628,8 +628,51 @@ texto {
 
 /* Adicionar os 4 botões laterais de navegação: 30m */ 
 
-@media (max-width: 768px) {
+#nav-buttons{
+    display: none;
+}
 
+navButton{
+    border-radius: 50%;
+    min-height: 1px;
+    min-width: 1px;
+
+    font-size: 10px;
+    text-align: center;
+
+    height: 20px;
+    width: 20px;
+
+    border: 1px solid rgba(0,0,0, .8);
+    background-color: rgba(0,0,0, .3);    
+    color: #fff;
+}
+
+navButton:first-child{
+    background-color: rgba(255,255,255,.8);    
+    color: #000;
+}
+
+navButton:hover{
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    #nav-buttons{
+        position: fixed;
+        left: 93.5%;
+        top: 45%;
+
+        min-height: 70px;
+        height: 12.5vh;
+        width: 25px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;        
+    }
+
+   
 }
 
 /* =======================================  ======================================= */
