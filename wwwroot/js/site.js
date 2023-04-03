@@ -1,6 +1,7 @@
 ﻿/* ======================================= MENU JS ======================================= */
 
 window.addEventListener("load", () => {
+      
 
     var menu = document.getElementById("menu");
     var navOptions = document.getElementById("nav-options");
