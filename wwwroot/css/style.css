@@ -567,7 +567,7 @@ texto {
 
 /* Implementando Welcome & Act-ON para medium/large devices*/
 
-@media (min-width: 769px) and (max-width: 1268px){
+@media (min-width: 769px) {
     .introduce-text {
         height: 92vh;
         font-family: codeBold;
@@ -718,6 +718,8 @@ navButton {
 
 /* Adaptações do Botão: Ver Mais */
 
+
+/*BugFix for small heights*/
 @media (max-height: 717px) {
     .imgSeeMore {
         height: 7.5vh;
@@ -726,13 +728,11 @@ navButton {
 }
 
 /* Adicionando o botão de Ver Mais*/
-
-
 .seeMore {
     display: none;
 }
 
-@media (max-width: 768px) {
+
     #nav-buttons {
         position: fixed;
         left: 93.5%;
@@ -774,9 +774,22 @@ navButton {
         box-shadow: #fff 30px 30px inset;
         border: 1px solid #7e080c;
     }
+
+
+/* Configurações dos Botões de Navegação para Medium/Large Devices*/
+@media (min-width: 769px){
+    #nav-buttons{
+        left: 96.5%;
+    }
 }
 
-
+/* BugFix: Tamanho do Botão Ver Mais p/ medium/large devices*/
+@media (min-width: 769px) and (max-height: 716px){
+    .imgSeeMore {
+        height: 50px;
+        width: 50px;
+    }
+}
 
 
 /* =======================================  ======================================= */
