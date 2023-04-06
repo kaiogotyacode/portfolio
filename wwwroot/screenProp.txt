@@ -2,3 +2,11 @@
 Small B		>	min-width: 500px & max-width: 768px
 Medium		>	min-width: 769px & max-width: 1268px
 Wide		>	min-width: 1269px
+
+
+
+Photoshop Inches [Multiplies Y*2]
+Small: 9:18
+SmallB: 13:16
+Medium: 12:10
+Wide: 16:9
