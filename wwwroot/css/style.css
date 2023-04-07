@@ -388,12 +388,7 @@ ul > .li-options > a:hover {
 
         /* ======= TELA SMALL B ======= */
 @media (min-width: 500px) and (max-width: 768px) {
-
-    #mainscreen {
-        height: 92vh;
-        margin-top: 8vh;
-    }
-
+      
     .foto {
         height: 100%;
     }
@@ -817,3 +812,7 @@ navButton {
 
 /*fixing Presentation Height*/
 /*#smallAscreen,#smallBscreen*/
+
+
+/*Forçar as imagens terem 100% de height e width proporcional.
+    [Mesmo quebrando (Depende da Tela)] */
