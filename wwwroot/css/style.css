@@ -379,7 +379,7 @@ ul > .li-options > a:hover {
     }
 
 
-    #widescreen, #mediumscreen, #smallBscreen {
+    .widescreen, .mediumscreen, .smallBscreen {
         display: none;
     }
 }
@@ -393,7 +393,7 @@ ul > .li-options > a:hover {
         height: 100%;
     }
 
-    #smallAscreen, #mediumscreen, #widescreen {
+    .smallAscreen, .mediumscreen, .widescreen {
         display: none;
     }
 }
@@ -402,7 +402,7 @@ ul > .li-options > a:hover {
 
         /* ======= TELA MEDIUM ======= */
 @media (min-width: 769px) and (max-width: 1268px) {
-    #smallAscreen, #smallBscreen, #widescreen {
+    .smallAscreen, .smallBscreen, .widescreen {
         display: none;
     }
 
@@ -414,7 +414,7 @@ ul > .li-options > a:hover {
 
         /* ======= TELA WIDE =======*/
 @media (min-width: 1269px) {
-    #smallAscreen, #smallBscreen, #mediumscreen {
+    .smallAscreen, .smallBscreen, .mediumscreen {
         display: none;
     }
 
