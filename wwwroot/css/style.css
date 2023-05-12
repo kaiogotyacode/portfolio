@@ -389,7 +389,7 @@ ul > .li-options > a:hover {
 
         /* ======= TELA SMALL B ======= */
 @media (min-width: 500px) and (max-width: 768px) {
-      
+
     .foto {
         height: 100%;
     }
@@ -472,7 +472,6 @@ ul > .li-options > a:hover {
     w {
         color: #7e080c;
     }
-        
 }
 
 /* =======================================  ======================================= */
@@ -575,7 +574,7 @@ texto {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content:  space-between;
+        justify-content: space-between;
     }
 
     h1 {
@@ -608,10 +607,9 @@ texto {
     w {
         color: #7e080c;
     }
-    
 }
 
-@media (min-width: 769px) and (max-height: 716px) and (max-width: 1268px){
+@media (min-width: 769px) and (max-height: 716px) and (max-width: 1268px) {
     h1 {
         font-size: 3em;
         margin-top: 30vh;
@@ -731,58 +729,58 @@ navButton {
 }
 
 
-    #nav-buttons {
-        position: fixed;
-        left: 93.5%;
-        top: 45%;
-        min-height: 70px;
-        height: 12.5vh;
-        width: 25px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-    }
+#nav-buttons {
+    position: fixed;
+    left: 93.5%;
+    top: 45%;
+    min-height: 70px;
+    height: 12.5vh;
+    width: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    .seeMore {
-        display: block;
-        width: 100%;
-        height: 50px;
-        position: absolute;
-        bottom: 1%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.seeMore {
+    display: block;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    .btnSeeMore {
-        position: relative;
-        height: 100%;
-        width: 50px;
-    }
+.btnSeeMore {
+    position: relative;
+    height: 100%;
+    width: 50px;
+}
 
-    .imgSeeMore {
-        border: 1px solid #fff;
-        border-radius: 50%;
-        transition: .35s;
-        filter: contrast(0.9);
-    }
+.imgSeeMore {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    transition: .35s;
+    filter: contrast(0.9);
+}
 
-    .btnSeeMore:hover > .imgSeeMore {
-        box-shadow: #fff 30px 30px inset;
-        border: 1px solid #7e080c;
-    }
+.btnSeeMore:hover > .imgSeeMore {
+    box-shadow: #fff 30px 30px inset;
+    border: 1px solid #7e080c;
+}
 
 
 /* Configurações dos Botões de Navegação para Medium/Large Devices*/
-@media (min-width: 769px){
-    #nav-buttons{
+@media (min-width: 769px) {
+    #nav-buttons {
         left: 96.5%;
     }
 }
 
 /* BugFix: Tamanho do Botão Ver Mais p/ medium/large devices*/
-@media (min-width: 769px) and (max-height: 716px){
+@media (min-width: 769px) and (max-height: 716px) {
     .imgSeeMore {
         height: 50px;
         width: 50px;
@@ -801,7 +799,7 @@ navButton {
 
 /* ======================================= APRESENTAÇÃO ======================================= */
 
-#presentation{
+#presentation {
     background-color: aqua;
     position: absolute;
     width: 100vw;
@@ -809,31 +807,60 @@ navButton {
     top: 100vh;
 }
 
-.presentation-content{
+.presentation-content {
     display: flex;
     flex-direction: column;
     width: 100vw;
     height: 100vh;
     border-radius: 5px;
-    position: inherit !important;    
+    position: inherit !important;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.presentation-title{    
+.presentation-title {
     font-family: codeBold;
     letter-spacing: 15px;
     font-size: 4em;
-    color: #fff;    
+    color: #fff;
 }
 
-.video-container{
-    
+.video-container {
     margin-top: -15vh;
     height: 60vh;
-    width:  65vw;
+    width: 65vw;
     background-color: #000;
     border: 2px solid rgba(255,255,255, .5);
     border-radius: 5px;
 }
+
+.switch-language {
+    transition: 0.5s;
+    border: 3px solid rgba(0,0,0, .85);
+    position: absolute;
+    background-color: #fff;
+    height: 5vw;
+    width: 5vw;
+    border-radius: 50%;
+    left: 8.75vw;
+    top: 50vh;
+}
+
+    .switch-language:hover {
+        cursor: pointer;
+        border: 2px solid rgba(255,255,255, 0.85);
+    }
+
+.label-language {
+    text-align: center;
+    width: 5vw;
+    font-size: 12.5px;
+    font-family: codeBold;
+    position: absolute;
+    color: #fff;
+    left: 8.75vw;
+    top: 45.5vh;
+}
+
+
 /* =======================================  ======================================= */
