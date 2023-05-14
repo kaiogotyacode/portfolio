@@ -133,6 +133,8 @@ window.addEventListener("load", () => {
             usImage.style.cssText += "display: none";
             brImage.style.cssText += "display: block";
 
+            engVideo.pause();
+
 
         } else {
 
@@ -147,6 +149,8 @@ window.addEventListener("load", () => {
 
             usImage.style.cssText += "display: block";
             brImage.style.cssText += "display: none";
+
+            braVideo.pause();
 
         }
     });
