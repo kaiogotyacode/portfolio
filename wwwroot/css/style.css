@@ -826,8 +826,8 @@ navButton {
 }
 
 .video-container {
-    margin-top: -15vh;
-    height: 60vh;
+    margin-top: -10vh;
+    height: auto;
     width: 65vw;
     background-color: #000;
     border: 2px solid rgba(255,255,255, .5);
@@ -860,6 +860,19 @@ navButton {
     color: #fff;
     left: 8.75vw;
     top: 45.5vh;
+}
+
+video{
+    height: 100%;
+    width: 100%;
+}
+
+.bra-video{
+    /*display: none;*/
+}
+
+.eng-video{
+    display: none;
 }
 
 
