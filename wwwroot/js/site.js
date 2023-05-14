@@ -1,7 +1,9 @@
 ﻿
 
 window.addEventListener("load", () => {
-      
+
+    alert(innerHeight)
+
 /* ======================================= MENU JS ======================================= */
     var menu = document.getElementById("menu");
     var navOptions = document.getElementById("nav-options");
