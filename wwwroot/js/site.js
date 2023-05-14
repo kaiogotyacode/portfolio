@@ -1,8 +1,8 @@
-﻿/* ======================================= MENU JS ======================================= */
+﻿
 
 window.addEventListener("load", () => {
       
-
+/* ======================================= MENU JS ======================================= */
     var menu = document.getElementById("menu");
     var navOptions = document.getElementById("nav-options");
     var handle = false;
@@ -95,8 +95,72 @@ window.addEventListener("load", () => {
 
         setInterval(animacaoAct, 5000);
 
+    /* ======================================= MENU JS ======================================= */
+
+
+
+
+
+    /* ================================= SWITCH LANGUAGE BUTTON ================================= */
+
+    var selectedLanguage = "eng";
+
+    var switchButton = document.getElementById("switch-language");
+
+    var titlePresentation = document.querySelector(".presentation-title");
+
+    var switchLabel = document.querySelector(".label-language");
+
+    var brImage = document.getElementById("BRflag");
+    var usImage = document.getElementById("USflag");
+
+    var engVideo = document.getElementById("eng-video");
+    var braVideo = document.getElementById("bra-video");
+
+
+    switchButton.addEventListener("click", ()=>{
+        if (selectedLanguage == "eng") {
+
+            //switch to portuguese
+            selectedLanguage = "bra";
+
+            titlePresentation.textContent = "Apresentação";
+            switchLabel.textContent = "Alterar Idioma";
+
+            engVideo.style.cssText += "display: none";
+            braVideo.style.cssText += "display: block";
+
+            usImage.style.cssText += "display: none";
+            brImage.style.cssText += "display: block";
+
+            engVideo.pause();
+
+
+        } else {
+
+            //switch to english
+            selectedLanguage = "eng";
+
+            titlePresentation.textContent = "Presentation";
+            switchLabel.textContent = "Switch Language";
+
+            engVideo.style.cssText += "display: block";
+            braVideo.style.cssText += "display: none";
+
+            usImage.style.cssText += "display: block";
+            brImage.style.cssText += "display: none";
+
+            braVideo.pause();
+
+        }
+    });
+
+
+    /* ================================= SWITCH LANGUAGE BUTTON ================================= */
+
 
 })
 
-/* ======================================= MENU JS ======================================= */
+
+
 
