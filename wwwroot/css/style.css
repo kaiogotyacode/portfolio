@@ -934,7 +934,7 @@ video {
 
 @media (max-width: 499px) and (max-height: 750px) {
     .video-container {
-        width: 90vw;
+        width: 80vw;
         margin-bottom: 20vw;
     }
 }
@@ -954,9 +954,9 @@ video {
 
 
 /* ======================================= APRESENTAÇÃO [SMALL B DEVICES] ======================================= */
-@media (min-width: 500px) and (max-width: 768px) {
+@media (min-width: 500px) and (max-width: 1267px) {
     .presentation-title {
-        font-size: 3em;
+        font-size: 3em;        
     }
 
     .label-language, #switch-language {
@@ -973,9 +973,6 @@ video {
         position: absolute;
         height: 15vh;
         width: 15vh;
-        /*min-height: 90px;
-        min-width: 90px;*/
-
         max-height: 100px;
         max-width: 100px;
     }
@@ -996,7 +993,7 @@ video {
 
 
 
-@media (min-width: 500px) and (max-width: 768px) and (max-height: 550px) {
+@media (min-width: 500px) and (max-width: 1267px) and (max-height: 550px) {
     .presentation-title {
         font-size: 2.5em;
     }
@@ -1015,23 +1012,62 @@ video {
 
 @media (min-width: 500px) and (max-width: 600px) and (min-height: 551px) and (max-height: 1200px) {
     .presentation-title {
+        margin-top: -25vw;
         font-size: 1.75em;
+        margin-bottom: -25vw;
     }
 }
 
-@media (min-width: 500px) and (max-width: 768px) and (min-height: 551px) and (max-height: 1200px) {
+@media (min-width: 500px) and (max-width: 1267px) and (min-height: 551px) and (max-height: 1200px) {
     .video-container {
         width: 70vw;
         margin-bottom: 12.5vw;
     }
 }
+
+@media (min-width: 768px) and (max-width: 1267px) and (max-height: 600px) {
+
+    .video-container{
+        width: 60vw;
+        max-width: 450px;
+    }
+    .presentation-title {
+        font-size: 1.5em;
+        margin-bottom: 50px;
+    }
+    .label-language {
+        min-width: 110px;
+        margin-left: -1.5vw;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1267px) and (min-height: 600px) and (max-height: 800px) {
+
+    .video-container {
+        width: 60vw;
+        max-width: 700px;
+    }
+
+    .presentation-title {
+        font-size: 2.5em;
+        margin-bottom: 50px;
+    }
+
+    .label-language {
+        min-width: 110px;
+        margin-left: -1.5vw;
+    }
+}
+
+
 /* ======================================= APRESENTAÇÃO [SMALL B DEVICES] ======================================= */
 
 
 
-
 /* ======================================= APRESENTAÇÃO [MEDIUM  DEVICES] ======================================= */
-/*code here */
+@media (min-width: 1268px) and (max-width: 1439px) {
+}
+
 /* ======================================= APRESENTAÇÃO [MEDIUM  DEVICES] ======================================= */
 
 
