@@ -2,9 +2,9 @@
 
 window.addEventListener("load", () => {
 
-    alert(innerHeight)
+    /* ======================================= MENU JS ======================================= */
 
-/* ======================================= MENU JS ======================================= */
+    alert('Width: ' + innerWidth + '\nHeight: '+ innerHeight)
     var menu = document.getElementById("menu");
     var navOptions = document.getElementById("nav-options");
     var handle = false;
