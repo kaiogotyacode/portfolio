@@ -1065,10 +1065,54 @@ video {
 
 
 /* ======================================= APRESENTAÇÃO [MEDIUM  DEVICES] ======================================= */
-@media (min-width: 1268px) and (max-width: 1439px) {
+
+@media (min-width: 1268px) and (max-width: 1439px) and (max-height: 800px) {
+    .video-container{
+        width: 50vw;
+    }
+
+    .presentation-title{
+        font-size: 2.5em;
+        margin-bottom: 50px;
+    }
+
+    .label-language{
+        width: fit-content;
+    }
+
+    #switch-language{
+        height: 7.5vw;
+        width: 7.5vw;
+    }
+    
 }
 
 /* ======================================= APRESENTAÇÃO [MEDIUM  DEVICES] ======================================= */
+
+
+/* ======================================= APRESENTAÇÃO [WIDE DEVICES] ======================================= */
+
+@media (min-width: 1440px) and (max-height: 800px) {
+    .video-container {
+        width: 50vw;
+    }
+
+    .presentation-title {
+        font-size: 2.5em;
+        margin-bottom: 50px;
+    }
+
+    .label-language {
+        width: fit-content;
+    }
+
+    #switch-language {
+        height: 7.5vw;
+        width: 7.5vw;
+    }
+}
+
+/* ======================================= APRESENTAÇÃO [WIDE DEVICES] ======================================= */
 
 
 
