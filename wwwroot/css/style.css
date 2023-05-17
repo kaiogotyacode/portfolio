@@ -856,7 +856,7 @@ navButton {
 
     #switch-language:hover {
         cursor: pointer;
-        border: 2px solid rgba(255,255,255, 0.85);
+        border-color: rgba(255,255,255, 0.5);
     }
 
 .label-language {
@@ -884,9 +884,16 @@ video {
 }
 
 #BRflag {
-    display: none;
+    opacity: 0;
+    z-index: 0;
+}
+#USflag {
+    z-index: 1;
 }
 
+#USflag, #BRflag {
+    transition: 0.5s ease-in-out;
+}
 
 /* ======================================= APRESENTAÇÃO ======================================= */
 
