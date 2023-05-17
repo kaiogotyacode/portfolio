@@ -4,7 +4,7 @@ window.addEventListener("load", () => {
 
     /* ======================================= MENU JS ======================================= */
 
-    alert('Width: ' + innerWidth + '\nHeight: '+ innerHeight)
+    /*alert('Width: ' + innerWidth + '\nHeight: '+ innerHeight)*/
     var menu = document.getElementById("menu");
     var navOptions = document.getElementById("nav-options");
     var handle = false;
