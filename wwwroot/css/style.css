@@ -887,6 +887,7 @@ video {
     opacity: 0;
     z-index: 0;
 }
+
 #USflag {
     z-index: 1;
 }
@@ -963,7 +964,7 @@ video {
 /* ======================================= APRESENTAÇÃO [SMALL B DEVICES] ======================================= */
 @media (min-width: 500px) and (max-width: 1267px) {
     .presentation-title {
-        font-size: 3em;        
+        font-size: 3em;
     }
 
     .label-language, #switch-language {
@@ -1034,14 +1035,16 @@ video {
 
 @media (min-width: 768px) and (max-width: 1267px) and (max-height: 600px) {
 
-    .video-container{
+    .video-container {
         width: 60vw;
         max-width: 450px;
     }
+
     .presentation-title {
         font-size: 1.5em;
         margin-bottom: 50px;
     }
+
     .label-language {
         min-width: 110px;
         margin-left: -1.5vw;
@@ -1074,24 +1077,23 @@ video {
 /* ======================================= APRESENTAÇÃO [MEDIUM  DEVICES] ======================================= */
 
 @media (min-width: 1268px) and (max-width: 1439px) and (max-height: 800px) {
-    .video-container{
+    .video-container {
         width: 50vw;
     }
 
-    .presentation-title{
+    .presentation-title {
         font-size: 2.5em;
         margin-bottom: 50px;
     }
 
-    .label-language{
+    .label-language {
         width: fit-content;
     }
 
-    #switch-language{
+    #switch-language {
         height: 7.5vw;
         width: 7.5vw;
     }
-    
 }
 
 /* ======================================= APRESENTAÇÃO [MEDIUM  DEVICES] ======================================= */
@@ -1124,10 +1126,10 @@ video {
 
 
 
-
+/* PROJECT SCREEN */
 /* ========================================== BRANCH ENHANCEMENT_010 ==========================================*/
 
-.project{
+.project {
     position: absolute;
     height: 100vh;
     width: 100vw;
@@ -1135,3 +1137,30 @@ video {
 }
 
 /* ========================================== BRANCH ENHANCEMENT_010 ==========================================*/
+
+
+
+/* CUSTOM SCROLLBAR */
+/* ========================================== BRANCH ENHANCEMENT_011 ==========================================*/
+
+::-webkit-scrollbar {
+    transition: 0.25s;
+    width: 0.5em;    
+    background-color: #524c4c;    
+}
+
+::-webkit-scrollbar-track {
+    background-color: #524c4c;
+}
+
+::-webkit-scrollbar-track:hover {
+    background-color: rgba(0,0,0,.5);
+    cursor: pointer !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#000, #1e272e, #000);
+    border-radius: 100vw;
+}
+
+/* ========================================== BRANCH ENHANCEMENT_011 ==========================================*/
