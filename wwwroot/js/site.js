@@ -44,58 +44,58 @@ window.addEventListener("load", () => {
     var t3 = document.getElementById("t3");
 
     var fase = 1;
-        
+
     function animacaoAct() {
         //first loop
         if (fase == 1) {
-            
-                t1.classList.remove("sndText")
-                t1.classList.remove("podioText")
 
-                t1.classList.add("podioText");
+            t1.classList.remove("sndText")
+            t1.classList.remove("podioText")
 
-                t2.classList.remove("trdText");
-                t2.classList.remove("sndText");
+            t1.classList.add("podioText");
 
-                t2.classList.add("sndText");
+            t2.classList.remove("trdText");
+            t2.classList.remove("sndText");
 
-                t3.classList.remove("podioText");
-                t3.classList.remove("trdText");
+            t2.classList.add("sndText");
+
+            t3.classList.remove("podioText");
+            t3.classList.remove("trdText");
 
             t3.classList.add("trdText");
 
             fase++;
 
-         
+
         } else if (fase == 2) {
-         
-                t1.classList.remove("podioText")
-                t1.classList.add("trdText");
 
-                t2.classList.remove("sndText");
-                t2.classList.add("podioText");
+            t1.classList.remove("podioText")
+            t1.classList.add("trdText");
 
-                t3.classList.remove("trdText");
-                t3.classList.add("sndText");
+            t2.classList.remove("sndText");
+            t2.classList.add("podioText");
+
+            t3.classList.remove("trdText");
+            t3.classList.add("sndText");
             fase++;
-                  
+
         } else {
             fase = 1;
-        
-                t1.classList.remove("trdText")
-                t1.classList.add("sndText");
 
-                t2.classList.remove("podioText");
-                t2.classList.add("trdText");
+            t1.classList.remove("trdText")
+            t1.classList.add("sndText");
 
-                t3.classList.remove("sndText");
-                t3.classList.add("podioText");
-    
+            t2.classList.remove("podioText");
+            t2.classList.add("trdText");
+
+            t3.classList.remove("sndText");
+            t3.classList.add("podioText");
+
         }
 
     }
 
-        setInterval(animacaoAct, 5000);
+    setInterval(animacaoAct, 5000);
 
     /* ======================================= MENU JS ======================================= */
 
@@ -120,7 +120,7 @@ window.addEventListener("load", () => {
     var braVideo = document.getElementById("bra-video");
 
 
-    switchButton.addEventListener("click", ()=>{
+    switchButton.addEventListener("click", () => {
         if (selectedLanguage == "eng") {
 
             //switch to portuguese
@@ -129,11 +129,12 @@ window.addEventListener("load", () => {
             titlePresentation.textContent = "Apresentação";
             switchLabel.textContent = "Alterar Idioma";
 
-            engVideo.style.cssText += "display: none";
-            braVideo.style.cssText += "display: block";
+            engVideo.style.cssText += "display:  none";
+            braVideo.style.cssText += "display:  block";
 
-            usImage.style.cssText += "display: none";
-            brImage.style.cssText += "display: block";
+            usImage.style.cssText += "opacity: 0";
+            brImage.style.cssText += "opacity: 1";
+
 
             engVideo.pause();
 
@@ -146,11 +147,12 @@ window.addEventListener("load", () => {
             titlePresentation.textContent = "Presentation";
             switchLabel.textContent = "Switch Language";
 
-            engVideo.style.cssText += "display: block";
-            braVideo.style.cssText += "display: none";
+            engVideo.style.cssText += "display: block;";
+            braVideo.style.cssText += "display: none;";
 
-            usImage.style.cssText += "display: block";
-            brImage.style.cssText += "display: none";
+            usImage.style.cssText += "opacity: 1";
+            brImage.style.cssText += "opacity: 0";
+                       
 
             braVideo.pause();
 
