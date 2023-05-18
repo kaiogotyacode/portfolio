@@ -823,7 +823,7 @@ navButton {
     border-radius: 5px;
     position: inherit !important;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-evenly;    
 }
 
 .presentation-title {
@@ -837,9 +837,8 @@ navButton {
     margin-top: -10vh;
     height: auto;
     width: 65vw;
-    background-color: #000;
-    border: 2px solid rgba(255,255,255, .5);
-    border-radius: 5px;
+    border: 2px solid rgba(0,0,0, .5);
+    border-radius: 5px;    
 }
 
 #switch-language {
@@ -1164,3 +1163,18 @@ video {
 }
 
 /* ========================================== BRANCH ENHANCEMENT_011 ==========================================*/
+
+
+
+/* BRANCH ENHANCEMENT _013 */
+video {
+    transition: filter 3s ease-in-out;
+    filter: brightness(1);
+}
+
+    video:hover {
+    transition: filter 3s ease-in-out;  
+        filter: brightness(1.5);
+        cursor: pointer;
+    }
+/* BRANCH ENHANCEMENT _013 */
