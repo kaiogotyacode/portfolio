@@ -837,8 +837,7 @@ navButton {
     margin-top: -10vh;
     height: auto;
     width: 65vw;
-    background-color: #000;
-    border: 2px solid rgba(255,255,255, .5);
+    border: 2px solid rgba(0,0,0, .5);
     border-radius: 5px;
 }
 
@@ -1145,18 +1144,18 @@ video {
 
 ::-webkit-scrollbar {
     transition: 0.25s;
-    width: 0.5em;    
-    background-color: #524c4c;    
+    width: 0.5em;
+    background-color: #524c4c;
 }
 
 ::-webkit-scrollbar-track {
     background-color: #524c4c;
 }
 
-::-webkit-scrollbar-track:hover {
-    background-color: rgba(0,0,0,.5);
-    cursor: pointer !important;
-}
+    ::-webkit-scrollbar-track:hover {
+        background-color: rgba(0,0,0,.5);
+        cursor: pointer !important;
+    }
 
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(#000, #1e272e, #000);
@@ -1164,3 +1163,17 @@ video {
 }
 
 /* ========================================== BRANCH ENHANCEMENT_011 ==========================================*/
+
+
+
+/* BRANCH ENHANCEMENT _013 */
+.brighter {
+    filter: brightness(100%);
+    transition: filter 0.5s ease-in-out;
+    &:hover {
+                filter: brightness(350%);
+                cursor: pointer;
+            }
+}
+/* BRANCH ENHANCEMENT _013 */
+
