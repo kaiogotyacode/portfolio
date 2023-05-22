@@ -1,0 +1,4 @@
+﻿Unfortunalety I couldn't upload the full video because GitHub doesn't support LargeFiles by default. 
+
+I'm currently learning how to use the Git Large Files Storage (GLFS) to integrate with the next Edition Files.
+
