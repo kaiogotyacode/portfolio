@@ -1177,3 +1177,30 @@ video {
 }
 /* BRANCH ENHANCEMENT _013 */
 
+
+
+
+/* INCLUDING SCROLL SNAP */
+/* ========================================== BRANCH ENHANCEMENT _012 ========================================== */
+
+
+ html{
+    scroll-snap-type: y proximity;
+    scroll-behavior: smooth;
+}
+
+
+.SSItem {
+    scroll-snap-align: center;
+}
+
+@media (max-width: 767px){
+    html{
+        scroll-padding-top: 63.36px;
+    }
+}
+
+
+
+
+/* ========================================== BRANCH ENHANCEMENT _012 ========================================== */
