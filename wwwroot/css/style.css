@@ -805,7 +805,7 @@ navButton {
 /* =======================================  ======================================= */
 
 
-/* ======================================= APRESENTAÇÃO ======================================= */
+/*  PRESENTATION SCREEN */
 
 .presentation {
     background-color: #fff;
@@ -895,10 +895,10 @@ video {
     transition: 0.5s ease-in-out;
 }
 
-/* ======================================= APRESENTAÇÃO ======================================= */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
-/* ======================================= APRESENTAÇÃO [SMALL A DEVICES] ======================================= */
+/* APRESENTAÇÃO [SMALL A DEVICES] */
 @media (max-width: 499px) {
     .presentation-title {
         font-size: 2em;
@@ -953,14 +953,12 @@ video {
     }
 }
 
-
-
-/* ======================================= APRESENTAÇÃO [SMALL A DEVICES] ======================================= */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
 
 
-/* ======================================= APRESENTAÇÃO [SMALL B DEVICES] ======================================= */
+/* APRESENTAÇÃO [SMALL B DEVICES]  */
 @media (min-width: 500px) and (max-width: 1267px) {
     .presentation-title {
         font-size: 3em;
@@ -997,8 +995,6 @@ video {
         height: 100%;
     }
 }
-
-
 
 @media (min-width: 500px) and (max-width: 1267px) and (max-height: 550px) {
     .presentation-title {
@@ -1069,11 +1065,11 @@ video {
 }
 
 
-/* ======================================= APRESENTAÇÃO [SMALL B DEVICES] ======================================= */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
 
-/* ======================================= APRESENTAÇÃO [MEDIUM  DEVICES] ======================================= */
+/* PRESENTATION [MEDIUM  DEVICES] */
 
 @media (min-width: 1268px) and (max-width: 1439px) and (max-height: 800px) {
     .video-container {
@@ -1095,10 +1091,10 @@ video {
     }
 }
 
-/* ======================================= APRESENTAÇÃO [MEDIUM  DEVICES] ======================================= */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
-/* ======================================= APRESENTAÇÃO [WIDE DEVICES] ======================================= */
+/* PRESENTATION [WIDE DEVICES] */
 
 @media (min-width: 1440px) and (max-height: 800px) {
     .video-container {
@@ -1120,13 +1116,11 @@ video {
     }
 }
 
-/* ======================================= APRESENTAÇÃO [WIDE DEVICES] ======================================= */
-
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
 
 /* PROJECT SCREEN */
-/* ========================================== BRANCH ENHANCEMENT_010 ==========================================*/
 
 .project {
     position: absolute;
@@ -1135,12 +1129,11 @@ video {
     top: 200vh;
 }
 
-/* ========================================== BRANCH ENHANCEMENT_010 ==========================================*/
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
 
 /* CUSTOM SCROLLBAR */
-/* ========================================== BRANCH ENHANCEMENT_011 ==========================================*/
 
 ::-webkit-scrollbar {
     transition: 0.25s;
@@ -1161,12 +1154,11 @@ video {
     background: linear-gradient(#000, #1e272e, #000);
     border-radius: 100vw;
 }
-
-/* ========================================== BRANCH ENHANCEMENT_011 ==========================================*/
-
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
-/* BRANCH ENHANCEMENT _013 */
+
+/* CREATING VIDEO-BRIGHTER EFFECT */
 .brighter {
     filter: brightness(100%);
     transition: filter 0.5s ease-in-out;
@@ -1175,5 +1167,43 @@ video {
                 cursor: pointer;
             }
 }
-/* BRANCH ENHANCEMENT _013 */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
+
+/* INCLUDING SCROLL SNAP */
+
+ html{
+    scroll-snap-type: y proximity;
+    scroll-behavior: smooth;
+}
+
+
+.SSItem {
+    scroll-snap-align: center;
+}
+
+@media (max-width: 767px){
+    html{
+        scroll-padding-top: 63.36px;
+    }
+}
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
+
+/* BUGFIX: BACKGROUND IMAGES ADJUSTMENTS */
+
+/*  As imagens já estão editadas
+    Aplicar 100% vw e vh, aplicando stretch na imagem, para encaixar 100%
+    e combar com as artes feitas no photoshop
+    caso seja necessário, realize alterações nas proporções destas imagens para um melhor encaixe
+    Lembre-se: Window Resizer está aí para exemplos reais. Utilize como parâmetro!
+*/
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
 
