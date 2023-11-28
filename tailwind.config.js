@@ -5,8 +5,12 @@ module.exports = {
     extend: {
       fontFamily: {
         montserrat: "Montserrat"
+      },    
+      animation:{
+        divisor: 'divisor 6s ease-in-out infinite',
       }
     },
   },
   plugins: [],
 }
+

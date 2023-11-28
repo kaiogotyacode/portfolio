@@ -19,6 +19,27 @@
 }
 
 
+.lapis-amarelo{
+    @apply tinta-amarelo;
+}
+
+
+.tinta-amarelo{
+    color: #FFFF00;
+}
+
+@keyframes divisor {
+    0% {
+      filter: brightness(1);
+    }
+    50% {
+      filter: brightness(1.7);
+    }
+    100% {
+      filter: brightness(1);
+    }
+  }
+
 ::-webkit-scrollbar {
     transition: 0.25s;
     width: 0.5em;
