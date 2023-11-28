@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Portfolio';
+  dropMenu : boolean = false;
+
+  dropdownMenu(){
+    this.dropMenu = !this.dropMenu;
+  }
+
+  menuSandwich(){    
+    return {
+      'menu-disabled' : !this.dropMenu,
+      'menu-active' : this.dropMenu
+    }
+  }
 }

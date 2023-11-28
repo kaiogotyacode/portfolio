@@ -1,6 +1,26 @@
-<div class="bg-gray-800 w-full h-20 md:h-24 flex items-center justify-center">
-  <h1 class="text-white text-center text-5xl md:text-6xl">Nav Bar</h1>
-</div>
+<nav class="navbar">
+    <div>
+    <img class="sm:max-h-20 h-14" src="../assets/img/first-content/official_brand.png" />
+  </div>
+
+  <ul [ngClass]="menuSandwich()" class="flex justify-center items-center absolute mt-96 w-full flex-col bg-gray-950 bg-opacity-75 md:flex md:w-fit md:relative md:mt-0 md:flex-row md:bg-transparent text-white font-montserrat uppercase font-light text-center transition-all ease-in-out duration-500 md:pointer-events-auto md:opacity-100">
+    <li class="mx-3 my-4 md:w-40 md:p-2 hover:font-bold cursor-pointer">Apresentação</li>
+    <li class="mx-3 my-4 md:w-40 md:p-2 hover:font-bold cursor-pointer">Projetos</li>
+    <li class="mx-3 my-4 md:w-40 md:p-2 hover:font-bold cursor-pointer">Contato</li>
+    <li class="mx-3 my-4"> <img class="h-10 hover:brightness-125 cursor-pointer transition ease-in-out" src="../assets/img/first-content/brazil.png"> </li>
+    <li class="mx-3 my-4"> <img class="h-10 hover:brightness-125 cursor-pointer transition ease-in-out" src="../assets/img/first-content/usa.png"> </li>
+  </ul>
+
+  <div (click)="dropdownMenu()" class="border rounded-sm p-2 md:hidden mr-3 hover:border-gray-500  cursor-pointer transition-all ease-in-out duration-200">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+    </svg>    
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6 hidden">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h5.25m5.25-.75L17.25 9m0 0L21 12.75M17.25 9v12" />
+    </svg>       
+  </div>
+
+</nav>
 
 
 <div class="w-full h-[80vh] bg-gray-500">
