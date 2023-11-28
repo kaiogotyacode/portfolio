@@ -7,7 +7,7 @@ module.exports = {
         montserrat: "Montserrat"
       },    
       animation:{
-        divisor: 'divisor 6s ease-in-out infinite',
+        divisor: 'divisor 3s ease-in-out infinite',
       }
     },
   },

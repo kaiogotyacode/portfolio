@@ -6,6 +6,7 @@
 @tailwind utilities;
 
 
+
 .navbar{
     @apply bg-gray-950 w-full h-20 md:h-24 flex items-center justify-center md:justify-between md:bg-gray-950 transition-all ease-in-out duration-500;
 }
@@ -17,6 +18,12 @@
 .menu-active{
     @apply opacity-100 pointer-events-auto;
 }
+
+
+.contact-info{
+    @apply w-full h-20 border border-gray-950 text-gray-600 rounded bg-gray-50 flex justify-start items-center mb-4 hover:border-gray-50 transition hover:shadow-md hover:shadow-gray-300 cursor-pointer 
+}
+
 
 
 @keyframes divisor {
