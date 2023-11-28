@@ -23,9 +23,9 @@
 </nav>
 
 
-<div class="w-full h-[80vh] bg-gray-500">
+<div class="h-[80vh] bg-gray-400 w-full overflow-hidden flex justify-center items-center">
   <!-- Content #1 -->
-  <p class="font-extrabold text-9xl text-center text-white">art</p>
+  <img src="../assets/img/first-content/temp.jpg" class="w-full"/>
 </div>
 
 <div class="w-full h-[10vh] bg-gray-50">
@@ -33,9 +33,19 @@
 </div>
 
 
-<div class="w-full h-[80vh] bg-gray-500">
+<div class="w-full h-[80vh] bg-gray-500 relative overflow-hidden flex flex-col justify-center">
   <!-- Content #2 -->
-  <p class="font-extrabold text-xl text-center text-white">presentation</p>
+  <p class="font-extrabold text-center z-10 text-white font-montserrat uppercase w-full text-4xl md:text-6xl">Presentation</p>
+
+  <img src="../assets/img/first-content/temp.jpg" class="w-full blur-sm absolute"/>
+
+  <div class="h-fit w-full z-10 flex justify-center mt-10">
+  <video class="aspect-video w-[90vw] md:max-w-[800px] lg:max-w-[1200px]" poster="../assets/img/first-content/thumbnail_video.png" controls id="bra-video">
+      <source class="" src="https://portfolio-kaiogotya.s3.us-east-2.amazonaws.com/portugueseVideo.mp4" type="video/mp4" />
+      Your browser doesn't support the video tag.
+  </video>
+  </div>
+
 </div>
 
 
@@ -44,9 +54,10 @@
 </div>
 
 
-<div class="w-full h-[80vh] bg-gray-500">
+<div class="w-full h-[80vh] bg-gray-500 relative overflow-hidden">
   <!-- Content #3 -->
-  <p class="font-extrabold text-xl text-center text-white">projects</p>
+  <img src="../assets/img/second-content/background.png" class="h-full absolute blur-md"/>
+  <p class="font-extrabold text-xl text-center text-white font-montserrat uppercase absolute w-full">projects</p>
 </div>
 
 
@@ -55,7 +66,7 @@
 </div>
 
 
-<div class="w-full h-[90vh] bg-gray-500">
+<div class="w-full h-[90vh] bg-gray-500 overflow-hidden">
   <!-- Content #3 -->
   <p class="font-extrabold text-xl text-center text-white">contact</p>
 </div>
