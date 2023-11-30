@@ -27,7 +27,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/swiperjs/script.js",
+              "src/assets/swiperjs/swiper-bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
