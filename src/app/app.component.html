@@ -5,23 +5,24 @@
 
   <ul [ngClass]="menuSandwich()"
     class="flex justify-center items-center absolute mt-96 w-full flex-col bg-gray-950 bg-opacity-75 md:flex md:w-fit md:relative md:mt-0 md:flex-row md:bg-transparent text-white font-montserrat uppercase font-light text-center transition-all ease-in-out duration-500 md:pointer-events-auto md:opacity-100">
-    <li class="mx-3 my-4 md:w-40 md:p-2 hover:font-bold cursor-pointer"><a href="#presentation">Apresentação</a></li>
-    <li class="mx-3 my-4 md:w-40 md:p-2 hover:font-bold cursor-pointer"><a href="#projects">Projetos</a></li>
-    <li class="mx-3 my-4 md:w-40 md:p-2 hover:font-bold cursor-pointer"><a href="#contact">Contato</a></li>
-    <li class="mx-3 my-4"> <img class="h-10 hover:brightness-125 cursor-pointer transition ease-in-out"
+    <li class="mx-3 my-4 md:w-40 md:p-2 hover:font-bold cursor-pointer"><a href="#presentation">{{translate.nav1}}</a>
+    </li>
+    <li class="mx-3 my-4 md:w-40 md:p-2 hover:font-bold cursor-pointer"><a href="#projects">{{translate.nav2}}</a></li>
+    <li class="mx-3 my-4 md:w-40 md:p-2 hover:font-bold cursor-pointer"><a href="#contact">{{translate.nav3}}</a></li>
+    <li (click)="switchLang('portuguese')" class="mx-3 my-4"> <img class="h-10 hover:brightness-125 cursor-pointer transition ease-in-out"
         src="../assets/img/first-content/brazil.png"> </li>
-    <li class="mx-3 my-4"> <img class="h-10 hover:brightness-125 cursor-pointer transition ease-in-out"
+    <li (click)="switchLang('english')" class="mx-3 my-4"> <img class="h-10 hover:brightness-125 cursor-pointer transition ease-in-out"
         src="../assets/img/first-content/usa.png"> </li>
   </ul>
 
   <div (click)="dropdownMenu()"
     class="border rounded-sm p-2 md:hidden mr-3 hover:border-gray-500  cursor-pointer transition-all ease-in-out duration-200">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"
+    <svg *ngIf="!dropMenu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"
       class="w-6 h-6">
       <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
     </svg>
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"
-      class="w-6 h-6 hidden">
+    <svg *ngIf="dropMenu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"
+      class="w-6 h-6">
       <path stroke-linecap="round" stroke-linejoin="round"
         d="M3 4.5h14.25M3 9h9.75M3 13.5h5.25m5.25-.75L17.25 9m0 0L21 12.75M17.25 9v12" />
     </svg>
@@ -45,7 +46,7 @@
 <div id="presentation" class="w-full h-[80vh] bg-gray-500 relative overflow-hidden flex flex-col justify-center">
   <p
     class="font-extrabold text-center z-10 text-white font-montserrat uppercase w-full text-4xl md:text-6xl sm:text-5xl">
-    Presentation</p>
+    {{translate.presentationTitle}} </p>
 
   <img loading="eager" src="../assets/img/second-content/bg_wide-test.png"
     class="h-full w-full absolute scale-150 md:scale-100" />
@@ -60,11 +61,6 @@
 
 </div>
 
-
-
-
-
-
 <div class="w-full h-[10vh] relative overflow-hidden">
   <img class="w-full h-full animate-divisor scale-105" src="../assets/img/divisor.png" />
 </div>
@@ -73,155 +69,137 @@
 
 <div id="projects" class="w-full h-[80vh] bg-gray-500 relative overflow-hidden flex flex-col justify-center">
   <div class="w-full z-10">
-    <p class="font-extrabold text-center  text-white font-montserrat uppercase  text-5xl md:text-6xl">Projects</p>    
+    <p class="font-extrabold text-center  text-white font-montserrat uppercase  text-5xl md:text-6xl">{{translate.projectTitle}}</p>
   </div>
 
   <img loading="eager" src="../assets/img/third-content/bg-wide.png"
     class="h-full w-full absolute scale-150 md:scale-100" />
 
   <div class="w-full z-10 mt-10 flex justify-center items-center">
-    
+
     <div class="slide-container swiper w-full lg:w-[90vw] h-[60vh] max-h-[450px] max-w-[1300px] flex justify-center">
       <div class="slide-content w-[90vw] md:w-[85vw] lg:w-[75vw] xl:w-[60vw] max-h-[400px]">
-          <div class="card-wrapper swiper-wrapper">
+        <div class="card-wrapper swiper-wrapper">
 
-              <div class="card swiper-slide">
-                  <div class="image-content">
-                      <span class="overlay"></span>
-
-                      <div class="card-image">
-                          <img src="../assets/img/projects/sorvetescream.png" loading="eager" alt="" class="card-img">
-                      </div>
-                  </div>
-
-                  <div class="card-content">
-                      <h2 class="name"> Sorvete's Cream </h2>
-                      <p class="description font-montserrat">Immerse in a sweet escape with our interactive ice cream haven! Explore flavors, share moments, and savor the joy of frozen delight</p>
-
-                      <button class="button">Ver mais</button>
-                  </div>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="../assets/img/projects/sorvetescream.png" loading="eager" alt="" class="card-img">
               </div>
-              
-              <div class="card swiper-slide">
-                  <div class="image-content">
-                      <span class="overlay"></span>
-
-                      <div class="card-image">
-                          <img src="../assets/img/projects/hititharder.png" alt="" loading="eager" class="card-img">
-                      </div>
-                  </div>
-
-                  <div class="card-content">
-                      <h2 class="name">Hit it Harder </h2>
-                      <p class="description">Ignite your drive on our motivational hub! Unleash strength, conquer challenges, and transform setbacks into triumphs. Power up now!</p>
-
-                      <button class="button">Ver mais</button>
-                  </div>
-              </div>
-
-              <div class="card swiper-slide">
-                  <div class="image-content">
-                      <span class="overlay"></span>
-
-                      <div class="card-image">
-                          <img src="../assets/img/projects/tgapp.png" alt="" loading="eager" class="card-img">
-                      </div>
-                  </div>
-
-                  <div class="card-content">
-                      <h2 class="name"> Tiro de Guerra </h2>
-                      <!-- Projeto desenvolvido para o Exército Brasileiro da região de Votuporanga com o intuito de melhorar o desempenho do treinamento de Ordem Unida da guarnição. -->
-                      <p class="description">Project developed for the Brazilian Army in the Votuporanga region with the aim of improving the performance of the garrison's Order of Arms training.</p>
-
-                      <button class="button">Ver mais</button>
-                  </div>
-              </div>
-
-              <div class="card swiper-slide">
-                  <div class="image-content">
-                      <span class="overlay"></span>
-
-                      <div class="card-image">
-                          <img src="../assets/img/projects/taskmanagement.png" alt="" loading="eager" class="card-img">
-                      </div>
-                  </div>
-
-                  <div class="card-content">
-                      <h2 class="name">Task Management </h2>
-                      <p class="description">Elevate productivity with our seamless task management platform. Effortlessly streamline, prioritize, and conquer your to-do list with ease and precision!</p>
-
-                      <button class="button">Ver mais</button>
-                  </div>
-              </div>
-               
-              <div class="card swiper-slide">
-                <div class="image-content">
-                    <span class="overlay"></span>
-
-                    <div class="card-image">
-                        <img src="../assets/img/projects/gotyabank.png" alt="" loading="eager" class="card-img">
-                    </div>
-                </div>
-
-                <div class="card-content">
-                    <h2 class="name">GotyaBank </h2>
-                    <!-- Desafio de Código PicPay: Uma simulação de transferência bancária utilizando REST API com C# & EF Core. -->
-                    <p class="description"> PicPay Code Challenge: Immerse in a bank transfer simulation via REST API using C# & EF Core. Sharpen coding skills with hands-on experience  </p>
-
-                    <button class="button">Ver mais</button>
-                </div>
-            </div>
-     
-            <div class="card swiper-slide">
-                <div class="image-content">
-                    <span class="overlay"></span>
-
-                    <div class="card-image">
-                        <img src="../assets/img/projects/valinor.png" alt="" loading="eager" class="card-img">
-                    </div>
-                </div>
-
-                <div class="card-content">
-                    <h2 class="name">Valinor </h2>
-                    <p class="description"> FieldControl Code Challenge: Embark on an enlightening journey, exploring GitHub repositories through the accessible API for a dynamic coding experience. </p>
-
-                    <button class="button">Ver mais</button>
-                </div>
-            </div>
-        
-            <div class="card swiper-slide">
-                <div class="image-content">
-                    <span class="overlay"></span>
-
-                    <div class="card-image">
-                        <img src="../assets/img/projects/github.png" alt="" loading="eager" class="card-img">
-                    </div>
-                </div>
-
-                <div class="card-content">
-                    <h2 class="name">GitHub Repositories </h2>
-                    <!-- Aqui você encontrará todos meus outros trabalhos relacionados a programação. Conecte-se comigo e vamos juntos impulsionar a comunidade de tecnologia! -->
-                    <p class="description">Explore my portfolio of programming projects here. Connect with me, and let's collaboratively elevate the technology community together!</p>
-                    <button class="button">Ver mais</button>
-                </div>
             </div>
 
-
-             
+            <div class="card-content">
+              <h2 class="name"> Sorvete's Cream </h2>
+              <p class="description font-montserrat"> {{ translate.sorvetesCreamDescription}}</p>
+              <button class="button">{{translate.viewMore}}</button>
+            </div>
           </div>
+
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="../assets/img/projects/hititharder.png" alt="" loading="eager" class="card-img">
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h2 class="name">Hit it Harder </h2>
+              <p class="description"> {{ translate.hitItHarderDescription}} </p>
+              <button class="button">{{translate.viewMore}}</button>
+            </div>
+          </div>
+
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+
+              <div class="card-image">
+                <img src="../assets/img/projects/tgapp.png" alt="" loading="eager" class="card-img">
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h2 class="name"> Tiro de Guerra </h2>
+              <p class="description"> {{ translate.tiroDeGuerraDescription }}</p>
+
+              <button class="button">{{translate.viewMore}}</button>
+            </div>
+          </div>
+
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="../assets/img/projects/taskmanagement.png" alt="" loading="eager" class="card-img">
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h2 class="name">Task Management </h2>
+              <p class="description"> {{ translate.taskManagementDescription }} </p>
+              <button class="button">{{translate.viewMore}}</button>
+            </div>
+          </div>
+
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="../assets/img/projects/gotyabank.png" alt="" loading="eager" class="card-img">
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h2 class="name"> GotyaBank </h2>
+              <p class="description"> {{translate.gotyaBankDescription}} </p>
+              <button class="button">{{translate.viewMore}}</button>
+            </div>
+          </div>
+
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="../assets/img/projects/valinor.png" alt="" loading="eager" class="card-img">
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h2 class="name">Valinor </h2>
+              <p class="description"> {{translate.valinorDescription}} </p>
+              <button class="button">{{translate.viewMore}}</button>
+            </div>
+          </div>
+
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="../assets/img/projects/github.png" alt="" loading="eager" class="card-img">
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h2 class="name">GitHub Repositories </h2>
+              <p class="description"> {{translate.gitHubDescription}} </p>
+              <button class="button">{{translate.viewMore}}</button>
+            </div>
+          </div>
+
+
+
+        </div>
       </div>
 
       <div class="swiper-button-next swiper-navBtn"></div>
       <div class="swiper-button-prev swiper-navBtn"></div>
       <div class="swiper-pagination"></div>
-  </div>
+    </div>
   </div>
 
 </div>
-
-
-
-
 
 
 <div class="w-full h-[10vh] relative overflow-hidden">
@@ -230,12 +208,11 @@
 
 <div id="contact" class="w-full h-auto bg-gray-500 relative overflow-hidden flex flex-col justify-center items-center">
 
-  <img loading="eager" src="../assets/img/contact/bg-wide.png"
-    class="h-full w-full absolute scale-150 md:scale-100" />
+  <img loading="eager" src="../assets/img/contact/bg-wide.png" class="h-full w-full absolute scale-150 md:scale-100" />
 
   <p
     class="font-extrabold text-center z-10 text-white font-montserrat uppercase w-full text-4xl md:text-6xl sm:text-5xl mt-10">
-    Contact </p>
+    {{translate.contactTitle}} </p>
 
 
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-20 ">
