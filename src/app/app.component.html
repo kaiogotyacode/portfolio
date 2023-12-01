@@ -1,6 +1,6 @@
 <nav class="navbar">
   <div>
-    <img class="sm:max-h-20 h-14" src="../assets/img/first-content/official_brand.png" />
+    <img loading="lazy" fetchpriority="auto" class="sm:max-h-20 h-14" src="../assets/img/first-content/official_brand.png" />
   </div>
 
   <ul [ngClass]="menuSandwich()"
@@ -9,9 +9,9 @@
     </li>
     <li class="mx-3 my-4 md:w-40 md:p-2 hover:font-bold cursor-pointer"><a href="#projects">{{translate.nav2}}</a></li>
     <li class="mx-3 my-4 md:w-40 md:p-2 hover:font-bold cursor-pointer"><a href="#contact">{{translate.nav3}}</a></li>
-    <li (click)="switchLang('portuguese')" class="mx-3 my-4"> <img class="h-10 hover:brightness-125 cursor-pointer transition ease-in-out"
+    <li  (click)="switchLang('portuguese')" class="mx-3 my-4"> <img loading="lazy" fetchpriority="auto" class="h-10 hover:brightness-125 cursor-pointer transition ease-in-out"
         src="../assets/img/first-content/brazil.png"> </li>
-    <li (click)="switchLang('english')" class="mx-3 my-4"> <img class="h-10 hover:brightness-125 cursor-pointer transition ease-in-out"
+    <li (click)="switchLang('english')" class="mx-3 my-4"> <img loading="lazy" fetchpriority="auto" class="h-10 hover:brightness-125 cursor-pointer transition ease-in-out"
         src="../assets/img/first-content/usa.png"> </li>
   </ul>
 
@@ -32,13 +32,13 @@
 
 <!-- [1] -->
 <div class="h-[80vh] bg-gray-400 overflow-hidden flex justify-center items-center">
-  <img loading="eager" src="../assets/img/first-content/art_mobile.png" class="h-fit w-fit md:hidden" />
-  <img loading="eager" src="../assets/img/first-content/art_wide.png" class="h-full w-full hidden md:block xl:h-fit" />
+  <img loading="lazy" fetchpriority="auto" src="../assets/img/first-content/art_mobile.png" class="h-fit w-fit md:hidden" />
+  <img loading="lazy" fetchpriority="auto" src="../assets/img/first-content/art_wide.png" class="h-full w-full hidden md:block xl:h-fit" />
 </div>
 
 
 <div class="w-full h-[10vh] relative overflow-hidden">
-  <img class="w-full h-full animate-divisor scale-105" src="../assets/img/divisor.png" />
+  <img loading="lazy" fetchpriority="auto" class="w-full h-full animate-divisor scale-105" src="../assets/img/divisor.png" />
 </div>
 
 
@@ -48,11 +48,11 @@
     class="font-extrabold text-center z-10 text-white font-montserrat uppercase w-full text-4xl md:text-6xl sm:text-5xl">
     {{translate.presentationTitle}} </p>
 
-  <img loading="eager" src="../assets/img/second-content/bg_wide-test.png"
+  <img loading="lazy" fetchpriority="auto" src="../assets/img/second-content/bg_wide-test.png"
     class="h-full w-full absolute scale-150 md:scale-100" />
 
   <div class="h-fit w-full z-10 flex justify-center mt-10">
-    <video class="aspect-video w-[90vw] md:max-w-[800px] lg:max-w-[1000px] xl:max-w-[1100px]"
+    <video loading="lazy" fetchpriority="auto" class="aspect-video w-[90vw] md:max-w-[800px] lg:max-w-[1000px] xl:max-w-[1100px]"
       poster="../assets/img/second-content/thumbnail_video.png" controls id="bra-video">
       <source class="" src="" type="video/mp4" />
       Your browser doesn't support the video tag.
@@ -62,7 +62,7 @@
 </div>
 
 <div class="w-full h-[10vh] relative overflow-hidden">
-  <img class="w-full h-full animate-divisor scale-105" src="../assets/img/divisor.png" />
+  <img loading="lazy" fetchpriority="auto" class="w-full h-full animate-divisor scale-105" src="../assets/img/divisor.png" />
 </div>
 
 <!-- [3] -->
@@ -72,7 +72,7 @@
     <p class="font-extrabold text-center  text-white font-montserrat uppercase  text-5xl md:text-6xl">{{translate.projectTitle}}</p>
   </div>
 
-  <img loading="eager" src="../assets/img/third-content/bg-wide.png"
+  <img loading="lazy" fetchpriority="auto" src="../assets/img/third-content/bg-wide.png"
     class="h-full w-full absolute scale-150 md:scale-100" />
 
   <div class="w-full z-10 mt-10 flex justify-center items-center">
@@ -85,7 +85,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="../assets/img/projects/sorvetescream.png" loading="eager" alt="" class="card-img">
+                <img loading="lazy" fetchpriority="auto" src="../assets/img/projects/sorvetescream.png" alt="" class="card-img">
               </div>
             </div>
 
@@ -100,7 +100,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="../assets/img/projects/hititharder.png" alt="" loading="eager" class="card-img">
+                <img src="../assets/img/projects/hititharder.png" alt="" loading="lazy" fetchpriority="auto" class="card-img">
               </div>
             </div>
 
@@ -116,7 +116,7 @@
               <span class="overlay"></span>
 
               <div class="card-image">
-                <img src="../assets/img/projects/tgapp.png" alt="" loading="eager" class="card-img">
+                <img src="../assets/img/projects/tgapp.png" alt="" loading="lazy" fetchpriority="auto" class="card-img">
               </div>
             </div>
 
@@ -132,7 +132,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="../assets/img/projects/taskmanagement.png" alt="" loading="eager" class="card-img">
+                <img src="../assets/img/projects/taskmanagement.png" alt="" loading="lazy" fetchpriority="auto" class="card-img">
               </div>
             </div>
 
@@ -147,7 +147,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="../assets/img/projects/gotyabank.png" alt="" loading="eager" class="card-img">
+                <img src="../assets/img/projects/gotyabank.png" alt="" loading="lazy" fetchpriority="auto" class="card-img">
               </div>
             </div>
 
@@ -162,7 +162,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="../assets/img/projects/valinor.png" alt="" loading="eager" class="card-img">
+                <img src="../assets/img/projects/valinor.png" alt="" loading="lazy" fetchpriority="auto" class="card-img">
               </div>
             </div>
 
@@ -177,7 +177,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="../assets/img/projects/github.png" alt="" loading="eager" class="card-img">
+                <img src="../assets/img/projects/github.png" alt="" loading="lazy" fetchpriority="auto" class="card-img">
               </div>
             </div>
 
@@ -203,12 +203,12 @@
 
 
 <div class="w-full h-[10vh] relative overflow-hidden">
-  <img class="w-full h-full animate-divisor scale-105" src="../assets/img/divisor.png" />
+  <img class="w-full h-full animate-divisor scale-105" loading="lazy" fetchpriority="auto" src="../assets/img/divisor.png" />
 </div>
 
 <div id="contact" class="w-full h-auto bg-gray-500 relative overflow-hidden flex flex-col justify-center items-center">
 
-  <img loading="eager" src="../assets/img/contact/bg-wide.png" class="h-full w-full absolute scale-150 md:scale-100" />
+  <img loading="eager" src="../assets/img/contact/bg-wide.png" loading="lazy" fetchpriority="auto" class="h-full w-full absolute scale-150 md:scale-100" />
 
   <p
     class="font-extrabold text-center z-10 text-white font-montserrat uppercase w-full text-4xl md:text-6xl sm:text-5xl mt-10">
@@ -221,30 +221,30 @@
       class="h-fit w-[90vw]  lg:w-[500px] z-10 mt-10 relative font-extralight text-sm sm:text-md md:text-lg uppercase">
 
       <div class="contact-info">
-        <img class="w-14 h-14 mx-5" src="../assets/img/contact/mail.png">
+        <img loading="lazy" fetchpriority="auto" class="w-14 h-14 mx-5" src="../assets/img/contact/mail.png">
         <p class="text-center"> E-mail | <a href="mailto:kaioreis1153@hotmail.com" target="_blank"
             class="hover:underline"> kaioreis1153@hotmail.com </a></p>
       </div>
 
       <div class="contact-info">
-        <img class="w-14 h-14 mx-5" src="../assets/img/contact/phone.png">
+        <img loading="lazy" fetchpriority="auto" class="w-14 h-14 mx-5" src="../assets/img/contact/phone.png">
         <p class="text-center"> Phone | +55 (17) 98138-3539 </p>
       </div>
 
       <div class="contact-info">
-        <img class="w-14 h-14 mx-5" src="../assets/img/contact/linkedin.png">
+        <img loading="lazy" fetchpriority="auto" class="w-14 h-14 mx-5" src="../assets/img/contact/linkedin.png">
         <p class="text-center"> LinkedIn | <a href="https://linkedin.com/in/kaio-maciel" target="_blank"
             class="hover:underline"> in/kaio-maciel </a></p>
       </div>
 
       <div class="contact-info">
-        <img class="w-14 h-14 mx-5" src="../assets/img/contact/behance.png">
+        <img loading="lazy" fetchpriority="auto" class="w-14 h-14 mx-5" src="../assets/img/contact/behance.png">
         <p class="text-center"> Behance | <a href="https://www.behance.net/kaiomaciel" target="_blank"
             class="hover:underline"> Kaio Maciel </a></p>
       </div>
 
       <div class="contact-info">
-        <img class="w-14 h-14 mx-5" src="../assets/img/contact/github.png">
+        <img loading="lazy" fetchpriority="auto" class="w-14 h-14 mx-5" src="../assets/img/contact/github.png">
         <p class="text-center"> GitHub | <a href="https://github.com/kaiogotyacode" target="_blank"
             class="hover:underline"> kaiogotyacode </a></p>
       </div>
@@ -252,7 +252,7 @@
     </div>
 
     <div class="z-10 mt-10 relative flex flex-col justify-center items-center  w-[90vw] lg:w-[480px]">
-      <img class="w-full h-full rounded shadow shadow-pink-500" src="../assets/img/contact/sponsorS.png">
+      <img loading="lazy" fetchpriority="auto" class="w-full h-full rounded shadow shadow-pink-500" src="../assets/img/contact/sponsorS.png">
       <a href="https://github.com/sponsors/kaiogotyacode/" target="_blank"
         class="border border-pink-500 text-pink-500 rounded-md p-3 hover:bg-pink-500 hover:border-gray-50 hover:text-black transition mt-5">
         Sponsor </a>
