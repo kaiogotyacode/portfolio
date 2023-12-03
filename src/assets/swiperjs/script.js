@@ -8,7 +8,7 @@ window.addEventListener("load", ()=>{
     grabCursor: 'true',
     pagination: {
       el: ".swiper-pagination",
-      clickable: true,
+      clickable: false,
       dynamicBullets: true,
     },
     navigation: {
@@ -27,6 +27,9 @@ window.addEventListener("load", ()=>{
             slidesPerView: 3,
         },
     },
+    
   });
+
+  
 })
 

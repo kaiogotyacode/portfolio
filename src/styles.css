@@ -13,19 +13,21 @@
     @apply bg-gray-950 w-full h-20 md:h-24 flex items-center justify-center md:justify-between md:bg-gray-950 transition-all ease-in-out duration-500;
 }
 
-.menu-disabled{
-    @apply opacity-0 pointer-events-none;
+.menu-disabled, .modal-disabled{
+    @apply opacity-0 pointer-events-none transition ease-in-out duration-300;
 }
 
-.menu-active{
-    @apply opacity-100 pointer-events-auto;
+.menu-active, .modal-active{
+    @apply opacity-100 pointer-events-auto transition ease-in-out duration-300;
 }
-
 
 .contact-info{
-    @apply w-full h-20 border border-gray-950 text-gray-600 rounded bg-gray-50 flex justify-start items-center mb-4 hover:border-gray-50 transition hover:shadow-md hover:shadow-gray-300 cursor-pointer 
+    @apply w-full h-20 border border-gray-950 text-gray-600 rounded bg-gray-50 flex justify-start items-center mb-4 hover:border-gray-50 transition hover:shadow-md hover:shadow-gray-300 cursor-pointer;
 }
 
+.modal-mobile {
+  @apply absolute w-full h-auto min-h-[600px] bg-[#f1f2f6] z-20 flex flex-col items-center justify-center;
+}
 
 
 @keyframes divisor {
