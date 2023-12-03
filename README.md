@@ -1,27 +1,18 @@
-# Portfolio
+# Portfolio 💠
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.10.
+Hey, welcome! Here you'll be able to check out some of my extra activities related to programming. Development is still in progress, and soon there'll be my video presentation in both languages (Portuguese/English) and a detailed display of performed projects.
 
-## Development server
+### Access
+- You can access my portfolio clicking 👉 [here](https://portfolio-opal-alpha-83.vercel.app/). Also available for small devices ✅
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Current View 💢
+![image](https://github.com/kaiogotyacode/portfolio/assets/43120150/d46bbd03-bd43-40d2-a913-887a954c04bc)
 
-## Code scaffolding
+![image](https://github.com/kaiogotyacode/portfolio/assets/43120150/520327b1-605a-4a00-aa24-5d7721d72205)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![image](https://github.com/kaiogotyacode/portfolio/assets/43120150/f0635687-5af1-4683-b51c-dd3608cdded1)
 
-## Build
+![image](https://github.com/kaiogotyacode/portfolio/assets/43120150/3a2743cd-cb35-488b-887a-2847f6738bb9)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
