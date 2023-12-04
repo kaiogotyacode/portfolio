@@ -5,10 +5,11 @@ window.addEventListener("load", ()=>{
     loop: true,
     centerSlide: 'true',
     fade: 'true',
+    autoplay : true,
     grabCursor: 'true',
     pagination: {
       el: ".swiper-pagination",
-      clickable: false,
+      clickable: true,
       dynamicBullets: true,
     },
     navigation: {
@@ -20,10 +21,10 @@ window.addEventListener("load", ()=>{
         0: {
             slidesPerView: 1,
         },
-        520: {
+        750: {
             slidesPerView: 2,
         },
-        950: {
+        1500: {
             slidesPerView: 3,
         },
     },
