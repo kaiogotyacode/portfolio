@@ -58,12 +58,12 @@
     class="h-full w-full absolute scale-150 md:scale-100" />
 
   <div class="h-fit w-full z-10 flex justify-center mt-10">
-    <video loading="lazy" fetchpriority="auto"
-      class="aspect-video w-[90vw] md:max-w-[800px] lg:max-w-[1000px] xl:max-w-[1100px]"
-      poster="../assets/img/second-content/thumbnail_video.png" controls id="bra-video">
-      <source class="" src="" type="video/mp4" />
-      Your browser doesn't support the video tag.
-    </video>
+    <iframe  *ngIf="translate.language == 'pt'" loading="lazy" fetchpriority="auto" src="https://www.youtube.com/embed/dKtUsjHmw5w" frameborder="0"
+      allowfullscreen class="aspect-video w-[80vw] max-w-[1000px]" poster="../assets/img/second-content/thumbnail_video.png"
+      id="bra-video"></iframe>
+    <iframe  *ngIf="translate.language == 'en'" loading="lazy" fetchpriority="auto" src="https://www.youtube.com/embed/qkaDTbOZ42s" frameborder="0"
+      allowfullscreen class="aspect-video w-[80vw] max-w-[1000px]" poster="../assets/img/second-content/thumbnail_video.png"
+      id="bra-video"></iframe>
   </div>
 
 </div>
@@ -211,15 +211,18 @@
       <div class="swiper-pagination"></div>
     </div>
 
-    
+
     <div id="modal" [ngClass]="ModalDetailed()"
       class="modal-mobile sm:w-[80vw] md:w-[60vw] sm:max-w-[600px]  sm:rounded-md sm:border sm:shadow-xl sm:shadow-gray-600">
       <div class="text-center">
-        <h2 class="font-montserrat text-gray-600 uppercase mb-6 text-xl sm:text-3xl font-extrabold"> {{ currentProjectModal?.projectName }} </h2>
+        <h2 class="font-montserrat text-gray-600 uppercase mb-6 text-xl sm:text-3xl font-extrabold"> {{
+          currentProjectModal?.projectName }} </h2>
       </div>
       <div class="flex justify-center items-center">
         <div class="h-40 w-1 bg-gray-600 sm:h-52"></div>
-        <img *ngIf="currentProjectModal" class="w-40 h-40 sm:w-52 sm:h-52 rounded-tr-md rounded-br-md shadow-md shadow-gray-600" src="../assets/img/projects/detailed/{{currentProjectModal.projectImage}}" />
+        <img *ngIf="currentProjectModal"
+          class="w-40 h-40 sm:w-52 sm:h-52 rounded-tr-md rounded-br-md shadow-md shadow-gray-600"
+          src="../assets/img/projects/detailed/{{currentProjectModal.projectImage}}" />
       </div>
       <div class="p-5 w-full">
         <label class="font-bold">Description</label>
@@ -229,17 +232,25 @@
       </div>
 
       <div class="flex justify-center items-center">
-        <a *ngIf="currentProjectModal?.hasRepository" class="bg-gray-700 text-white p-3 mx-2 text-center border hover:border-gray-500 transition hover:text-gray-200" target="_blank" href="{{currentProjectModal?.gitHubLink}}">
-          Ver no GitHub 
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5  inline-block">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
-          </svg>        
+        <a *ngIf="currentProjectModal?.hasRepository"
+          class="bg-gray-700 text-white p-3 mx-2 text-center border hover:border-gray-500 transition hover:text-gray-200"
+          target="_blank" href="{{currentProjectModal?.gitHubLink}}">
+          Ver no GitHub
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-5 h-5  inline-block">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+          </svg>
         </a>
-        <a *ngIf="currentProjectModal?.hasBehance" class="bg-blue-600 text-white p-3 mx-2 text-center border hover:border-gray-500 transition hover:text-gray-200" target="_blank" href="{{currentProjectModal?.behanceLink}}">
+        <a *ngIf="currentProjectModal?.hasBehance"
+          class="bg-blue-600 text-white p-3 mx-2 text-center border hover:border-gray-500 transition hover:text-gray-200"
+          target="_blank" href="{{currentProjectModal?.behanceLink}}">
           Ver no Behance
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5  inline-block">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
-          </svg>          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-5 h-5  inline-block">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+          </svg>
         </a>
       </div>
 

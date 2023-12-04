@@ -21,12 +21,15 @@ export class AppComponent implements OnInit {
   currentProjectModal?: ProjectModal;
 
   portugueseLanguage: Translate = {
+    language : "pt",
+
     nav1: "Apresentação",
     nav2: "Projetos",
     nav3: "Contato",
 
     presentationTitle: "Apresentação",
     projectTitle: "Projetos",
+    presentationLink: "https://www.youtube.com/embed/dKtUsjHmw5w",
 
     sorvetesCreamDescription: "Mergulhe numa doce fuga na aplicação interativa de gelados! Descubra sabores, partilhe momentos e saboreie a alegria das delícias congeladas.",
     hitItHarderDescription: "Alavanque sua motivação neste hub inspirador! Liberte sua força, vença desafios e transforme contratempos em triunfos. Potencialize-se agora!",
@@ -41,12 +44,15 @@ export class AppComponent implements OnInit {
   }
 
   englishLanguage: Translate = {
+    language : "en",
+
     nav1: "Presentation",
     nav2: "Projects",
     nav3: "Contact",
 
     presentationTitle: "Presentation",
     projectTitle: "Projects",
+    presentationLink: "https://www.youtube.com/embed/qkaDTbOZ42s",
 
     sorvetesCreamDescription: "Immerse in a sweet escape with our interactive ice cream haven! Explore flavors, share moments, and savor the joy of frozen delight",
     hitItHarderDescription: "Ignite your drive on our motivational hub! Unleash strength, conquer challenges, and transform setbacks into triumphs. Power up now!",
