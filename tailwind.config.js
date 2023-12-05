@@ -8,6 +8,7 @@ module.exports = {
       },    
       animation:{
         divisor: 'divisor 3s ease-in-out infinite',
+        switchLanguageAnimator: 'onSwitchLanguage 1s ease-in-out'
       }
     },
   },

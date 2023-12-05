@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ProjectModal } from 'src/models/projectModal';
 import { Translate } from 'src/models/translate';
 
@@ -10,18 +10,23 @@ import { Translate } from 'src/models/translate';
 export class AppComponent implements OnInit {
 
   ngOnInit(): void {
-    this.translate = this.englishLanguage;    
+    this.translate = this.englishLanguage;
   }
-  
+
   title = 'Portfolio';
   dropMenu: boolean = false;
   dropModal: boolean = false;
   currentLang: string = "english";
   translate!: Translate;
   currentProjectModal?: ProjectModal;
+  languageAnimation: boolean = false;
+
+  toggleLanguageAnimation() {
+    this.languageAnimation = !this.languageAnimation;
+  }
 
   portugueseLanguage: Translate = {
-    language : "pt",
+    language: "portuguese",
 
     nav1: "Apresentação",
     nav2: "Projetos",
@@ -44,7 +49,7 @@ export class AppComponent implements OnInit {
   }
 
   englishLanguage: Translate = {
-    language : "en",
+    language: "english",
 
     nav1: "Presentation",
     nav2: "Projects",
@@ -124,10 +129,29 @@ export class AppComponent implements OnInit {
     }
   ]
 
+  setOverflowHidden() {
+    document.body.style.overflow = 'hidden';
+  }
+
+  setOverflowVisible() {
+    document.body.style.overflow = 'visible';
+  }
 
 
   switchLang(lang: string) {
+
+    if (lang == this.translate.language)
+      return;
+
+
     this.translate = lang == 'portuguese' ? this.portugueseLanguage : this.englishLanguage
+    this.toggleLanguageAnimation();
+    this.setOverflowHidden();
+
+    setTimeout(() => {
+      this.toggleLanguageAnimation();
+      this.setOverflowVisible();
+    }, 1000)
   }
 
   dropdownMenu() {
@@ -141,9 +165,9 @@ export class AppComponent implements OnInit {
     }
   }
 
-  openModalDetailed(modal : ProjectModal) {
+  openModalDetailed(modal: ProjectModal) {
     this.dropModal = true;
-    this.currentProjectModal =  modal;
+    this.currentProjectModal = modal;
     this.ModalDetailed();
   }
 
