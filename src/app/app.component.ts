@@ -10,13 +10,13 @@ import { Translate } from 'src/models/translate';
 export class AppComponent implements OnInit {
 
   ngOnInit(): void {
-    this.translate = this.englishLanguage;
+    this.translate = this.portugueseLanguage;
   }
 
   title = 'Portfolio';
   dropMenu: boolean = false;
   dropModal: boolean = false;
-  currentLang: string = "english";
+  currentLang: string = "portuguese";
   translate!: Translate;
   currentProjectModal?: ProjectModal;
   languageAnimation: boolean = false;
