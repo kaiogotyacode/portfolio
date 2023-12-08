@@ -1,6 +1,6 @@
 <nav class="navbar">
-  <div>
-    <img loading="lazy" fetchpriority="auto" class="sm:max-h-20 h-14"
+  <div class="w-[500px] pointer-events-none">
+    <img loading="eager" fetchpriority="high" class="w-full h-auto"
       src="../assets/img/first-content/official_brand.png" />
   </div>
 
@@ -10,11 +10,11 @@
     </li>
     <li class="mx-3 my-4 md:w-40 md:p-2 hover:font-bold cursor-pointer"><a href="#projects">{{translate.nav2}}</a></li>
     <li class="mx-3 my-4 md:w-40 md:p-2 hover:font-bold cursor-pointer"><a href="#contact">{{translate.nav3}}</a></li>
-    <li (click)="switchLang('portuguese')" class="mx-3 my-4"> <img loading="lazy" fetchpriority="auto"
-        class="h-10 hover:brightness-125 cursor-pointer transition ease-in-out"
+    <li (click)="switchLang('portuguese')" class="mx-3 my-4 cursor-pointer hover:brightness-125 transition ease-in-out">
+      <img loading="lazy" fetchpriority="auto" class="h-10  pointer-events-none"
         src="../assets/img/first-content/brazil.png"> </li>
-    <li (click)="switchLang('english')" class="mx-3 my-4"> <img loading="lazy" fetchpriority="auto"
-        class="h-10 hover:brightness-125 cursor-pointer transition ease-in-out"
+    <li (click)="switchLang('english')" class="mx-3 my-4 cursor-pointer hover:brightness-125 transition ease-in-out">
+      <img loading="lazy" fetchpriority="auto" class="h-10 pointer-events-none"
         src="../assets/img/first-content/usa.png"> </li>
   </ul>
 
@@ -37,21 +37,19 @@
   [class.animate-switchLanguageAnimator]="languageAnimation"></div>
 
 <!-- [1] -->
-<div class="h-[80vh] bg-gray-400 overflow-hidden flex justify-center items-center relative pointer-events-none">
-  <img loading="eager" fetchpriority="high" src="../assets/img/first-content/art_mobile.png"
-    class="h-fit w-fit sm:hidden" />
+<div class="h-[80vh] bg-gray-400 overflow-hidden flex justify-center items-center relative pointer-events-none"> 
 
   <img loading="eager" fetchpriority="high" src="../assets/img/first-content/art_wide.png"
-    class="h-full w-full hidden sm:block xl:h-fit" />
+    class="h-full w-full object-cover" />
 
   <img loading="eager" fetchpriority="high" src="../assets/img/first-content/rainfall.gif"
-    class="h-full w-full absolute z-30 animate-snowFalling" />
+    class="h-full w-full object-cover absolute z-30 animate-snowFalling" />
 
   <img loading="eager" fetchpriority="high" src="../assets/img/first-content/thunder.gif"
     class="top-0 right-0 absolute z-40 animate-thunderOne" />
 
   <img loading="eager" fetchpriority="high" src="../assets/img/first-content/thunder.gif"
-    class="top-0 left-0 absolute z-40 animate-thunderTwo" />
+    class="top-0 left-0 absolute z-40 animate-thunderTwo" /> 
 </div>
 
 
@@ -68,7 +66,7 @@
     class="font-extrabold text-center z-10 text-white font-montserrat uppercase w-full text-4xl md:text-6xl sm:text-5xl">
     {{translate.presentationTitle}} </p>
 
-  <img loading="lazy" fetchpriority="auto" src="../assets/img/second-content/bg_wide-test.png"
+  <img loading="lazy" fetchpriority="auto" src="../assets/img/second-content/bg_wide.png"
     class="h-full w-full absolute scale-150 md:scale-100" />
 
   <div class="h-fit w-full z-10 flex justify-center mt-10">
