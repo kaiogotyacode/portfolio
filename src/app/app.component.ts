@@ -74,7 +74,7 @@ export class AppComponent implements OnInit {
   listProjectModal: ProjectModal[] = [
     {
       projectName: "Sorvete's Cream",
-      projectImage: "sorvetescream.png",
+      projectImage: "sorvetescream.webp",
       description: "Este projeto foi desenvolvido no início de 2021, onde dei início com projetos front-end para praticar a criação de ideias que tinha e transformá-las em código. Com HTML/CSS e PHP consegui atingir resultados de UI incríveis para a época, e foi a partir desse projeto que me motivei ainda mais para continuar minha carreira como desenvolvedor.",
       hasRepository: false,
       hasBehance: true,
@@ -82,7 +82,7 @@ export class AppComponent implements OnInit {
     },
     {
       projectName: "Hit It Harder",
-      projectImage: "hititharder.png",
+      projectImage: "hititharder.webp",
       description: "O projeto 'Hit Harder' foi mais um projeto desenvolvido em 2021, permitindo expandir minhas habilidades técnicas com Desenvolvimento e Design Gráfico. Utilizando PHP e MySQL foi criado uma interação dinâmica com o usuário durante o uso da aplicação.",
       hasRepository: false,
       hasBehance: true,
@@ -90,14 +90,14 @@ export class AppComponent implements OnInit {
     },
     {
       projectName: "Tiro de Guerra",
-      projectImage: "tirodeguerra.png",
+      projectImage: "tirodeguerra.webp",
       description: "No ano de 2022 tive o privilégio de desenvolver uma aplicação C# Desktop para resolver um problema que ocorria durante as Apresentações de Ordem Unida. Criando um Aplicativo para facilitar a performance da equipe de som durante os eventos na guarnição.",
       hasRepository: false,
       hasBehance: false
     },
     {
       projectName: "Task Management",
-      projectImage: "taskManagement.png",
+      projectImage: "taskManagement.webp",
       description: "O projeto 'Task Management' tem ênfase em facilitar o gerenciamento de projetos. Sua origem veio após um desafio entre meus amigos da faculdade, para treinar uma técnica que inventamos 'Brainstorming Sprint Code', onde o principal objetivo é desenvolver uma aplicação completa em até 1 semana.",
       hasRepository: true,
       hasBehance: false,
@@ -105,7 +105,7 @@ export class AppComponent implements OnInit {
     },
     {
       projectName: "GotyaBank",
-      projectImage: "gotyabank.png",
+      projectImage: "gotyabank.webp",
       description: "Este projeto foi desenvolvido com ênfase na melhoria das habilidades com C# Back-End. Um code challenge oferecido pela Pic Pay para simular uma transferência bancária com REST APIs.",
       hasRepository: true,
       hasBehance: false,
@@ -113,7 +113,7 @@ export class AppComponent implements OnInit {
     },
     {
       projectName: "Valinor",
-      projectImage: "valinor.png",
+      projectImage: "valinor.webp",
       description: "O Valinor é um projeto que realiza busca de repositórios do GitHub acessando a própria API do GitHub. Um desafio recente feito em Angular para treinar desenvolvimento com SPA junto de REST APIs.",
       hasRepository: true,
       hasBehance: false,
@@ -121,7 +121,7 @@ export class AppComponent implements OnInit {
     },
     {
       projectName: "GitHub Repositories",
-      projectImage: "github.png",
+      projectImage: "github.webp",
       description: "Aqui você encontrará mais informações sobre o meu perfil Desenvolvedor. Atualmente sigo com treinamentos intensivos como Full Stack, focando no framework Angular e desenvolvimento Back-End com maiores complexidades no C#.",
       hasRepository: true,
       hasBehance: false,

@@ -1,7 +1,7 @@
 <nav class="navbar">
   <div class="w-[500px] pointer-events-none">
     <img loading="eager" fetchpriority="high" class="w-full h-auto"
-      src="../assets/img/first-content/official_brand.png" />
+      src="../assets/img/first-content/official_brand.webp" />
   </div>
 
   <ul [ngClass]="menuSandwich()"
@@ -12,10 +12,10 @@
     <li class="mx-3 my-4 md:w-40 md:p-2 hover:font-bold cursor-pointer"><a href="#contact">{{translate.nav3}}</a></li>
     <li (click)="switchLang('portuguese')" class="mx-3 my-4 cursor-pointer hover:brightness-125 transition ease-in-out">
       <img loading="lazy" fetchpriority="auto" class="h-10  pointer-events-none"
-        src="../assets/img/first-content/brazil.png"> </li>
+        src="../assets/img/first-content/brazil.webp"> </li>
     <li (click)="switchLang('english')" class="mx-3 my-4 cursor-pointer hover:brightness-125 transition ease-in-out">
       <img loading="lazy" fetchpriority="auto" class="h-10 pointer-events-none"
-        src="../assets/img/first-content/usa.png"> </li>
+        src="../assets/img/first-content/usa.webp"> </li>
   </ul>
 
   <div (click)="dropdownMenu()"
@@ -39,16 +39,16 @@
 <!-- [1] -->
 <div class="h-[80vh] bg-gray-400 overflow-hidden flex justify-center items-center relative pointer-events-none"> 
 
-  <img loading="eager" fetchpriority="high" src="../assets/img/first-content/art_wide.png"
+  <img loading="eager" fetchpriority="high" srcset="../assets/img/first-content/art_mobile.webp 500w, ../assets/img/first-content/art_wide.webp 1200w"
     class="h-full w-full object-cover" />
 
-  <img loading="eager" fetchpriority="high" src="../assets/img/first-content/rainfall.gif"
+  <img loading="eager" fetchpriority="high" src="../assets/img/first-content/rainfall.webp"
     class="h-full w-full object-cover absolute z-30 animate-snowFalling" />
 
-  <img loading="eager" fetchpriority="high" src="../assets/img/first-content/thunder.gif"
+  <img loading="eager" fetchpriority="high" src="../assets/img/first-content/thunder.webp"
     class="top-0 right-0 absolute z-40 animate-thunderOne" />
 
-  <img loading="eager" fetchpriority="high" src="../assets/img/first-content/thunder.gif"
+  <img loading="eager" fetchpriority="high" src="../assets/img/first-content/thunder.webp"
     class="top-0 left-0 absolute z-40 animate-thunderTwo" /> 
 </div>
 
@@ -56,7 +56,7 @@
 
 <div class="w-full h-[10vh] relative overflow-hidden">
   <img loading="lazy" fetchpriority="auto" class="w-full h-full animate-divisor scale-105"
-    src="../assets/img/divisor.png" />
+    src="../assets/img/divisor.webp" />
 </div>
 
 
@@ -66,25 +66,23 @@
     class="font-extrabold text-center z-10 text-white font-montserrat uppercase w-full text-4xl md:text-6xl sm:text-5xl">
     {{translate.presentationTitle}} </p>
 
-  <img loading="lazy" fetchpriority="auto" src="../assets/img/second-content/bg_wide.png"
+  <img loading="lazy" fetchpriority="auto" src="../assets/img/second-content/bg-wide.webp"
     class="h-full w-full absolute scale-150 md:scale-100" />
 
   <div class="h-fit w-full z-10 flex justify-center mt-10">
     <iframe *ngIf="translate.language == 'portuguese'" loading="lazy" fetchpriority="auto"
       src="https://www.youtube.com/embed/yM9pOM9hOU0" frameborder="0" allowfullscreen
-      class="aspect-video w-[80vw] max-w-[1000px]" poster="../assets/img/second-content/thumbnail_video.png"
-      id="bra-video"></iframe>
+      class="aspect-video w-[80vw] max-w-[1000px]"></iframe>
     <iframe *ngIf="translate.language == 'english'" loading="lazy" fetchpriority="auto"
       src="https://www.youtube.com/embed/87tdpQOS3_0" frameborder="0" allowfullscreen
-      class="aspect-video w-[80vw] max-w-[1000px]" poster="../assets/img/second-content/thumbnail_video.png"
-      id="bra-video"></iframe>
+      class="aspect-video w-[80vw] max-w-[1000px]"></iframe>
   </div>
 
 </div>
 
 <div class="w-full h-[10vh] relative overflow-hidden">
   <img loading="lazy" fetchpriority="auto" class="w-full h-full animate-divisor scale-105"
-    src="../assets/img/divisor.png" />
+    src="../assets/img/divisor.webp" />
 </div>
 
 <!-- [3] -->
@@ -94,7 +92,7 @@
       {{translate.projectTitle}}</p>
   </div>
 
-  <img loading="lazy" fetchpriority="auto" src="../assets/img/third-content/bg-wide.png"
+  <img loading="lazy" fetchpriority="auto" src="../assets/img/third-content/bg-wide.webp"
     class="h-full w-full absolute scale-150 md:scale-100" />
 
   <div class="w-full z-10 mt-10 flex justify-center items-center">
@@ -107,7 +105,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img loading="lazy" fetchpriority="auto" src="../assets/img/projects/sorvetescream.png" alt=""
+                <img src="../assets/img/projects/sorvetescream.webp"
                   class="card-img">
               </div>
             </div>
@@ -123,7 +121,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="../assets/img/projects/hititharder.png" alt="" loading="lazy" fetchpriority="auto"
+                <img src="../assets/img/projects/hititharder.webp"
                   class="card-img">
               </div>
             </div>
@@ -140,7 +138,7 @@
               <span class="overlay"></span>
 
               <div class="card-image">
-                <img src="../assets/img/projects/tgapp.png" alt="" loading="lazy" fetchpriority="auto" class="card-img">
+                <img src="../assets/img/projects/tgapp.webp" class="card-img">
               </div>
             </div>
 
@@ -156,8 +154,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="../assets/img/projects/taskmanagement.png" alt="" loading="lazy" fetchpriority="auto"
-                  class="card-img">
+                <img src="../assets/img/projects/taskmanagement.webp" class="card-img">
               </div>
             </div>
 
@@ -172,8 +169,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="../assets/img/projects/gotyabank.png" alt="" loading="lazy" fetchpriority="auto"
-                  class="card-img">
+                <img src="../assets/img/projects/gotyabank.webp" class="card-img">
               </div>
             </div>
 
@@ -188,8 +184,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="../assets/img/projects/valinor.png" alt="" loading="lazy" fetchpriority="auto"
-                  class="card-img">
+                <img src="../assets/img/projects/valinor.webp" class="card-img">
               </div>
             </div>
 
@@ -204,8 +199,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="../assets/img/projects/github.png" alt="" loading="lazy" fetchpriority="auto"
-                  class="card-img">
+                <img src="../assets/img/projects/github.webp" class="card-img">
               </div>
             </div>
 
@@ -282,13 +276,13 @@
 
 <div class="w-full h-[10vh] relative overflow-hidden">
   <img class="w-full h-full animate-divisor scale-105" loading="lazy" fetchpriority="auto"
-    src="../assets/img/divisor.png" />
+    src="../assets/img/divisor.webp" />
 </div>
 
 <!-- 4 -->
 <div id="contact" class="w-full h-auto bg-gray-500 relative overflow-hidden flex flex-col justify-center items-center">
 
-  <img loading="eager" src="../assets/img/contact/bg-wide.png" loading="lazy" fetchpriority="auto"
+  <img loading="eager" src="../assets/img/contact/bg-wide.webp" loading="lazy" fetchpriority="auto"
     class="h-full w-full absolute scale-150 md:scale-100" />
 
   <p
@@ -302,31 +296,31 @@
       class="h-fit w-[90vw]  lg:w-[500px] z-10 mt-10 relative font-extralight text-sm sm:text-md md:text-lg uppercase">
 
       <div class="contact-info">
-        <img loading="lazy" fetchpriority="auto" class="w-14 h-14 mx-5" src="../assets/img/contact/mail.png">
+        <img loading="lazy" fetchpriority="auto" class="w-14 h-14 mx-5" src="../assets/img/contact/mail.webp">
         <p class="text-center"> E-mail | <a href="mailto:kaioreis1153@hotmail.com" target="_blank"
             class="hover:underline"> kaioreis1153@hotmail.com </a></p>
       </div>
 
       <div class="contact-info">
-        <img loading="lazy" fetchpriority="auto" class="w-14 h-14 mx-5" src="../assets/img/contact/phone.png">
+        <img loading="lazy" fetchpriority="auto" class="w-14 h-14 mx-5" src="../assets/img/contact/phone.webp">
         <p class="text-center"> Phone | <a href="https://wa.me/5517981383539" target="_blank">+55 (17) 98138-3539</a>
         </p>
       </div>
 
       <div class="contact-info">
-        <img loading="lazy" fetchpriority="auto" class="w-14 h-14 mx-5" src="../assets/img/contact/linkedin.png">
+        <img loading="lazy" fetchpriority="auto" class="w-14 h-14 mx-5" src="../assets/img/contact/linkedin.webp">
         <p class="text-center"> LinkedIn | <a href="https://linkedin.com/in/kaio-maciel" target="_blank"
             class="hover:underline"> in/kaio-maciel </a></p>
       </div>
 
       <div class="contact-info">
-        <img loading="lazy" fetchpriority="auto" class="w-14 h-14 mx-5" src="../assets/img/contact/behance.png">
+        <img loading="lazy" fetchpriority="auto" class="w-14 h-14 mx-5" src="../assets/img/contact/behance.webp">
         <p class="text-center"> Behance | <a href="https://www.behance.net/kaiomaciel" target="_blank"
             class="hover:underline"> Kaio Maciel </a></p>
       </div>
 
       <div class="contact-info">
-        <img loading="lazy" fetchpriority="auto" class="w-14 h-14 mx-5" src="../assets/img/contact/github.png">
+        <img loading="lazy" fetchpriority="auto" class="w-14 h-14 mx-5" src="../assets/img/contact/github.webp">
         <p class="text-center"> GitHub | <a href="https://github.com/kaiogotyacode" target="_blank"
             class="hover:underline"> kaiogotyacode </a></p>
       </div>
@@ -335,7 +329,7 @@
 
     <div class="z-10 mt-10 relative flex flex-col justify-center items-center  w-[90vw] lg:w-[480px]">
       <img loading="lazy" fetchpriority="auto" class="w-full h-full rounded shadow shadow-pink-500"
-        src="../assets/img/contact/sponsorS.png">
+        src="../assets/img/contact/sponsors.webp">
       <a href="https://github.com/sponsors/kaiogotyacode/" target="_blank"
         class="border border-pink-500 text-pink-500 rounded-md p-3 hover:bg-pink-500 hover:border-gray-50 hover:text-black transition mt-5">
         Sponsor </a>
