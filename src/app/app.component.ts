@@ -97,7 +97,7 @@ export class AppComponent implements OnInit {
     },
     {
       projectName: "Task Management",
-      projectImage: "taskManagement.webp",
+      projectImage: "taskmanagement.webp",
       description: "O projeto 'Task Management' tem ênfase em facilitar o gerenciamento de projetos. Sua origem veio após um desafio entre meus amigos da faculdade, para treinar uma técnica que inventamos 'Brainstorming Sprint Code', onde o principal objetivo é desenvolver uma aplicação completa em até 1 semana.",
       hasRepository: true,
       hasBehance: false,

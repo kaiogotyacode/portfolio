@@ -39,8 +39,8 @@
 <!-- [1] -->
 <div class="h-[80vh] bg-gray-400 overflow-hidden flex justify-center items-center relative pointer-events-none"> 
 
-  <img loading="eager" fetchpriority="high" srcset="../assets/img/first-content/art_mobile.webp 500w, ../assets/img/first-content/art_wide.webp 1200w"
-    class="h-full w-full object-cover" />
+  <img loading="eager" fetchpriority="high" srcset="../assets/img/first-content/art-mobile.webp 500w, ../assets/img/first-content/art_wide.webp 1200w"
+    class="h-full w-full object-cover pointer-events-none" />
 
   <img loading="eager" fetchpriority="high" src="../assets/img/first-content/rainfall.webp"
     class="h-full w-full object-cover absolute z-30 animate-snowFalling" />
@@ -55,7 +55,7 @@
 
 
 <div class="w-full h-[10vh] relative overflow-hidden">
-  <img loading="lazy" fetchpriority="auto" class="w-full h-full animate-divisor scale-105"
+  <img class="w-full h-full animate-divisor scale-105 object-cover pointer-events-none"
     src="../assets/img/divisor.webp" />
 </div>
 
@@ -63,11 +63,11 @@
 <!-- [2] -->
 <div id="presentation" class="w-full h-[80vh] bg-gray-500 relative overflow-hidden flex flex-col justify-center">
   <p
-    class="font-extrabold text-center z-10 text-white font-montserrat uppercase w-full text-4xl md:text-6xl sm:text-5xl">
+    class="font-extrabold text-center z-10 text-white font-montserrat uppercase w-full text-4xl md:text-6xl sm:text-5xl pointer-events-none">
     {{translate.presentationTitle}} </p>
 
   <img loading="lazy" fetchpriority="auto" src="../assets/img/second-content/bg-wide.webp"
-    class="h-full w-full absolute scale-150 md:scale-100" />
+    class="h-full w-full absolute scale-150 md:scale-100 pointer-events-none object-cover" />    
 
   <div class="h-fit w-full z-10 flex justify-center mt-10">
     <iframe *ngIf="translate.language == 'portuguese'" loading="lazy" fetchpriority="auto"
@@ -81,19 +81,19 @@
 </div>
 
 <div class="w-full h-[10vh] relative overflow-hidden">
-  <img loading="lazy" fetchpriority="auto" class="w-full h-full animate-divisor scale-105"
+  <img loading="lazy" fetchpriority="auto" class="w-full h-full animate-divisor scale-105 pointer-events-none object-cover"
     src="../assets/img/divisor.webp" />
 </div>
 
 <!-- [3] -->
 <div id="projects" class="w-full h-[80vh] bg-gray-500 relative overflow-hidden flex flex-col justify-center">
   <div class="w-full z-10">
-    <p class="font-extrabold text-center  text-white font-montserrat uppercase  text-5xl md:text-6xl">
+    <p class="font-extrabold text-center  text-white font-montserrat uppercase  text-5xl md:text-6xl pointer-events-none">
       {{translate.projectTitle}}</p>
   </div>
 
   <img loading="lazy" fetchpriority="auto" src="../assets/img/third-content/bg-wide.webp"
-    class="h-full w-full absolute scale-150 md:scale-100" />
+    class="h-full w-full absolute scale-150 md:scale-100 pointer-events-none object-cover" />
 
   <div class="w-full z-10 mt-10 flex justify-center items-center">
 
@@ -105,7 +105,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="../assets/img/projects/sorvetescream.webp"
+                <img loading="lazy" src="../assets/img/projects/sorvetescream.webp"
                   class="card-img">
               </div>
             </div>
@@ -121,7 +121,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="../assets/img/projects/hititharder.webp"
+                <img  loading="lazy" src="../assets/img/projects/hititharder.webp"
                   class="card-img">
               </div>
             </div>
@@ -138,7 +138,7 @@
               <span class="overlay"></span>
 
               <div class="card-image">
-                <img src="../assets/img/projects/tgapp.webp" class="card-img">
+                <img loading="lazy" src="../assets/img/projects/tgapp.webp" class="card-img">
               </div>
             </div>
 
@@ -154,7 +154,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="../assets/img/projects/taskmanagement.webp" class="card-img">
+                <img loading="lazy" src="../assets/img/projects/taskmanagement.webp" class="card-img">
               </div>
             </div>
 
@@ -169,7 +169,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="../assets/img/projects/gotyabank.webp" class="card-img">
+                <img loading="lazy" src="../assets/img/projects/gotyabank.webp" class="card-img">
               </div>
             </div>
 
@@ -184,7 +184,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="../assets/img/projects/valinor.webp" class="card-img">
+                <img loading="lazy" src="../assets/img/projects/valinor.webp" class="card-img">
               </div>
             </div>
 
@@ -199,7 +199,7 @@
             <div class="image-content">
               <span class="overlay"></span>
               <div class="card-image">
-                <img src="../assets/img/projects/github.webp" class="card-img">
+                <img loading="lazy" src="../assets/img/projects/github.webp" class="card-img">
               </div>
             </div>
 
@@ -227,7 +227,7 @@
       </div>
       <div class="flex justify-center items-center">
         <div class="h-40 w-1 bg-gray-600 sm:h-52"></div>
-        <img *ngIf="currentProjectModal"
+        <img fetchpriority="high" loading="eager" *ngIf="currentProjectModal"
           class="w-40 h-40 sm:w-52 sm:h-52 rounded-tr-md rounded-br-md shadow-md shadow-gray-600"
           src="../assets/img/projects/detailed/{{currentProjectModal.projectImage}}" />
       </div>
@@ -275,7 +275,7 @@
 </div>
 
 <div class="w-full h-[10vh] relative overflow-hidden">
-  <img class="w-full h-full animate-divisor scale-105" loading="lazy" fetchpriority="auto"
+  <img class="w-full h-full animate-divisor scale-105 object-cover pointer-events-none" loading="lazy" fetchpriority="auto"
     src="../assets/img/divisor.webp" />
 </div>
 
@@ -283,10 +283,10 @@
 <div id="contact" class="w-full h-auto bg-gray-500 relative overflow-hidden flex flex-col justify-center items-center">
 
   <img loading="eager" src="../assets/img/contact/bg-wide.webp" loading="lazy" fetchpriority="auto"
-    class="h-full w-full absolute scale-150 md:scale-100" />
+    class="h-full w-full absolute scale-150 md:scale-100 pointer-events-none object-cover" />
 
   <p
-    class="font-extrabold text-center z-10 text-white font-montserrat uppercase w-full text-4xl md:text-6xl sm:text-5xl mt-10">
+    class="font-extrabold text-center z-10 text-white font-montserrat uppercase w-full text-4xl md:text-6xl sm:text-5xl mt-10 pointer-events-none">
     {{translate.contactTitle}} </p>
 
 
@@ -328,7 +328,7 @@
     </div>
 
     <div class="z-10 mt-10 relative flex flex-col justify-center items-center  w-[90vw] lg:w-[480px]">
-      <img loading="lazy" fetchpriority="auto" class="w-full h-full rounded shadow shadow-pink-500"
+      <img loading="lazy" fetchpriority="auto" class="w-full h-full rounded shadow shadow-pink-500 pointer-events-none"
         src="../assets/img/contact/sponsors.webp">
       <a href="https://github.com/sponsors/kaiogotyacode/" target="_blank"
         class="border border-pink-500 text-pink-500 rounded-md p-3 hover:bg-pink-500 hover:border-gray-50 hover:text-black transition mt-5">
