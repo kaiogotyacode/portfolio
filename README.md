@@ -3,7 +3,7 @@
 Hey, welcome! Here you'll be able to check out some of my extra activities related to programming. Development is still in progress, and soon there'll be my video presentation in both languages (Portuguese/English) and a detailed display of performed projects.
 
 ### Access
-- You can access my portfolio clicking 👉 [here](https://portfolio-opal-alpha-83.vercel.app/). Also available for small devices ✅
+- You can access my portfolio clicking 👉 [here](https://portfolio-9ue1e0vwi-kaiogotyacodes-projects.vercel.app/). Also available for small devices ✅
 
 ### Current View 💢
 ![image](https://github.com/kaiogotyacode/portfolio/assets/43120150/d46bbd03-bd43-40d2-a913-887a954c04bc)
