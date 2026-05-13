@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
   triggerFilmIntro(full: boolean = false) {
     this.filmIntroFull = full;
     this.filmIntro = true;
-    setTimeout(() => this.filmIntro = false, 4600);
+    setTimeout(() => this.filmIntro = false, full ? 7000 : 4600);
   }
 
   title = 'Portfolio';

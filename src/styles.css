@@ -762,6 +762,25 @@ html {
   inset: 0;
   z-index: 9999;
   animation-name: filmOverlayFull;
+  animation-duration: 7s;
+}
+
+.film-text-wrapper--full {
+  animation: filmTextFull 7s ease-in-out forwards;
+}
+
+.film-elevate {
+  position: absolute;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: clamp(52px, 11vw, 130px);
+  font-weight: 400;
+  color: rgba(240, 235, 230, 0.9);
+  letter-spacing: 0.12em;
+  text-transform: none;
+  text-shadow:
+    0 0 40px rgba(255, 255, 255, 0.35),
+    0 0 90px rgba(200, 180, 160, 0.12);
+  animation: filmElevate 7s ease-in-out forwards;
 }
 
 .film-overlay--hero {
@@ -817,8 +836,26 @@ html {
 
 @keyframes filmOverlayFull {
   0%   { opacity: 1; }
-  78%  { opacity: 1; }
+  93%  { opacity: 1; }
   100% { opacity: 0; }
+}
+
+/* Brand text animation for full intro (7s) */
+@keyframes filmTextFull {
+  0%   { opacity: 0; transform: translateX(-60px); }
+  6%   { opacity: 1; transform: translateX(0); }
+  46%  { opacity: 1; transform: translateX(0); }
+  57%  { opacity: 0; transform: translateX(60px); }
+  100% { opacity: 0; transform: translateX(60px); }
+}
+
+/* "elevate" entrance + fadeout */
+@keyframes filmElevate {
+  0%, 55%  { opacity: 0; transform: scale(1.18); }
+  68%      { opacity: 1; transform: scale(1); }
+  82%      { opacity: 1; transform: scale(1); }
+  93%      { opacity: 0; transform: scale(0.94); }
+  100%     { opacity: 0; }
 }
 
 @keyframes filmText {
