@@ -3,6 +3,36 @@
 @import url('./assets/swipercss/style.css');
 @import url('./assets/swipercss/swiper-bundle.min.css');
 
+/* ── Pre-loader (lives in index.html, visible before Angular bootstraps) ── */
+#pre-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+#pre-loader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#pre-loader-spinner {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-top-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  animation: preLoaderSpin 0.8s linear infinite;
+}
+
+@keyframes preLoaderSpin {
+  to { transform: rotate(360deg); }
+}
+
 html {
   scroll-behavior: smooth;
   /* Firefox scrollbar */
@@ -731,6 +761,7 @@ html {
   position: fixed;
   inset: 0;
   z-index: 9999;
+  animation-name: filmOverlayFull;
 }
 
 .film-overlay--hero {
@@ -780,6 +811,12 @@ html {
 @keyframes filmOverlay {
   0%   { opacity: 0; }
   8%   { opacity: 1; }
+  78%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes filmOverlayFull {
+  0%   { opacity: 1; }
   78%  { opacity: 1; }
   100% { opacity: 0; }
 }

@@ -11,7 +11,17 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.translate = this.portugueseLanguage;
-    setTimeout(() => this.triggerFilmIntro(true), 600);
+    setTimeout(() => {
+      this.triggerFilmIntro(true);
+      // Remove the pre-loader only after the film overlay (opacity:1) is guaranteed rendered
+      setTimeout(() => {
+        const loader = document.getElementById('pre-loader');
+        if (loader) {
+          loader.classList.add('fade-out');
+          setTimeout(() => loader.remove(), 300);
+        }
+      }, 100);
+    }, 600);
     setInterval(() => this.triggerFilmIntro(false), 10000);
   }
 
@@ -46,7 +56,7 @@ export class AppComponent implements OnInit {
 
     presentationTitle: "Apresentação",
     projectTitle: "Projetos",
-    presentationLink: "https://www.youtube.com/embed/dKtUsjHmw5w",
+    presentationLink: "https://www.youtube.com/embed/dncGus0asoA",
 
     sorvetesCreamDescription: "Mergulhe numa doce fuga na aplicação interativa de gelados! Descubra sabores, partilhe momentos e saboreie a alegria das delícias congeladas.",
     hitItHarderDescription: "Alavanque sua motivação neste hub inspirador! Liberte sua força, vença desafios e transforme contratempos em triunfos. Potencialize-se agora!",
@@ -69,7 +79,7 @@ export class AppComponent implements OnInit {
 
     presentationTitle: "Presentation",
     projectTitle: "Projects",
-    presentationLink: "https://www.youtube.com/embed/qkaDTbOZ42s",
+    presentationLink: "https://www.youtube.com/embed/eJh1fKJgL0g",
 
     sorvetesCreamDescription: "Immerse in a sweet escape with our interactive ice cream haven! Explore flavors, share moments, and savor the joy of frozen delight",
     hitItHarderDescription: "Ignite your drive on our motivational hub! Unleash strength, conquer challenges, and transform setbacks into triumphs. Power up now!",
