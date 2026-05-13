@@ -11,9 +11,21 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.translate = this.portugueseLanguage;
+    setTimeout(() => this.triggerFilmIntro(true), 600);
+    setInterval(() => this.triggerFilmIntro(false), 10000);
+  }
+
+  filmIntro: boolean = false;
+  filmIntroFull: boolean = false;
+
+  triggerFilmIntro(full: boolean = false) {
+    this.filmIntroFull = full;
+    this.filmIntro = true;
+    setTimeout(() => this.filmIntro = false, 4600);
   }
 
   title = 'Portfolio';
+  currentYear = new Date().getFullYear();
   dropMenu: boolean = false;
   dropModal: boolean = false;
   currentLang: string = "portuguese";
