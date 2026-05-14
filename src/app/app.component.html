@@ -8,17 +8,18 @@
   <span class="film-elevate">elevate</span>
 </div>
 
-<nav class="navbar">
+<nav class="navbar relative">
   <div class="w-[500px] pointer-events-none">
     <img loading="eager" fetchpriority="high" class="w-full h-auto"
       src="../assets/img/first-content/official_brand.webp" />
   </div>
 
   <ul [ngClass]="menuSandwich()"
-    class="flex justify-center items-center absolute z-10 mt-96 w-full flex-col bg-gray-950 bg-opacity-75 md:flex md:w-fit md:relative md:mt-0 md:flex-row md:bg-transparent text-white font-montserrat uppercase font-light text-center transition-all ease-in-out duration-500 md:pointer-events-auto md:opacity-100">
+    class="flex justify-center items-center absolute z-[100] top-full left-0 w-full flex-col bg-gray-950 bg-opacity-75 md:flex md:w-fit md:relative md:top-auto md:flex-row md:bg-transparent text-white font-montserrat uppercase font-light text-center transition-all ease-in-out duration-500 md:pointer-events-auto md:opacity-100">
     <li class="mx-3 my-4 md:w-40 md:p-2 cursor-pointer"><a href="#presentation">{{translate.nav1}}</a>
     </li>
     <li class="mx-3 my-4 md:w-40 md:p-2 cursor-pointer"><a href="#projects">{{translate.nav2}}</a></li>
+    <li class="mx-3 my-4 md:w-40 md:p-2 cursor-pointer"><a href="#work-history">{{translate.nav4}}</a></li>
     <li class="mx-3 my-4 md:w-40 md:p-2 cursor-pointer"><a href="#contact">{{translate.nav3}}</a></li>
     <li (click)="switchLang('portuguese')" class="mx-3 my-4 cursor-pointer hover:brightness-125 transition ease-in-out">
       <img loading="lazy" fetchpriority="auto" class="h-10  pointer-events-none"
@@ -243,15 +244,15 @@
     </div>
 
 
-    <!-- Preload all detailed project images (hidden, eager) -->
+    <!-- Preload all detailed project images (hidden, lower priority than hero) -->
     <div class="hidden" aria-hidden="true">
-      <img loading="eager" fetchpriority="high" src="../assets/img/projects/detailed/sorvetescream.webp" />
-      <img loading="eager" fetchpriority="high" src="../assets/img/projects/detailed/hititharder.webp" />
-      <img loading="eager" fetchpriority="high" src="../assets/img/projects/detailed/tirodeguerra.webp" />
-      <img loading="eager" fetchpriority="high" src="../assets/img/projects/detailed/taskmanagement.webp" />
-      <img loading="eager" fetchpriority="high" src="../assets/img/projects/detailed/gotyabank.webp" />
-      <img loading="eager" fetchpriority="high" src="../assets/img/projects/detailed/valinor.webp" />
-      <img loading="eager" fetchpriority="high" src="../assets/img/projects/detailed/github.webp" />
+      <img loading="eager" fetchpriority="low" src="../assets/img/projects/detailed/sorvetescream.webp" />
+      <img loading="eager" fetchpriority="low" src="../assets/img/projects/detailed/hititharder.webp" />
+      <img loading="eager" fetchpriority="low" src="../assets/img/projects/detailed/tirodeguerra.webp" />
+      <img loading="eager" fetchpriority="low" src="../assets/img/projects/detailed/taskmanagement.webp" />
+      <img loading="eager" fetchpriority="low" src="../assets/img/projects/detailed/gotyabank.webp" />
+      <img loading="eager" fetchpriority="low" src="../assets/img/projects/detailed/valinor.webp" />
+      <img loading="eager" fetchpriority="low" src="../assets/img/projects/detailed/github.webp" />
     </div>
 
     <div id="modal" [ngClass]="ModalDetailed()"
@@ -321,8 +322,187 @@
 
 <div class="section-divider"></div>
 
+<!-- [work-history] -->
+<div id="work-history" class="w-full bg-black relative overflow-hidden py-20">
+
+  <!-- Section title -->
+  <p class="font-extrabold text-center text-white font-montserrat uppercase w-full text-4xl md:text-6xl pointer-events-none neon-title mb-16 relative z-10 px-4">
+    {{ translate.workHistoryTitle }}
+  </p>
+
+  <!-- Timeline -->
+  <div class="wh-timeline relative z-10">
+
+    <!-- ─── Mantyz ─────────────────────────────────────────── -->
+    <div class="wh-entry">
+      <div class="wh-entry-marker"><span class="wh-entry-dot"></span></div>
+      <div class="wh-card">
+        <div class="wh-card-header">
+          <a href="https://www.linkedin.com/company/mantyz" target="_blank" rel="noopener noreferrer" class="wh-logo-link">
+            <img loading="lazy" alt="Mantyz" class="wh-logo"
+              src="https://media.licdn.com/dms/image/v2/D4D0BAQGEq82GWnJ8WQ/company-logo_100_100/company-logo_100_100/0/1703723180951/mantyz_logo?e=1780531200&v=beta&t=NeapiIaVTxu8ipXr8NfLAQegJ8QaWAO3QaUqu20fTCs" />
+          </a>
+          <div class="wh-details">
+            <span class="wh-role-title">Software Developer</span>
+            <div class="wh-company-line">
+              <a href="https://www.linkedin.com/company/mantyz" target="_blank" rel="noopener noreferrer" class="wh-company-name">Mantyz</a>
+              <span class="wh-badge">Full-time</span>
+            </div>
+            <span class="wh-period">Nov 2024 – Present · 1 yr 7 mos</span>
+            <span class="wh-location">São José do Rio Preto, SP · Hybrid</span>
+          </div>
+        </div>
+        <p class="wh-description">
+          {{ translate.whMantyzDesc }}
+        </p>
+        <div class="wh-skills">
+          <span class="wh-skill">Python</span>
+          <span class="wh-skill">C#</span>
+          <span class="wh-skill-more">+10 skills</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── Grupo Sifra ────────────────────────────────────── -->
+    <div class="wh-entry">
+      <div class="wh-entry-marker"><span class="wh-entry-dot"></span></div>
+      <div class="wh-card">
+        <div class="wh-card-header">
+          <a href="https://www.linkedin.com/company/gruposifra" target="_blank" rel="noopener noreferrer" class="wh-logo-link">
+            <img loading="lazy" alt="Grupo Sifra" class="wh-logo"
+              src="https://media.licdn.com/dms/image/v2/D4D0BAQF-RXzvWtQzug/company-logo_100_100/B4DZh6bDxFH8AQ-/0/1754400570849/gruposifra_logo?e=1780531200&v=beta&t=wEBaWWKW-jdsksXzhS5s_fYCbMAeO7KP_VHn2VERUO0" />
+          </a>
+          <div class="wh-details">
+            <span class="wh-role-title">Software Developer</span>
+            <div class="wh-company-line">
+              <a href="https://www.linkedin.com/company/gruposifra" target="_blank" rel="noopener noreferrer" class="wh-company-name">Grupo Sifra</a>
+              <span class="wh-badge">Full-time</span>
+            </div>
+            <span class="wh-period">Jan 2024 – Oct 2024 · 10 mos</span>
+            <span class="wh-location">São José do Rio Preto, SP · Hybrid</span>
+          </div>
+        </div>
+        <p class="wh-description">
+          {{ translate.whSifraDesc }}
+        </p>
+        <div class="wh-skills">
+          <span class="wh-skill">Git</span>
+          <span class="wh-skill">REST APIs</span>
+          <span class="wh-skill-more">+8 skills</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── Expand trigger ─────────────────────────────────── -->
+    <div class="wh-expand-trigger">
+      <button (click)="workHistoryExpanded = !workHistoryExpanded" class="wh-expand-btn" [attr.aria-expanded]="workHistoryExpanded">
+        <span>{{ workHistoryExpanded ? translate.whShowLess : translate.whShowMore }}</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
+          stroke="currentColor" class="wh-expand-icon" [class.wh-expand-icon--open]="workHistoryExpanded">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- ─── Collapsible: OCTO + APP Sistemas ──────────────── -->
+    <div class="wh-collapsible" [class.wh-collapsible--open]="workHistoryExpanded">
+    <div class="wh-entry">
+      <div class="wh-entry-marker"><span class="wh-entry-dot"></span></div>
+      <div class="wh-card">
+        <!-- Company header (shared across roles) -->
+        <div class="wh-card-header">
+          <a href="https://www.linkedin.com/company/octoti/" target="_blank" rel="noopener noreferrer" class="wh-logo-link">
+            <img loading="lazy" alt="OCTO Tecnologia e Consultoria" class="wh-logo"
+              src="https://media.licdn.com/dms/image/v2/C4D0BAQHqY8gZ4L207g/company-logo_100_100/company-logo_100_100/0/1630579112348/octoti_logo?e=1780531200&v=beta&t=01b4K0IOTG6ZEQslFhP93Uc1BFlCDYyiGilss7HnQvg" />
+          </a>
+          <div class="wh-details">
+            <a href="https://www.linkedin.com/company/octoti/" target="_blank" rel="noopener noreferrer" class="wh-company-name wh-company-name--hero">OCTO Tecnologia e Consultoria</a>
+            <span class="wh-period">Jun 2022 – Nov 2023 · 1 yr 6 mos</span>
+            <span class="wh-location">São José do Rio Preto, SP · Remote</span>
+          </div>
+        </div>
+        <!-- Sub-roles -->
+        <div class="wh-subroles">
+          <!-- Role 1: Full-time -->
+          <div class="wh-subrole">
+            <span class="wh-subrole-dot"></span>
+            <div class="wh-subrole-content">
+              <span class="wh-role-title wh-role-title--sm">Software Developer</span>
+              <div class="wh-company-line">
+                <span class="wh-badge">Full-time</span>
+                <span class="wh-period wh-period--inline">Oct 2022 – Nov 2023 · 1 yr 2 mos</span>
+              </div>
+              <p class="wh-description wh-description--sm">
+                {{ translate.whOctoFullDesc }}
+              </p>
+              <div class="wh-skills">
+                <span class="wh-skill">GitLab</span>
+                <span class="wh-skill">Dapper ORM</span>
+                <span class="wh-skill-more">+9 skills</span>
+              </div>
+            </div>
+          </div>
+          <!-- Role 2: Internship -->
+          <div class="wh-subrole">
+            <span class="wh-subrole-dot"></span>
+            <div class="wh-subrole-content">
+              <span class="wh-role-title wh-role-title--sm">Software Developer</span>
+              <div class="wh-company-line">
+                <span class="wh-badge wh-badge--internship">Internship</span>
+                <span class="wh-period wh-period--inline">Jun 2022 – Oct 2022 · 5 mos</span>
+              </div>
+              <p class="wh-description wh-description--sm">
+                {{ translate.whOctoInternDesc }}
+              </p>
+              <div class="wh-skills">
+                <span class="wh-skill">GitLab</span>
+                <span class="wh-skill">Dapper ORM</span>
+                <span class="wh-skill-more">+6 skills</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── APP Sistemas ───────────────────────────────────── -->
+    <div class="wh-entry">
+      <div class="wh-entry-marker"><span class="wh-entry-dot"></span></div>
+      <div class="wh-card">
+        <div class="wh-card-header">
+          <a href="https://www.linkedin.com/company/app-sistemas" target="_blank" rel="noopener noreferrer" class="wh-logo-link">
+            <img loading="lazy" alt="APP Sistemas" class="wh-logo"
+              src="https://media.licdn.com/dms/image/v2/C4D0BAQGVBKH4tZO9Jg/company-logo_100_100/company-logo_100_100/0/1630550280757/app_sistemas_logo?e=1780531200&v=beta&t=rhSoPmMyvZKkVubFq-nvfDX_dmi-pxy7tBGGsDMKuGM" />
+          </a>
+          <div class="wh-details">
+            <span class="wh-role-title">Software Development Intern</span>
+            <div class="wh-company-line">
+              <a href="https://www.linkedin.com/company/app-sistemas" target="_blank" rel="noopener noreferrer" class="wh-company-name">APP Sistemas</a>
+              <span class="wh-badge wh-badge--internship">Internship</span>
+            </div>
+            <span class="wh-period">Feb 2022 – May 2022 · 4 mos</span>
+            <span class="wh-location">São José do Rio Preto, SP · Remote</span>
+          </div>
+        </div>
+        <p class="wh-description">
+          {{ translate.whAppDesc }}
+        </p>
+        <div class="wh-skills">
+          <span class="wh-skill">JavaScript</span>
+          <span class="wh-skill">Agile</span>
+          <span class="wh-skill-more">+2 skills</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /wh-collapsible -->
+  </div><!-- /wh-timeline -->
+</div><!-- /work-history -->
+
+<div class="section-divider"></div>
+
 <!-- 4 -->
-<div id="contact" class="w-full h-auto bg-gray-500 relative overflow-hidden flex flex-col justify-center items-center">
+<div id="contact" class="w-full min-h-[80vh] bg-gray-500 relative flex flex-col justify-center items-center overflow-hidden">
   <!-- Dark section overlay -->
   <div class="section-dark-overlay"></div>
 
@@ -334,10 +514,10 @@
     {{translate.contactTitle}} </p>
 
 
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-20 ">
+  <div class="flex justify-center w-full px-4 mt-8 mb-8">
 
     <div
-      class="h-fit w-[90vw] lg:w-[500px] z-10 mt-10 relative uppercase contact-panel">
+      class="h-fit w-full max-w-[500px] z-10 relative uppercase contact-panel">
 
       <div class="contact-panel-header">
         <span class="contact-panel-dot"></span>
@@ -348,9 +528,9 @@
 
       <div class="contact-info">
         <img loading="lazy" fetchpriority="auto" class="w-10 h-10 mx-5 shrink-0" src="../assets/img/contact/mail.webp">
-        <div class="flex flex-col">
+        <div class="flex flex-col min-w-0">
           <span class="contact-info-label">E-mail</span>
-          <a href="mailto:kaio.reis@krinnovation.com.br" target="_blank" class="contact-info-value hover:underline">kaio.reis@krinnovation.com.br</a>
+          <a href="mailto:kaio.reis@krinnovation.com.br" target="_blank" class="contact-info-value hover:underline break-all">kaio.reis@krinnovation.com.br</a>
         </div>
       </div>
 
@@ -371,14 +551,6 @@
       </div>
 
       <div class="contact-info">
-        <img loading="lazy" fetchpriority="auto" class="w-10 h-10 mx-5 shrink-0" src="../assets/img/contact/behance.webp">
-        <div class="flex flex-col">
-          <span class="contact-info-label">Behance</span>
-          <a href="https://www.behance.net/kaiomaciel" target="_blank" class="contact-info-value hover:underline">Kaio Maciel</a>
-        </div>
-      </div>
-
-      <div class="contact-info">
         <img loading="lazy" fetchpriority="auto" class="w-10 h-10 mx-5 shrink-0" src="../assets/img/contact/github.webp">
         <div class="flex flex-col">
           <span class="contact-info-label">GitHub</span>
@@ -388,28 +560,15 @@
 
     </div>
 
-    <div class="sponsor-panel z-10 mt-10 relative flex flex-col justify-center items-center w-[90vw] lg:w-[480px]">
-      <div class="sponsor-img-wrapper">
-        <img loading="lazy" fetchpriority="auto" class="w-full h-full rounded pointer-events-none"
-          src="../assets/img/contact/sponsors.webp">
-      </div>
-      <a href="https://github.com/sponsors/kaiogotyacode/" target="_blank" class="sponsor-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 inline-block mr-2">
-          <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
-        </svg>
-        Sponsor
-      </a>
-    </div>
   </div>
 
 </div>
 
-<footer class="neon-footer w-full h-24 flex items-center text-xs md:text-sm text-gray-400 font-extralight">
+<footer class="neon-footer w-full h-24 flex justify-center items-center text-xs md:text-sm text-gray-400 font-extralight">
   <div class="neon-footer-line"></div>
-  <div class="mx-5 md:mx-20 w-full flex justify-center">
-    <div>
-      <p class="cursor-pointer text-center tracking-widest uppercase text-[11px]">© Kaio Maciel {{currentYear}}</p>
-      <p class="cursor-pointer text-center tracking-widest uppercase text-[11px] neon-footer-role">Software Developer</p>
-    </div>
+  <div class="flex flex-col items-center gap-[2px]">
+    <p class="cursor-pointer text-center tracking-widest uppercase text-[11px]">Kaio Maciel</p>
+    <p class="cursor-pointer text-center tracking-widest uppercase text-[11px] neon-footer-role">Software Development Engineer</p>
+    <p class="cursor-pointer text-center tracking-widest uppercase text-[11px]">© KR Innovation Lab {{currentYear}}</p>
   </div>
 </footer>

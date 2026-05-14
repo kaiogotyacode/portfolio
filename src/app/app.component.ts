@@ -22,7 +22,9 @@ export class AppComponent implements OnInit {
         }
       }, 100);
     }, 600);
-    setInterval(() => this.triggerFilmIntro(false), 10000);
+    setInterval(() => {
+      if (!document.hidden) this.triggerFilmIntro(false);
+    }, 30000);
   }
 
   filmIntro: boolean = false;
@@ -38,6 +40,7 @@ export class AppComponent implements OnInit {
   currentYear = new Date().getFullYear();
   dropMenu: boolean = false;
   dropModal: boolean = false;
+  workHistoryExpanded: boolean = false;
   currentLang: string = "portuguese";
   translate!: Translate;
   currentProjectModal?: ProjectModal;
@@ -53,9 +56,11 @@ export class AppComponent implements OnInit {
     nav1: "Apresentação",
     nav2: "Projetos",
     nav3: "Contato",
+    nav4: "Histórico",
 
     presentationTitle: "Apresentação",
     projectTitle: "Projetos",
+    workHistoryTitle: "Histórico Profissional",
     presentationLink: "https://www.youtube.com/embed/dncGus0asoA",
 
     sorvetesCreamDescription: "Mergulhe numa doce fuga na aplicação interativa de gelados! Descubra sabores, partilhe momentos e saboreie a alegria das delícias congeladas.",
@@ -67,7 +72,15 @@ export class AppComponent implements OnInit {
     gitHubDescription: "Aqui você encontrará todos meus outros trabalhos relacionados a programação. Conecte-se comigo e vamos juntos impulsionar a comunidade de tecnologia!",
 
     contactTitle: "Contato",
-    viewMore: "Ver mais"
+    viewMore: "Ver mais",
+
+    whShowMore: "Ver experiências anteriores",
+    whShowLess: "Recolher",
+    whMantyzDesc: "Desenvolvimento de soluções back-end com foco na criação de novas funcionalidades, integrações internas e externas, entregando aplicações seguras e escaláveis alinhadas aos objetivos estratégicos do negócio.",
+    whSifraDesc: "Alocado no desenvolvimento back-end com foco na implementação de novas funcionalidades, melhoria de desempenho e manutenção da segurança robusta das aplicações.",
+    whOctoFullDesc: "Liderança de iniciativas de desenvolvimento back-end, contribuindo com decisões de arquitetura, implementação de novas funcionalidades e integrações, além da manutenção dos padrões de qualidade e desempenho do código.",
+    whOctoInternDesc: "Desenvolvimento de relatórios em um Sistema ERP utilizando C# ASP.NET, seguindo os padrões da arquitetura MVC, com SQL Server e MongoDB como bancos de dados. Manutenção e suporte ao projeto, além de sugestões e implementação de novas funcionalidades solicitadas pelos clientes.",
+    whAppDesc: "Acompanhamento diário da rotina do squad de desenvolvimento da empresa. Aprendizado intensivo em C# pela plataforma Alura, construindo uma base sólida em fundamentos de desenvolvimento de software e metodologias ágeis."
   }
 
   englishLanguage: Translate = {
@@ -76,9 +89,11 @@ export class AppComponent implements OnInit {
     nav1: "Presentation",
     nav2: "Projects",
     nav3: "Contact",
+    nav4: "History",
 
     presentationTitle: "Presentation",
     projectTitle: "Projects",
+    workHistoryTitle: "Work History",
     presentationLink: "https://www.youtube.com/embed/eJh1fKJgL0g",
 
     sorvetesCreamDescription: "Immerse in a sweet escape with our interactive ice cream haven! Explore flavors, share moments, and savor the joy of frozen delight",
@@ -90,7 +105,15 @@ export class AppComponent implements OnInit {
     gitHubDescription: "Explore my portfolio of programming projects here. Connect with me, and let's collaboratively elevate the technology community together!",
 
     contactTitle: "Contact",
-    viewMore: "View more"
+    viewMore: "View more",
+
+    whShowMore: "Show earlier experience",
+    whShowLess: "Collapse",
+    whMantyzDesc: "Developing back-end solutions focused on creating new features, internal and external integrations, delivering secure and scalable applications aligned with the strategic goals of the business.",
+    whSifraDesc: "Assigned to back-end development with a focus on implementing new features, enhancing performance, and maintaining robust application security across the platform.",
+    whOctoFullDesc: "Led back-end development initiatives, contributing to system architecture decisions, implementing new features and integrations, and maintaining code quality and performance standards.",
+    whOctoInternDesc: "Development of Reports in an ERP System using C# ASP.NET, following MVC architecture standards, and utilizing SQL Server and MongoDB as databases. Maintenance and support for the project, as well as implementation of new features requested by clients.",
+    whAppDesc: "Daily monitoring of the company's development squad routine. Intensive learning in C# through the Alura platform, building a solid foundation in software development fundamentals and agile methodologies."
   }
 
   listProjectModal: ProjectModal[] = [
