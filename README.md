@@ -3,7 +3,7 @@
 Hey, welcome! Here you'll be able to check out some of my extra activities related to programming. Development is still in progress, and soon there'll be my video presentation in both languages (Portuguese/English) and a detailed display of performed projects.
 
 ### Access
-- You can access my portfolio clicking 👉 [here](https://portfolio-kaiogotyacodes-projects.vercel.app/). Also available for small devices ✅
+- You can access my portfolio clicking 👉 [here](https://krinnovation.com.br). Also available for small devices ✅
 
 ### Current View 💢
 ![image](https://github.com/kaiogotyacode/portfolio/assets/43120150/d46bbd03-bd43-40d2-a913-887a954c04bc)
