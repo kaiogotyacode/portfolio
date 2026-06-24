@@ -764,11 +764,11 @@ html {
   inset: 0;
   z-index: 9999;
   animation-name: filmOverlayFull;
-  animation-duration: 7s;
+  animation-duration: 5s;
 }
 
 .film-text-wrapper--full {
-  animation: filmTextFull 7s ease-in-out forwards;
+  animation: filmTextFull 5s ease-in-out forwards;
 }
 
 .film-elevate {
@@ -783,7 +783,7 @@ html {
     0 0 40px rgba(255, 255, 255, 0.35),
     0 0 90px rgba(200, 180, 160, 0.12);
   will-change: opacity, transform;
-  animation: filmElevate 7s ease-in-out forwards;
+  animation: filmElevate 5s ease-in-out forwards;
 }
 
 .film-overlay--hero {
@@ -840,25 +840,25 @@ html {
 
 @keyframes filmOverlayFull {
   0%   { opacity: 1; }
-  93%  { opacity: 1; }
+  88%  { opacity: 1; }
   100% { opacity: 0; }
 }
 
-/* Brand text animation for full intro (7s) */
+/* Brand text animation for full intro (5s) */
 @keyframes filmTextFull {
   0%   { opacity: 0; transform: translateX(-60px); }
-  6%   { opacity: 1; transform: translateX(0); }
-  46%  { opacity: 1; transform: translateX(0); }
-  57%  { opacity: 0; transform: translateX(60px); }
+  8%   { opacity: 1; transform: translateX(0); }
+  52%  { opacity: 1; transform: translateX(0); }
+  66%  { opacity: 0; transform: translateX(60px); }
   100% { opacity: 0; transform: translateX(60px); }
 }
 
 /* "elevate" entrance + fadeout */
 @keyframes filmElevate {
-  0%, 55%  { opacity: 0; transform: scale(1.18); }
-  68%      { opacity: 1; transform: scale(1); }
+  0%, 58%  { opacity: 0; transform: scale(1.18); }
+  70%      { opacity: 1; transform: scale(1); }
   82%      { opacity: 1; transform: scale(1); }
-  93%      { opacity: 0; transform: scale(0.94); }
+  96%      { opacity: 0; transform: scale(0.94); }
   100%     { opacity: 0; }
 }
 

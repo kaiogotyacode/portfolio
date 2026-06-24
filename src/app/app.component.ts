@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ProjectModal } from 'src/models/projectModal';
 import { Translate } from 'src/models/translate';
 
@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
   triggerFilmIntro(full: boolean = false) {
     this.filmIntroFull = full;
     this.filmIntro = true;
-    setTimeout(() => this.filmIntro = false, full ? 7000 : 4600);
+    setTimeout(() => this.filmIntro = false, full ? 5000 : 4600);
   }
 
   title = 'Portfolio';
@@ -197,6 +197,22 @@ export class AppComponent implements OnInit {
       this.toggleLanguageAnimation();
       this.setOverflowVisible();
     }, 1000)
+  }
+
+  showScrollTop: boolean = false;
+
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    this.showScrollTop = window.scrollY > 300;
+  }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  scrollToSection(id: string) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   dropdownMenu() {

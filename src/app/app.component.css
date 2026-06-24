@@ -1,0 +1,60 @@
+/* ── Scroll to top button ─────────────────────────────────── */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  animation: fadeInUp 0.3s ease forwards;
+}
+
+.scroll-top-btn svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.scroll-top-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Small devices – smaller, centered at bottom */
+@media (max-width: 767px) {
+  .scroll-top-btn {
+    bottom: 1.25rem;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: 2.25rem;
+    height: 2.25rem;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  }
+
+  .scroll-top-btn svg {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .scroll-top-btn:hover {
+    transform: translateX(-50%) translateY(-3px);
+  }
+}

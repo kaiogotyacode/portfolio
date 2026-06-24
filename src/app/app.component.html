@@ -16,11 +16,11 @@
 
   <ul [ngClass]="menuSandwich()"
     class="flex justify-center items-center absolute z-[100] top-full left-0 w-full flex-col bg-gray-950 bg-opacity-75 md:flex md:w-fit md:relative md:top-auto md:flex-row md:bg-transparent text-white font-montserrat uppercase font-light text-center transition-all ease-in-out duration-500 md:pointer-events-auto md:opacity-100">
-    <li class="mx-3 my-4 md:w-40 md:p-2 cursor-pointer"><a href="#presentation">{{translate.nav1}}</a>
+    <li class="mx-3 my-4 md:w-40 md:p-2 cursor-pointer"><a (click)="scrollToSection('presentation')" class="cursor-pointer">{{translate.nav1}}</a>
     </li>
-    <li class="mx-3 my-4 md:w-40 md:p-2 cursor-pointer"><a href="#projects">{{translate.nav2}}</a></li>
-    <li class="mx-3 my-4 md:w-40 md:p-2 cursor-pointer"><a href="#work-history">{{translate.nav4}}</a></li>
-    <li class="mx-3 my-4 md:w-40 md:p-2 cursor-pointer"><a href="#contact">{{translate.nav3}}</a></li>
+    <li class="mx-3 my-4 md:w-40 md:p-2 cursor-pointer"><a (click)="scrollToSection('projects')" class="cursor-pointer">{{translate.nav2}}</a></li>
+    <li class="mx-3 my-4 md:w-40 md:p-2 cursor-pointer"><a (click)="scrollToSection('work-history')" class="cursor-pointer">{{translate.nav4}}</a></li>
+    <li class="mx-3 my-4 md:w-40 md:p-2 cursor-pointer"><a (click)="scrollToSection('contact')" class="cursor-pointer">{{translate.nav3}}</a></li>
     <li (click)="switchLang('portuguese')" class="mx-3 my-4 cursor-pointer hover:brightness-125 transition ease-in-out">
       <img loading="lazy" fetchpriority="auto" class="h-10  pointer-events-none"
         src="../assets/img/first-content/brazil.webp"> </li>
@@ -340,7 +340,7 @@
         <div class="wh-card-header">
           <a href="https://www.linkedin.com/company/mantyz" target="_blank" rel="noopener noreferrer" class="wh-logo-link">
             <img loading="lazy" alt="Mantyz" class="wh-logo"
-              src="https://media.licdn.com/dms/image/v2/D4D0BAQGEq82GWnJ8WQ/company-logo_100_100/company-logo_100_100/0/1703723180951/mantyz_logo?e=1780531200&v=beta&t=NeapiIaVTxu8ipXr8NfLAQegJ8QaWAO3QaUqu20fTCs" />
+              src="https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782336799/mantyz_logo_gzfux3.jpg" />
           </a>
           <div class="wh-details">
             <span class="wh-role-title">Software Developer</span>
@@ -370,7 +370,7 @@
         <div class="wh-card-header">
           <a href="https://www.linkedin.com/company/gruposifra" target="_blank" rel="noopener noreferrer" class="wh-logo-link">
             <img loading="lazy" alt="Grupo Sifra" class="wh-logo"
-              src="https://media.licdn.com/dms/image/v2/D4D0BAQF-RXzvWtQzug/company-logo_100_100/B4DZh6bDxFH8AQ-/0/1754400570849/gruposifra_logo?e=1780531200&v=beta&t=wEBaWWKW-jdsksXzhS5s_fYCbMAeO7KP_VHn2VERUO0" />
+              src="https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782336798/gruposifra_logo_m03qtb.jpg" />
           </a>
           <div class="wh-details">
             <span class="wh-role-title">Software Developer</span>
@@ -413,7 +413,7 @@
         <div class="wh-card-header">
           <a href="https://www.linkedin.com/company/octoti/" target="_blank" rel="noopener noreferrer" class="wh-logo-link">
             <img loading="lazy" alt="OCTO Tecnologia e Consultoria" class="wh-logo"
-              src="https://media.licdn.com/dms/image/v2/C4D0BAQHqY8gZ4L207g/company-logo_100_100/company-logo_100_100/0/1630579112348/octoti_logo?e=1780531200&v=beta&t=01b4K0IOTG6ZEQslFhP93Uc1BFlCDYyiGilss7HnQvg" />
+              src="https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782336798/octoti_logo_plyqjx.jpg" />
           </a>
           <div class="wh-details">
             <a href="https://www.linkedin.com/company/octoti/" target="_blank" rel="noopener noreferrer" class="wh-company-name wh-company-name--hero">OCTO Tecnologia e Consultoria</a>
@@ -472,7 +472,7 @@
         <div class="wh-card-header">
           <a href="https://www.linkedin.com/company/app-sistemas" target="_blank" rel="noopener noreferrer" class="wh-logo-link">
             <img loading="lazy" alt="APP Sistemas" class="wh-logo"
-              src="https://media.licdn.com/dms/image/v2/C4D0BAQGVBKH4tZO9Jg/company-logo_100_100/company-logo_100_100/0/1630550280757/app_sistemas_logo?e=1780531200&v=beta&t=rhSoPmMyvZKkVubFq-nvfDX_dmi-pxy7tBGGsDMKuGM" />
+              src="https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782336798/app_sistemas_logo_cbdqll.jpg" />
           </a>
           <div class="wh-details">
             <span class="wh-role-title">Software Development Intern</span>
@@ -572,3 +572,14 @@
     <p class="cursor-pointer text-center tracking-widest uppercase text-[11px]">© KR Innovation Lab {{currentYear}}</p>
   </div>
 </footer>
+
+<!-- Scroll to top button -->
+<button
+  *ngIf="showScrollTop"
+  (click)="scrollToTop()"
+  aria-label="Scroll to top"
+  class="scroll-top-btn">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+  </svg>
+</button>
