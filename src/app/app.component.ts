@@ -63,8 +63,8 @@ export class AppComponent implements OnInit {
     workHistoryTitle: "Histórico Profissional",
     presentationLink: "https://www.youtube.com/embed/dncGus0asoA",
 
-    yaBuyDescription: "Plataforma de e-commerce completa liderada por mim há 12 meses. Integrações com Correios, Frenet, Mercado Pago e Stripe. Arquitetura, infra e gestão de equipe.",
-    eraConectividadeDescription: "TCC na Fatec Rio Preto: cenários ultra conectados com IoT, AWS Lambda, Tuya e IA. Um job analisa o clima a cada 3 min e aciona dispositivos IoT ao detectar 80% de chance de chuva.",
+    yaBuyDescription: "Plataforma de e-commerce desenvolvida para o público Geek. Tive grandes experiências com integrações com Correios, Frenet, Mercado Pago e Stripe. Além de ter sido o líder técnico da equipe, composta por mais 2 desenvolvedores front-end. Trabalho recente lançado, que ainda segue em maturação, mas já está em atividade em toda região do Brasil.",
+    eraConectividadeDescription: "Esse projeto fez parte do meu TCC na Fatec Rio Preto, envolvendo cenários ultra conectados com IoT, AWS Lambda, Tuya e IA. Onde com jobs internos criados via Amazon Alexa, fosse possível conectar todas essas tecnologias para promover uma funcionalidade de alta qualidade.",
 
     sorvetesCreamDescription: "Mergulhe numa doce fuga na aplicação interativa de gelados! Descubra sabores, partilhe momentos e saboreie a alegria das delícias congeladas.",
     hitItHarderDescription: "Alavanque sua motivação neste hub inspirador! Liberte sua força, vença desafios e transforme contratempos em triunfos. Potencialize-se agora!",
@@ -99,8 +99,8 @@ export class AppComponent implements OnInit {
     workHistoryTitle: "Work History",
     presentationLink: "https://www.youtube.com/embed/eJh1fKJgL0g",
 
-    yaBuyDescription: "Full e-commerce platform I led for 12 months. Integrations with Correios, Frenet, Mercado Pago and Stripe. Led architecture, infrastructure, and team management.",
-    eraConectividadeDescription: "College final project: ultra-connected IoT scenarios using AWS Lambda, Tuya and AI. A job checks weather every 3 min and triggers IoT devices when detecting 80% chance of rain.",
+    yaBuyDescription: "E-commerce platform built for the Geek community. Led a team of 2 front-end developers with integrations for Correios, Frenet, Mercado Pago, and Stripe. Recently launched and already active across all regions of Brazil.",
+    eraConectividadeDescription: "Part of my college final project at Fatec Rio Preto, exploring ultra-connected scenarios using IoT, AWS Lambda, Tuya, and AI. Internal jobs built via Amazon Alexa connected all these technologies to deliver a high-quality smart home experience.",
 
     sorvetesCreamDescription: "Immerse in a sweet escape with our interactive ice cream haven! Explore flavors, share moments, and savor the joy of frozen delight",
     hitItHarderDescription: "Ignite your drive on our motivational hub! Unleash strength, conquer challenges, and transform setbacks into triumphs. Power up now!",
