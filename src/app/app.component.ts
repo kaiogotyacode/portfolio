@@ -125,7 +125,7 @@ export class AppComponent implements OnInit {
   listProjectModal: ProjectModal[] = [
     {
       projectName: "YaBuy",
-      projectImage: "https://res.cloudinary.com/dujmufzmm/image/upload/v1780171824/Logo_temp_vaveya.png",
+      projectImage: "https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782398185/Logo_ktmw0s.png",
       cardBackground: "#e7264f",
       description: "YaBuy é uma plataforma de e-commerce desenvolvida ao longo de 12 meses como líder técnico, coordenando 2 devs front-end e sendo responsável pela arquitetura, infraestrutura e distribuição de tarefas. O projeto conta com e-management, e-commerce.front e e-commerce.api, com integrações ao Correios, Frenet, Mercado Pago e Stripe.",
       hasRepository: false,
@@ -135,7 +135,7 @@ export class AppComponent implements OnInit {
     },
     {
       projectName: "A era da conectividade",
-      projectImage: "eraconectividade.svg",
+      projectImage: "https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782398186/LogoConectividade_s1lvs5.png",
       description: "Projeto de TCC na Fatec de Rio Preto explorando IoT, Cloud e IA para criar cenários ultra conectados. Integrando OpenWeather, AWS Lambda e Plataforma Tuya: a cada 3 minutos, um job analisa as condições climáticas e, ao detectar 80% de chance de chuva, dispara alertas e aciona dispositivos IoT em tempo real na residência do usuário.",
       hasRepository: false,
       hasBehance: false,
@@ -144,7 +144,7 @@ export class AppComponent implements OnInit {
     },
     {
       projectName: "Sorvete's Cream",
-      projectImage: "sorvetescream.webp",
+      projectImage: "https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782398184/sorvetescream_nsfn3n.webp",
       description: "Este projeto foi desenvolvido no início de 2021, onde dei início com projetos front-end para praticar a criação de ideias que tinha e transformá-las em código. Com HTML/CSS e PHP consegui atingir resultados de UI incríveis para a época, e foi a partir desse projeto que me motivei ainda mais para continuar minha carreira como desenvolvedor.",
       hasRepository: false,
       hasBehance: true,
@@ -152,7 +152,7 @@ export class AppComponent implements OnInit {
     },
     {
       projectName: "Hit It Harder",
-      projectImage: "hititharder.webp",
+      projectImage: "https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782398185/HitLogo_wdu0pi.png",
       description: "O projeto 'Hit Harder' foi mais um projeto desenvolvido em 2021, permitindo expandir minhas habilidades técnicas com Desenvolvimento e Design Gráfico. Utilizando PHP e MySQL foi criado uma interação dinâmica com o usuário durante o uso da aplicação.",
       hasRepository: false,
       hasBehance: true,
@@ -160,14 +160,14 @@ export class AppComponent implements OnInit {
     },
     {
       projectName: "Tiro de Guerra",
-      projectImage: "tirodeguerra.webp",
+      projectImage: "https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782398185/tirodeguerra_mxumd3.webp",
       description: "No ano de 2022 tive o privilégio de desenvolver uma aplicação C# Desktop para resolver um problema que ocorria durante as Apresentações de Ordem Unida. Criando um Aplicativo para facilitar a performance da equipe de som durante os eventos na guarnição.",
       hasRepository: false,
       hasBehance: false
     },
     {
       projectName: "Task Management",
-      projectImage: "taskmanagement.webp",
+      projectImage: "https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782398185/Taskmanagement_wnt3hy.png",
       description: "O projeto 'Task Management' tem ênfase em facilitar o gerenciamento de projetos. Sua origem veio após um desafio entre meus amigos da faculdade, para treinar uma técnica que inventamos 'Brainstorming Sprint Code', onde o principal objetivo é desenvolver uma aplicação completa em até 1 semana.",
       hasRepository: true,
       hasBehance: false,
@@ -175,7 +175,7 @@ export class AppComponent implements OnInit {
     },
     {
       projectName: "GotyaBank",
-      projectImage: "gotyabank.webp",
+      projectImage: "https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782399437/PicPayChallenge_maz0yo.png",
       description: "Este projeto foi desenvolvido com ênfase na melhoria das habilidades com C# Back-End. Um code challenge oferecido pela Pic Pay para simular uma transferência bancária com REST APIs.",
       hasRepository: true,
       hasBehance: false,
@@ -183,7 +183,7 @@ export class AppComponent implements OnInit {
     },
     {
       projectName: "Valinor",
-      projectImage: "valinor.webp",
+      projectImage: "https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782398185/valinorIcon_vjsoxv.png",
       description: "O Valinor é um projeto que realiza busca de repositórios do GitHub acessando a própria API do GitHub. Um desafio recente feito em Angular para treinar desenvolvimento com SPA junto de REST APIs.",
       hasRepository: true,
       hasBehance: false,
@@ -191,7 +191,7 @@ export class AppComponent implements OnInit {
     },
     {
       projectName: "GitHub Repositories",
-      projectImage: "github.webp",
+      projectImage: "https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782398184/github_yf6fpq.webp",
       description: "Aqui você encontrará mais informações sobre o meu perfil Desenvolvedor. Atualmente sigo com treinamentos intensivos como Full Stack, focando no framework Angular e desenvolvimento Back-End com maiores complexidades no C#.",
       hasRepository: true,
       hasBehance: false,
