@@ -307,6 +307,16 @@ html {
   box-shadow: 0 0 22px rgba(100, 130, 220, 0.18);
 }
 
+.modal-action-btn--project {
+  border-color: rgba(88, 166, 255, 0.4);
+  color: #58a6ff;
+}
+
+.modal-action-btn--project:hover {
+  background: rgba(88, 166, 255, 0.1);
+  border-color: rgba(88, 166, 255, 0.8);
+}
+
 .modal-close-btn {
   position: absolute;
   top: 12px;
