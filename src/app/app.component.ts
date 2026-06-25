@@ -63,6 +63,9 @@ export class AppComponent implements OnInit {
     workHistoryTitle: "Histórico Profissional",
     presentationLink: "https://www.youtube.com/embed/dncGus0asoA",
 
+    yaBuyDescription: "Plataforma de e-commerce completa liderada por mim há 12 meses. Integrações com Correios, Frenet, Mercado Pago e Stripe. Arquitetura, infra e gestão de equipe.",
+    eraConectividadeDescription: "TCC na Fatec Rio Preto: cenários ultra conectados com IoT, AWS Lambda, Tuya e IA. Um job analisa o clima a cada 3 min e aciona dispositivos IoT ao detectar 80% de chance de chuva.",
+
     sorvetesCreamDescription: "Mergulhe numa doce fuga na aplicação interativa de gelados! Descubra sabores, partilhe momentos e saboreie a alegria das delícias congeladas.",
     hitItHarderDescription: "Alavanque sua motivação neste hub inspirador! Liberte sua força, vença desafios e transforme contratempos em triunfos. Potencialize-se agora!",
     tiroDeGuerraDescription: "Projeto desenvolvido para o Exército Brasileiro da região de Votuporanga com o intuito de melhorar o desempenho do treinamento de Ordem Unida da guarnição.",
@@ -96,6 +99,9 @@ export class AppComponent implements OnInit {
     workHistoryTitle: "Work History",
     presentationLink: "https://www.youtube.com/embed/eJh1fKJgL0g",
 
+    yaBuyDescription: "Full e-commerce platform I led for 12 months. Integrations with Correios, Frenet, Mercado Pago and Stripe. Led architecture, infrastructure, and team management.",
+    eraConectividadeDescription: "College final project: ultra-connected IoT scenarios using AWS Lambda, Tuya and AI. A job checks weather every 3 min and triggers IoT devices when detecting 80% chance of rain.",
+
     sorvetesCreamDescription: "Immerse in a sweet escape with our interactive ice cream haven! Explore flavors, share moments, and savor the joy of frozen delight",
     hitItHarderDescription: "Ignite your drive on our motivational hub! Unleash strength, conquer challenges, and transform setbacks into triumphs. Power up now!",
     tiroDeGuerraDescription: "Project developed for the Brazilian Army in the Votuporanga region with the aim of improving the performance of the garrison's Order of Arms training.",
@@ -117,6 +123,25 @@ export class AppComponent implements OnInit {
   }
 
   listProjectModal: ProjectModal[] = [
+    {
+      projectName: "YaBuy",
+      projectImage: "https://res.cloudinary.com/dujmufzmm/image/upload/v1780171824/Logo_temp_vaveya.png",
+      cardBackground: "#e7264f",
+      description: "YaBuy é uma plataforma de e-commerce desenvolvida ao longo de 12 meses como líder técnico, coordenando 2 devs front-end e sendo responsável pela arquitetura, infraestrutura e distribuição de tarefas. O projeto conta com e-management, e-commerce.front e e-commerce.api, com integrações ao Correios, Frenet, Mercado Pago e Stripe.",
+      hasRepository: false,
+      hasBehance: false,
+      hasProjectLink: true,
+      projectLink: "https://yabuy.com.br"
+    },
+    {
+      projectName: "A era da conectividade",
+      projectImage: "eraconectividade.svg",
+      description: "Projeto de TCC na Fatec de Rio Preto explorando IoT, Cloud e IA para criar cenários ultra conectados. Integrando OpenWeather, AWS Lambda e Plataforma Tuya: a cada 3 minutos, um job analisa as condições climáticas e, ao detectar 80% de chance de chuva, dispara alertas e aciona dispositivos IoT em tempo real na residência do usuário.",
+      hasRepository: false,
+      hasBehance: false,
+      hasProjectLink: true,
+      projectLink: "https://www.linkedin.com/posts/kaio-maciel_ontem-encerrei-a-noite-com-um-marco-muito-activity-7211748303095414785-xcx6"
+    },
     {
       projectName: "Sorvete's Cream",
       projectImage: "sorvetescream.webp",
