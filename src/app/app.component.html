@@ -254,7 +254,7 @@
 
           <div class="card swiper-slide">
             <div class="image-content">
-              <span class="overlay" style="background: #2a251d;"></span>
+              <span class="overlay"></span>
               <div class="card-image">
                 <img loading="lazy" src="https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782398184/github_yf6fpq.webp" class="card-img">
               </div>
@@ -314,7 +314,7 @@
       <div class="p-6 w-full">
         <label class="modal-label">Description</label>
         <p class="mt-2 text-justify modal-description">
-          {{ currentProjectModal?.description }}
+          {{ (translate.language === 'english' && currentProjectModal?.descriptionEn) ? currentProjectModal?.descriptionEn : currentProjectModal?.description }}
         </p>
       </div>
 

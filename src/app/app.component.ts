@@ -63,8 +63,8 @@ export class AppComponent implements OnInit {
     workHistoryTitle: "Histórico Profissional",
     presentationLink: "https://www.youtube.com/embed/dncGus0asoA",
 
-    yaBuyDescription: "Plataforma de e-commerce desenvolvida para o público Geek. Tive grandes experiências com integrações com Correios, Frenet, Mercado Pago e Stripe. Além de ter sido o líder técnico da equipe, composta por mais 2 desenvolvedores front-end. Trabalho recente lançado, que ainda segue em maturação, mas já está em atividade em toda região do Brasil.",
-    eraConectividadeDescription: "Esse projeto fez parte do meu TCC na Fatec Rio Preto, envolvendo cenários ultra conectados com IoT, AWS Lambda, Tuya e IA. Onde com jobs internos criados via Amazon Alexa, fosse possível conectar todas essas tecnologias para promover uma funcionalidade de alta qualidade.",
+    yaBuyDescription: "Plataforma de e-commerce para o público Geek, com integrações a Correios, Frenet, Mercado Pago e Stripe. Atuei como líder técnico coordenando mais 2 devs front-end. Projeto ativo em todo o Brasil e em constante evolução.",
+    eraConectividadeDescription: "TCC desenvolvido na Fatec Rio Preto explorando IoT, AWS Lambda, Tuya e IA. A solução integrava essas tecnologias por meio de jobs acionados via Amazon Alexa, entregando uma funcionalidade coesa e de alto nível.",
 
     sorvetesCreamDescription: "Mergulhe numa doce fuga na aplicação interativa de gelados! Descubra sabores, partilhe momentos e saboreie a alegria das delícias congeladas.",
     hitItHarderDescription: "Alavanque sua motivação neste hub inspirador! Liberte sua força, vença desafios e transforme contratempos em triunfos. Potencialize-se agora!",
@@ -99,8 +99,8 @@ export class AppComponent implements OnInit {
     workHistoryTitle: "Work History",
     presentationLink: "https://www.youtube.com/embed/eJh1fKJgL0g",
 
-    yaBuyDescription: "E-commerce platform built for the Geek community. Led a team of 2 front-end developers with integrations for Correios, Frenet, Mercado Pago, and Stripe. Recently launched and already active across all regions of Brazil.",
-    eraConectividadeDescription: "Part of my college final project at Fatec Rio Preto, exploring ultra-connected scenarios using IoT, AWS Lambda, Tuya, and AI. Internal jobs built via Amazon Alexa connected all these technologies to deliver a high-quality smart home experience.",
+    yaBuyDescription: "E-commerce platform for the Geek community, with integrations for Correios, Frenet, Mercado Pago, and Stripe. I served as technical lead coordinating 2 additional front-end developers. Project active across Brazil and continuously evolving.",
+    eraConectividadeDescription: "College thesis developed at Fatec Rio Preto exploring IoT, AWS Lambda, Tuya, and AI. The solution integrated these technologies through jobs triggered via Amazon Alexa, delivering a cohesive, high-quality feature.",
 
     sorvetesCreamDescription: "Immerse in a sweet escape with our interactive ice cream haven! Explore flavors, share moments, and savor the joy of frozen delight",
     hitItHarderDescription: "Ignite your drive on our motivational hub! Unleash strength, conquer challenges, and transform setbacks into triumphs. Power up now!",
@@ -127,7 +127,8 @@ export class AppComponent implements OnInit {
       projectName: "YaBuy",
       projectImage: "https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782398185/Logo_ktmw0s.png",
       cardBackground: "#e7264f",
-      description: "YaBuy é uma plataforma de e-commerce desenvolvida ao longo de 12 meses como líder técnico, coordenando 2 devs front-end e sendo responsável pela arquitetura, infraestrutura e distribuição de tarefas. O projeto conta com e-management, e-commerce.front e e-commerce.api, com integrações ao Correios, Frenet, Mercado Pago e Stripe.",
+      description: "YaBuy é uma plataforma de e-commerce desenvolvida ao longo de 12 meses, na qual atuei como líder técnico responsável pela arquitetura, infraestrutura e gestão de tarefas, coordenando uma equipe de 2 desenvolvedores front-end. A solução é composta pela loja online yabuy.com.br e por um sistema de gerenciamento dedicado, que permite ao proprietário controlar todo o fluxo operacional da plataforma — incluindo exibição e cadastro de produtos, gerenciamento de banners, disparo de e-mails promocionais, acompanhamento e aprovação de pedidos, além do fluxo completo de reembolso. As integrações contemplam serviços de frete como Correios e Frenet, e gateways de pagamento como Mercado Pago e Stripe.",
+      descriptionEn: "YaBuy is an e-commerce platform developed over 12 months, in which I served as technical lead responsible for the architecture, infrastructure, and task management, coordinating a team of 2 front-end developers. The solution consists of the online store yabuy.com.br and a dedicated management system that allows the owner to control the entire operational flow of the platform — including product listing and registration, banner management, promotional email campaigns, order tracking and approval, and a complete refund workflow. Integrations include shipping services such as Correios and Frenet, and payment gateways such as Mercado Pago and Stripe.",
       hasRepository: false,
       hasBehance: false,
       hasProjectLink: true,
@@ -136,7 +137,8 @@ export class AppComponent implements OnInit {
     {
       projectName: "A era da conectividade",
       projectImage: "https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782398186/LogoConectividade_s1lvs5.png",
-      description: "Projeto de TCC na Fatec de Rio Preto explorando IoT, Cloud e IA para criar cenários ultra conectados. Integrando OpenWeather, AWS Lambda e Plataforma Tuya: a cada 3 minutos, um job analisa as condições climáticas e, ao detectar 80% de chance de chuva, dispara alertas e aciona dispositivos IoT em tempo real na residência do usuário.",
+      description: "Projeto acadêmico desenvolvido como TCC na Fatec Rio Preto, com foco em cenários de alta conectividade entre IoT, Cloud e Inteligência Artificial.\n\nA solução consiste em um fluxo automatizado e autônomo onde, a cada 3 minutos, um job acionado via Amazon Alexa dispara uma função AWS Lambda que consulta a OpenWeather API com base na latitude e longitude de uma região monitorada. Os dados climáticos são então enviados à OpenAI, que analisa a probabilidade de chuva. Caso a IA detecte entre 80% e 100% de chance de precipitação, um dispositivo IoT é acionado automaticamente via Tuya, sem qualquer intervenção do usuário final, que é notificado ou tem seu ambiente ajustado de forma proativa e transparente.",
+      descriptionEn: "Academic project developed as a college thesis at Fatec Rio Preto, focused on high-connectivity scenarios integrating IoT, Cloud, and Artificial Intelligence.\n\nThe solution consists of an automated and autonomous flow where, every 3 minutes, a job triggered via Amazon Alexa fires an AWS Lambda function that queries the OpenWeather API based on the latitude and longitude of a monitored region. The weather data is then sent to OpenAI, which analyzes the probability of rain. If the AI detects between 80% and 100% chance of precipitation, an IoT device is automatically activated via Tuya, without any end-user intervention — the user is notified or has their environment proactively and transparently adjusted.",
       hasRepository: false,
       hasBehance: false,
       hasProjectLink: true,
