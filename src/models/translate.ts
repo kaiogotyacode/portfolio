@@ -12,6 +12,8 @@ export interface Translate {
     workHistoryTitle: string
     presentationLink : string
 
+    yaBuyDescription: string
+    eraConectividadeDescription: string
     sorvetesCreamDescription: string
     hitItHarderDescription: string
     tiroDeGuerraDescription: string

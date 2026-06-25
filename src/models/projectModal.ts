@@ -6,4 +6,7 @@ export interface ProjectModal {
     hasBehance : boolean
     behanceLink? : string
     gitHubLink? : string
+    cardBackground? : string
+    projectLink? : string
+    hasProjectLink? : boolean
 }
