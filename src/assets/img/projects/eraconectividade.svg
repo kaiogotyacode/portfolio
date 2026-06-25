@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Dark background -->
+  <circle cx="100" cy="100" r="100" fill="#0d1117"/>
+  <!-- Cloud body -->
+  <ellipse cx="100" cy="95" rx="48" ry="28" fill="none" stroke="#58a6ff" stroke-width="3"/>
+  <ellipse cx="78" cy="100" rx="22" ry="20" fill="none" stroke="#58a6ff" stroke-width="3"/>
+  <ellipse cx="122" cy="100" rx="22" ry="20" fill="none" stroke="#58a6ff" stroke-width="3"/>
+  <!-- IoT nodes -->
+  <circle cx="45" cy="140" r="7" fill="#3fb950" opacity="0.9"/>
+  <circle cx="75" cy="150" r="7" fill="#3fb950" opacity="0.9"/>
+  <circle cx="125" cy="150" r="7" fill="#3fb950" opacity="0.9"/>
+  <circle cx="155" cy="140" r="7" fill="#3fb950" opacity="0.9"/>
+  <!-- Connection lines from cloud to nodes -->
+  <line x1="70" y1="118" x2="45" y2="133" stroke="#3fb950" stroke-width="1.5" opacity="0.6"/>
+  <line x1="85" y1="120" x2="75" y2="143" stroke="#3fb950" stroke-width="1.5" opacity="0.6"/>
+  <line x1="115" y1="120" x2="125" y2="143" stroke="#3fb950" stroke-width="1.5" opacity="0.6"/>
+  <line x1="130" y1="118" x2="155" y2="133" stroke="#3fb950" stroke-width="1.5" opacity="0.6"/>
+  <!-- AWS Lambda symbol (λ) -->
+  <text x="100" y="104" text-anchor="middle" font-family="monospace" font-size="22" fill="#f78166" font-weight="bold">λ</text>
+  <!-- AI brain hint: small circuit dots -->
+  <circle cx="55" cy="60" r="3" fill="#d2a8ff" opacity="0.7"/>
+  <circle cx="100" cy="50" r="3" fill="#d2a8ff" opacity="0.7"/>
+  <circle cx="145" cy="60" r="3" fill="#d2a8ff" opacity="0.7"/>
+  <line x1="55" y1="60" x2="100" y2="50" stroke="#d2a8ff" stroke-width="1" opacity="0.5"/>
+  <line x1="100" y1="50" x2="145" y2="60" stroke="#d2a8ff" stroke-width="1" opacity="0.5"/>
+  <!-- Glow ring -->
+  <circle cx="100" cy="100" r="96" fill="none" stroke="#58a6ff" stroke-width="1" opacity="0.2"/>
+</svg>
