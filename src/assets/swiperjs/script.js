@@ -1,4 +1,8 @@
 window.addEventListener("load", () => {
+  window.projectSwiper = null;
+  window.swiperModalOpen = false;
+  window.swiperSectionVisible = false;
+
   var swiper = new Swiper(".slide-content", {
     slidesPerView: 3,
     spaceBetween: 25,
@@ -33,14 +37,30 @@ window.addEventListener("load", () => {
     },
   });
 
+  window.projectSwiper = swiper;
+
+  // Hover: always stop on enter; only resume on leave if modal is closed and section is visible
+  var slideEl = document.querySelector('.slide-content');
+  if (slideEl) {
+    slideEl.addEventListener('mouseenter', function () {
+      swiper.autoplay.stop();
+    });
+    slideEl.addEventListener('mouseleave', function () {
+      if (!window.swiperModalOpen && window.swiperSectionVisible) {
+        swiper.autoplay.start();
+      }
+    });
+  }
+
   // Only run autoplay while the projects section is visible
-  const projectsSection = document.getElementById('projects');
+  var projectsSection = document.getElementById('projects');
   if (projectsSection) {
     swiper.autoplay.stop();
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
+    var observer = new IntersectionObserver(
+      function (entries) {
+        window.swiperSectionVisible = entries[0].isIntersecting;
+        if (window.swiperSectionVisible && !window.swiperModalOpen) {
           swiper.autoplay.start();
         } else {
           swiper.autoplay.stop();

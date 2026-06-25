@@ -66,13 +66,13 @@ export class AppComponent implements OnInit {
     yaBuyDescription: "Plataforma de e-commerce para o público Geek, com integrações a Correios, Frenet, Mercado Pago e Stripe. Atuei como líder técnico coordenando mais 2 devs front-end. Projeto ativo em todo o Brasil e em constante evolução.",
     eraConectividadeDescription: "TCC desenvolvido na Fatec Rio Preto explorando IoT, AWS Lambda, Tuya e IA. A solução integrava essas tecnologias por meio de jobs acionados via Amazon Alexa, entregando uma funcionalidade coesa e de alto nível.",
 
-    sorvetesCreamDescription: "Mergulhe numa doce fuga na aplicação interativa de gelados! Descubra sabores, partilhe momentos e saboreie a alegria das delícias congeladas.",
-    hitItHarderDescription: "Alavanque sua motivação neste hub inspirador! Liberte sua força, vença desafios e transforme contratempos em triunfos. Potencialize-se agora!",
+    sorvetesCreamDescription: "Projeto de transição para o desenvolvimento front-end, criado após a conclusão do curso técnico em Análise e Desenvolvimento de Sistemas. Utilizando HTML e CSS, marcou o início da jornada na criação de interfaces web.",
+    hitItHarderDescription: "Desenvolvido na mesma fase inicial da carreira, este projeto expandiu as habilidades técnicas com a introdução de PHP e MySQL, agregando interatividade dinâmica e persistência de dados às interfaces construídas.",
     tiroDeGuerraDescription: "Projeto desenvolvido para o Exército Brasileiro da região de Votuporanga com o intuito de melhorar o desempenho do treinamento de Ordem Unida da guarnição.",
     taskManagementDescription: "Eleve a produtividade com esta plataforma de gestão de tarefas intuitiva. Simplifique, priorize e conquiste sua lista de afazeres com facilidade e precisão!",
     gotyaBankDescription: "Desafio de Código PicPay: Uma simulação de transferência bancária utilizando REST API com C# & EF Core.",
     valinorDescription: "FieldControl Code Challenge: Inicie uma jornada esclarecedora, explorando repositórios no GitHub por meio da API acessível para uma experiência dinâmica de codificação.",
-    gitHubDescription: "Aqui você encontrará todos meus outros trabalhos relacionados a programação. Conecte-se comigo e vamos juntos impulsionar a comunidade de tecnologia!",
+    gitHubDescription: "Repositório central de projetos pessoais e experimentos técnicos. Especialista back-end com foco em C# e Python, atuando com SQL Server e noções práticas de arquitetura de software e infraestrutura.",
 
     contactTitle: "Contato",
     viewMore: "Ver mais",
@@ -102,13 +102,13 @@ export class AppComponent implements OnInit {
     yaBuyDescription: "E-commerce platform for the Geek community, with integrations for Correios, Frenet, Mercado Pago, and Stripe. I served as technical lead coordinating 2 additional front-end developers. Project active across Brazil and continuously evolving.",
     eraConectividadeDescription: "College thesis developed at Fatec Rio Preto exploring IoT, AWS Lambda, Tuya, and AI. The solution integrated these technologies through jobs triggered via Amazon Alexa, delivering a cohesive, high-quality feature.",
 
-    sorvetesCreamDescription: "Immerse in a sweet escape with our interactive ice cream haven! Explore flavors, share moments, and savor the joy of frozen delight",
-    hitItHarderDescription: "Ignite your drive on our motivational hub! Unleash strength, conquer challenges, and transform setbacks into triumphs. Power up now!",
+    sorvetesCreamDescription: "A front-end transition project developed after completing the technical course in Systems Analysis and Development. Built with HTML and CSS, it marked the beginning of the journey into web interface development.",
+    hitItHarderDescription: "Built in the same early-career period, this project expanded technical skills by introducing PHP and MySQL, adding dynamic interactivity and data persistence to the interfaces developed.",
     tiroDeGuerraDescription: "Project developed for the Brazilian Army in the Votuporanga region with the aim of improving the performance of the garrison's Order of Arms training.",
     taskManagementDescription: "Elevate productivity with our seamless task management platform. Effortlessly streamline, prioritize, and conquer your to-do list with ease and precision!",
     gotyaBankDescription: "PicPay Code Challenge: Immerse in a bank transfer simulation via REST API using C# & EF Core. Sharpen coding skills with hands-on experience",
     valinorDescription: "FieldControl Code Challenge: Embark on an enlightening journey, exploring GitHub repositories through the accessible API for a dynamic coding experience.",
-    gitHubDescription: "Explore my portfolio of programming projects here. Connect with me, and let's collaboratively elevate the technology community together!",
+    gitHubDescription: "Central repository for personal projects and technical experiments. Back-end specialist focused on C# and Python, working with SQL Server and holding practical knowledge of software architecture and infrastructure.",
 
     contactTitle: "Contact",
     viewMore: "View more",
@@ -145,6 +145,37 @@ export class AppComponent implements OnInit {
       projectLink: "https://www.linkedin.com/posts/kaio-maciel_ontem-encerrei-a-noite-com-um-marco-muito-activity-7211748303095414785-xcx6"
     },
     {
+      projectName: "Valinor",
+      projectImage: "https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782398185/valinorIcon_vjsoxv.png",
+      description: "O Valinor é uma aplicação Angular desenvolvida como desafio técnico para explorar a integração com a API pública do GitHub. A solução permite buscar repositórios de qualquer usuário em tempo real, consumindo os endpoints REST disponibilizados publicamente pela plataforma. O projeto conta com testes automatizados aplicados para garantir a confiabilidade das integrações e o comportamento esperado dos componentes, reforçando boas práticas de desenvolvimento com SPA e REST APIs.",
+      hasRepository: true,
+      hasBehance: false,
+      gitHubLink: "https://github.com/kaiogotyacode/valinor"
+    },
+    {
+      projectName: "GotyaBank",
+      projectImage: "https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782399437/PicPayChallenge_maz0yo.png",
+      description: "O GotyaBank é um code challenge proposto pela PicPay, desenvolvido em C# com foco nas complexidades da Programação Orientada a Objetos. A aplicação simula um sistema de transferência bancária via REST API, aplicando conceitos como herança, encapsulamento e polimorfismo na modelagem das entidades financeiras. Utiliza Entity Framework Core para persistência de dados e implementa regras de negócio robustas — como validação de saldo e controle de transações — seguindo os princípios de uma arquitetura REST bem definida.",
+      hasRepository: true,
+      hasBehance: false,
+      gitHubLink: "https://github.com/kaiogotyacode/GoTyaBank"
+    },
+    {
+      projectName: "Tiro de Guerra",
+      projectImage: "https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782398185/tirodeguerra_mxumd3.webp",
+      description: "No ano de 2021 tive o privilégio de desenvolver uma aplicação C# Desktop para resolver um problema que ocorria durante as Apresentações de Ordem Unida. Criando um Aplicativo para facilitar a performance da equipe de som durante os eventos na guarnição.",
+      hasRepository: false,
+      hasBehance: false
+    },
+    {
+      projectName: "Task Management",
+      projectImage: "https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782398185/Taskmanagement_wnt3hy.png",
+      description: "O projeto 'Task Management' tem ênfase em facilitar o gerenciamento de projetos. Sua origem veio após um desafio entre meus amigos da faculdade, para treinar uma técnica que inventamos 'Brainstorming Sprint Code', onde o principal objetivo é desenvolver uma aplicação completa em até 1 semana.",
+      hasRepository: true,
+      hasBehance: false,
+      gitHubLink: "https://github.com/kaiogotyacode/taskManagement"
+    },
+    {
       projectName: "Sorvete's Cream",
       projectImage: "https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782398184/sorvetescream_nsfn3n.webp",
       description: "Este projeto foi desenvolvido no início de 2021, onde dei início com projetos front-end para praticar a criação de ideias que tinha e transformá-las em código. Com HTML/CSS e PHP consegui atingir resultados de UI incríveis para a época, e foi a partir desse projeto que me motivei ainda mais para continuar minha carreira como desenvolvedor.",
@@ -161,40 +192,9 @@ export class AppComponent implements OnInit {
       behanceLink: "https://www.behance.net/gallery/91391425/Projeto-Motivacional"
     },
     {
-      projectName: "Tiro de Guerra",
-      projectImage: "https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782398185/tirodeguerra_mxumd3.webp",
-      description: "No ano de 2022 tive o privilégio de desenvolver uma aplicação C# Desktop para resolver um problema que ocorria durante as Apresentações de Ordem Unida. Criando um Aplicativo para facilitar a performance da equipe de som durante os eventos na guarnição.",
-      hasRepository: false,
-      hasBehance: false
-    },
-    {
-      projectName: "Task Management",
-      projectImage: "https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782398185/Taskmanagement_wnt3hy.png",
-      description: "O projeto 'Task Management' tem ênfase em facilitar o gerenciamento de projetos. Sua origem veio após um desafio entre meus amigos da faculdade, para treinar uma técnica que inventamos 'Brainstorming Sprint Code', onde o principal objetivo é desenvolver uma aplicação completa em até 1 semana.",
-      hasRepository: true,
-      hasBehance: false,
-      gitHubLink: "https://github.com/kaiogotyacode/taskManagement"
-    },
-    {
-      projectName: "GotyaBank",
-      projectImage: "https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782399437/PicPayChallenge_maz0yo.png",
-      description: "Este projeto foi desenvolvido com ênfase na melhoria das habilidades com C# Back-End. Um code challenge oferecido pela Pic Pay para simular uma transferência bancária com REST APIs.",
-      hasRepository: true,
-      hasBehance: false,
-      gitHubLink: "https://github.com/kaiogotyacode/GoTyaBank"
-    },
-    {
-      projectName: "Valinor",
-      projectImage: "https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782398185/valinorIcon_vjsoxv.png",
-      description: "O Valinor é um projeto que realiza busca de repositórios do GitHub acessando a própria API do GitHub. Um desafio recente feito em Angular para treinar desenvolvimento com SPA junto de REST APIs.",
-      hasRepository: true,
-      hasBehance: false,
-      gitHubLink: "https://github.com/kaiogotyacode/valinor"
-    },
-    {
       projectName: "GitHub Repositories",
       projectImage: "https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782398184/github_yf6fpq.webp",
-      description: "Aqui você encontrará mais informações sobre o meu perfil Desenvolvedor. Atualmente sigo com treinamentos intensivos como Full Stack, focando no framework Angular e desenvolvimento Back-End com maiores complexidades no C#.",
+      description: "Repositório que centraliza os projetos pessoais e experimentos técnicos desenvolvidos ao longo da carreira como especialista back-end. As principais stacks são C# e Python, com experiência prática em modelagem e consultas SQL utilizando SQL Server. Os projetos refletem uma atuação que vai além do código — abrangendo decisões de arquitetura de software, organização de sistemas e noções de infraestrutura, com foco em soluções escaláveis e bem estruturadas.",
       hasRepository: true,
       hasBehance: false,
       gitHubLink: "https://github.com/kaiogotyacode/"
@@ -257,11 +257,17 @@ export class AppComponent implements OnInit {
     this.dropModal = true;
     this.currentProjectModal = modal;
     this.ModalDetailed();
+    (window as any).swiperModalOpen = true;
+    (window as any).projectSwiper?.autoplay.stop();
   }
 
   closeModalDetailed() {
     this.dropModal = !this.dropModal;
     this.currentProjectModal = undefined;
+    (window as any).swiperModalOpen = false;
+    if ((window as any).swiperSectionVisible) {
+      (window as any).projectSwiper?.autoplay.start();
+    }
   }
 
   ModalDetailed() {
