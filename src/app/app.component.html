@@ -5,7 +5,9 @@
     <span class="film-brand">KR INNOVATION LAB</span>
     <span class="film-line"></span>
   </div>
-  <span class="film-elevate">elevate</span>
+  <div class="film-elevate-wrapper" [class.film-elevate-zoom]="filmElevateZoom">
+    <span>{{ typingText }}</span><span class="film-type-cursor" [class.film-cursor-visible]="showCursor">_</span>
+  </div>
 </div>
 
 <nav class="navbar relative">

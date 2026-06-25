@@ -774,26 +774,41 @@ html {
   inset: 0;
   z-index: 9999;
   animation-name: filmOverlayFull;
-  animation-duration: 5s;
+  animation-duration: 6.0s;
 }
 
-.film-text-wrapper--full {
-  animation: filmTextFull 5s ease-in-out forwards;
+.film-text-wrapper.film-text-wrapper--full {
+  animation: filmTextFull 6.0s ease-in-out forwards;
 }
 
-.film-elevate {
+.film-elevate-wrapper {
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: 'Courier New', Courier, monospace;
   font-size: clamp(52px, 11vw, 130px);
   font-weight: 400;
   color: rgba(240, 235, 230, 0.9);
   letter-spacing: 0.12em;
-  text-transform: none;
   text-shadow:
     0 0 40px rgba(255, 255, 255, 0.35),
     0 0 90px rgba(200, 180, 160, 0.12);
-  will-change: opacity, transform;
-  animation: filmElevate 5s ease-in-out forwards;
+  will-change: transform;
+  transform-origin: center center;
+}
+
+.film-elevate-zoom {
+  animation: zoomInElevate 0.5s ease-out forwards;
+}
+
+.film-type-cursor {
+  display: inline-block;
+  opacity: 0;
+}
+
+.film-type-cursor.film-cursor-visible {
+  animation: cursorBlink 0.65s step-end infinite;
 }
 
 .film-overlay--hero {
@@ -850,26 +865,28 @@ html {
 
 @keyframes filmOverlayFull {
   0%   { opacity: 1; }
-  88%  { opacity: 1; }
+  92%  { opacity: 1; }
+  96%  { opacity: 0; }
   100% { opacity: 0; }
 }
 
-/* Brand text animation for full intro (5s) */
+/* Brand text animation for full intro (6.0s) — PRESENTS visible ~1.75s */
 @keyframes filmTextFull {
   0%   { opacity: 0; transform: translateX(-60px); }
   8%   { opacity: 1; transform: translateX(0); }
-  52%  { opacity: 1; transform: translateX(0); }
-  66%  { opacity: 0; transform: translateX(60px); }
+  30%  { opacity: 1; transform: translateX(0); }
+  37%  { opacity: 0; transform: translateX(60px); }
   100% { opacity: 0; transform: translateX(60px); }
 }
 
-/* "elevate" entrance + fadeout */
-@keyframes filmElevate {
-  0%, 68%  { opacity: 0; transform: scale(1.18); }
-  78%      { opacity: 1; transform: scale(1); }
-  88%      { opacity: 1; transform: scale(1); }
-  97%      { opacity: 0; transform: scale(0.94); }
-  100%     { opacity: 0; }
+@keyframes cursorBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes zoomInElevate {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 @keyframes filmText {

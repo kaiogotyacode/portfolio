@@ -29,11 +29,40 @@ export class AppComponent implements OnInit {
 
   filmIntro: boolean = false;
   filmIntroFull: boolean = false;
+  typingText: string = '';
+  showCursor: boolean = false;
+  filmElevateZoom: boolean = false;
 
   triggerFilmIntro(full: boolean = false) {
     this.filmIntroFull = full;
     this.filmIntro = true;
-    setTimeout(() => this.filmIntro = false, full ? 5000 : 4600);
+    if (full) this.startTypingSequence();
+    setTimeout(() => {
+      this.filmIntro = false;
+      this.typingText = '';
+      this.showCursor = false;
+      this.filmElevateZoom = false;
+    }, full ? 6000 : 4600);
+  }
+
+  startTypingSequence() {
+    const word = 'elevate';
+    setTimeout(() => {
+      this.showCursor = true;
+      this.typingText = 'e';
+      setTimeout(() => {
+        let idx = 1;
+        const typeInterval = setInterval(() => {
+          this.typingText = word.substring(0, idx + 1);
+          idx++;
+          if (idx >= word.length) {
+            clearInterval(typeInterval);
+            this.showCursor = false;
+            setTimeout(() => { this.filmElevateZoom = true; }, 1500);
+          }
+        }, 83);
+      }, 500);
+    }, 2500);
   }
 
   title = 'Portfolio';
