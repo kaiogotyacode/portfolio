@@ -36,6 +36,11 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes fadeInUpCentered {
+  from { opacity: 0; transform: translateX(-50%) translateY(12px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
 /* Small devices – smaller, centered at bottom */
 @media (max-width: 767px) {
   .scroll-top-btn {
@@ -47,6 +52,7 @@
     height: 2.25rem;
     background: rgba(255, 255, 255, 0.08);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+    animation: fadeInUpCentered 0.3s ease forwards;
   }
 
   .scroll-top-btn svg {
