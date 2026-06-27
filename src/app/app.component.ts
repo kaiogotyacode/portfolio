@@ -67,6 +67,21 @@ export class AppComponent implements OnInit {
 
   title = 'Portfolio';
   currentYear = new Date().getFullYear();
+
+  get mantyzDuration(): string {
+    const start = new Date(2024, 10); // Nov 2024 (month is 0-indexed)
+    const now = new Date();
+    let months = (now.getFullYear() - start.getFullYear()) * 12 + (now.getMonth() - start.getMonth()) + 1; // inclusive, like LinkedIn
+    const years = Math.floor(months / 12);
+    const remainingMonths = months % 12;
+    const endLabel = `Present`;
+    const duration = years > 0
+      ? remainingMonths > 0
+        ? `${years} yr ${remainingMonths} mos`
+        : `${years} yr`
+      : `${remainingMonths} mos`;
+    return `Nov 2024 – ${endLabel} · ${duration}`;
+  }
   dropMenu: boolean = false;
   dropModal: boolean = false;
   workHistoryExpanded: boolean = false;
