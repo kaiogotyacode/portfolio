@@ -72,12 +72,17 @@
   <div class="absolute bottom-0 left-0 right-0 z-50 pointer-events-none neon-hero-glow"></div>
   <!-- Neon top border -->
   <div class="absolute top-0 left-0 right-0 z-50 pointer-events-none neon-hero-top-glow"></div>
-  <!-- Film intro overlay – hero scoped (repeats) -->
-  <div *ngIf="filmIntro && !filmIntroFull" class="film-overlay film-overlay--hero">
-    <div class="film-text-wrapper">
+  <!-- Film intro overlay – hero loop (CSS-driven: KR 3s / WELCOME 27s) -->
+  <div *ngIf="filmHeroLoop" class="film-overlay film-overlay--hero film-overlay--fixed">
+    <div class="film-loop-slide film-text-loop-kr">
       <span class="film-eyebrow">PRESENTS</span>
       <span class="film-brand">KR INNOVATION LAB</span>
       <span class="film-line"></span>
+    </div>
+    <div class="film-loop-slide film-text-loop-welcome">
+      <span class="film-brand">{{ translate.language === 'portuguese' ? 'BEM-VINDO' : 'WELCOME' }}</span>
+      <span class="film-line"></span>
+      <span class="film-eyebrow film-scroll-hint">{{ translate.language === 'portuguese' ? 'Role para baixo para mais detalhes' : 'Scroll down for more details' }}</span>
     </div>
   </div>
 </div>

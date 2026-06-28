@@ -10,7 +10,7 @@ import { Translate } from 'src/models/translate';
 export class AppComponent implements OnInit {
 
   ngOnInit(): void {
-    this.translate = this.portugueseLanguage;
+    this.translate = this.englishLanguage;
     setTimeout(() => {
       this.triggerFilmIntro(true);
       // Remove the pre-loader only after the film overlay (opacity:1) is guaranteed rendered
@@ -21,14 +21,16 @@ export class AppComponent implements OnInit {
           setTimeout(() => loader.remove(), 300);
         }
       }, 100);
+      // After the full intro ends (6000ms) + 10s, start the hero loop
+      setTimeout(() => {
+        this.filmHeroLoop = true;
+      }, 6000 + 10000);
     }, 600);
-    setInterval(() => {
-      if (!document.hidden) this.triggerFilmIntro(false);
-    }, 30000);
   }
 
   filmIntro: boolean = false;
   filmIntroFull: boolean = false;
+  filmHeroLoop: boolean = false;
   typingText: string = '';
   showCursor: boolean = false;
   filmElevateZoom: boolean = false;

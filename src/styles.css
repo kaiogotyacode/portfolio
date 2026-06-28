@@ -897,6 +897,65 @@ html {
   100% { opacity: 0; transform: translateX(60px); }
 }
 
+.film-overlay--fixed {
+  animation: filmOverlayFixed 1.2s ease-in-out forwards;
+}
+
+@keyframes filmOverlayFixed {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* ── Hero loop slides (30s cycle: KR 3s + WELCOME 27s) ── */
+
+.film-loop-slide {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  will-change: opacity, transform;
+  opacity: 0;
+}
+
+/* KR: 0-3s (0-10%) — enter 0.8s, stay 1.4s, exit 0.8s, hidden 27s */
+.film-text-loop-kr {
+  animation: filmLoopKr 30s linear infinite;
+}
+
+/* WELCOME: 3-30s (10-100%) — hidden 3s, enter 0.8s, stay 25.4s, exit 0.8s */
+.film-text-loop-welcome {
+  animation: filmLoopWelcome 30s linear infinite;
+}
+
+@keyframes filmLoopKr {
+  0%     { opacity: 0; transform: translateX(-60px); }
+  2.67%  { opacity: 1; transform: translateX(0); }
+  7.33%  { opacity: 1; transform: translateX(0); }
+  10%    { opacity: 0; transform: translateX(60px); }
+  10.01% { opacity: 0; transform: translateX(-60px); }
+  100%   { opacity: 0; transform: translateX(-60px); }
+}
+
+@keyframes filmLoopWelcome {
+  0%     { opacity: 0; transform: translateX(-60px); }
+  10%    { opacity: 0; transform: translateX(-60px); }
+  12.67% { opacity: 1; transform: translateX(0); }
+  97.33% { opacity: 1; transform: translateX(0); }
+  100%   { opacity: 0; transform: translateX(60px); }
+}
+
+.film-scroll-hint {
+  letter-spacing: 0.25em;
+  font-size: clamp(8px, 1vw, 11px);
+  margin-top: 4px;
+}
+
+/* ── Loop slide font overrides (+30%) ── */
+.film-loop-slide .film-brand    { font-size: clamp(23px, 5.2vw, 55px); }
+.film-loop-slide .film-eyebrow  { font-size: clamp(12px, 1.56vw, 17px); }
+.film-loop-slide .film-scroll-hint { font-size: clamp(10px, 1.3vw, 14px); }
+
 /* ── Work History Section ───────────────────────────────────────── */
 
 .wh-timeline {
