@@ -107,7 +107,7 @@ export class AppComponent implements OnInit {
     presentationTitle: "Apresentação",
     projectTitle: "Projetos",
     workHistoryTitle: "Histórico Profissional",
-    presentationLink: "https://www.youtube.com/embed/dncGus0asoA",
+    presentationLink: "https://www.youtube.com/embed/rOvp10qQkJk",
 
     yaBuyDescription: "Plataforma de e-commerce para o público Geek, com integrações a Correios, Frenet, Mercado Pago e Stripe. Atuei como líder técnico coordenando mais 2 devs front-end. Projeto ativo em todo o Brasil e em constante evolução.",
     eraConectividadeDescription: "TCC desenvolvido na Fatec Rio Preto explorando IoT, AWS Lambda, Tuya e IA. A solução integrava essas tecnologias por meio de jobs acionados via Amazon Alexa, entregando uma funcionalidade coesa e de alto nível.",
@@ -143,7 +143,7 @@ export class AppComponent implements OnInit {
     presentationTitle: "Presentation",
     projectTitle: "Projects",
     workHistoryTitle: "Work History",
-    presentationLink: "https://www.youtube.com/embed/eJh1fKJgL0g",
+    presentationLink: "https://www.youtube.com/embed/IVPdjYeRUPU",
 
     yaBuyDescription: "E-commerce platform for the Geek community, with integrations for Correios, Frenet, Mercado Pago, and Stripe. I served as technical lead coordinating 2 additional front-end developers. Project active across Brazil and continuously evolving.",
     eraConectividadeDescription: "College thesis developed at Fatec Rio Preto exploring IoT, AWS Lambda, Tuya, and AI. The solution integrated these technologies through jobs triggered via Amazon Alexa, delivering a cohesive, high-quality feature.",
