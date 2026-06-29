@@ -4,8 +4,9 @@
 .slide-container {
   max-width: 1120px;
   width: 100%;
-  padding: 40px 0;
+  padding: 40px 0 50px;
   font-family: 'Poppins', sans-serif;
+  overflow: visible !important;
 }
 
 .slide-content {
@@ -30,7 +31,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 420px;
 }
 
 .card::before {
@@ -70,6 +71,11 @@
 
 .card-content {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 14px 8px;
 }
 
 .image-content {
@@ -166,24 +172,34 @@
   color: #8a8078;
   text-align: center;
   line-height: 1.65;
+  min-height: 110px;
+  max-height: 110px;
   overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  flex-shrink: 0;
 }
 
 .button {
-  border: 1px solid rgba(200, 185, 170, 0.4);
+  display: block;
+  width: 100%;
+  border: none;
+  border-top: 1px solid rgba(200, 185, 170, 0.15);
+  border-radius: 0 0 25px 25px;
   font-size: 13px;
   font-weight: 500;
   color: #c8bdb0;
-  padding: 10px 22px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(120, 90, 60, 0.06));
-  border-radius: 8px;
-  margin: auto 14px 14px;
+  padding: 14px 22px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(80, 60, 40, 0.08));
+  flex-shrink: 0;
   cursor: pointer;
   transition: all 0.35s ease;
   text-transform: uppercase;
   letter-spacing: 1.5px;
+  text-align: center;
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 14px rgba(255, 255, 255, 0.05), inset 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
   position: relative;
   overflow: hidden;
 }
@@ -204,12 +220,10 @@
 }
 
 .button:hover {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(160, 120, 80, 0.12));
-  box-shadow: 0 0 28px rgba(255, 255, 255, 0.2), 0 0 56px rgba(200, 170, 140, 0.08);
-  border-color: rgba(240, 230, 220, 0.75);
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(160, 120, 80, 0.12));
   color: #fff;
   text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+  letter-spacing: 2px;
 }
 
 .swiper-navBtn {
@@ -236,6 +250,10 @@
   left: 0;
 }
 
+.swiper-pagination {
+  bottom: -28px !important;
+}
+
 .swiper-pagination-bullet {
   background-color: rgba(160, 140, 120, 0.4) !important;
   opacity: 1 !important;
@@ -254,5 +272,20 @@
   }
   .swiper-navBtn {
     display: none;
+  }
+  .card {
+    height: 400px;
+  }
+  .card-image {
+    height: 120px;
+    width: 120px;
+  }
+  .image-content {
+    padding: 20px 0;
+  }
+  .description {
+    min-height: 100px;
+    max-height: 100px;
+    -webkit-line-clamp: 5;
   }
 }

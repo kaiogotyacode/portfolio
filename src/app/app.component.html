@@ -128,7 +128,7 @@
 <div class="section-divider"></div>
 
 <!-- [3] -->
-<div id="projects" class="w-full h-[80vh] bg-gray-500 relative overflow-hidden flex flex-col justify-center">
+<div id="projects" class="w-full h-[88vh] bg-gray-500 relative overflow-hidden flex flex-col justify-center">
   <!-- Dark section overlay -->
   <div class="section-dark-overlay"></div>
   <div class="w-full z-10">
@@ -141,8 +141,8 @@
 
   <div class="w-full z-10 mt-10 flex justify-center items-center">
 
-    <div class="slide-container swiper w-full lg:w-[90vw] h-[60vh] max-h-[450px] max-w-[1300px] flex justify-center">
-      <div class="slide-content w-[90vw] md:w-[85vw] lg:w-[75vw] xl:w-[60vw] max-h-[400px]">
+    <div class="slide-container swiper w-full lg:w-[90vw] max-w-[1300px] flex justify-center">
+      <div class="slide-content w-[90vw] md:w-[85vw] lg:w-[75vw] xl:w-[60vw]">
         <div class="card-wrapper swiper-wrapper">
 
           <div class="card swiper-slide">
@@ -153,12 +153,11 @@
                   class="card-img">
               </div>
             </div>
-
             <div class="card-content">
               <h2 class="name">YaBuy</h2>
               <p class="description font-montserrat">{{ translate.yaBuyDescription }}</p>
-              <a (click)="openModalDetailed(listProjectModal[0])" class="button">{{translate.viewMore}}</a>
             </div>
+            <a (click)="openModalDetailed(listProjectModal[0])" class="button">{{translate.viewMore}}</a>
           </div>
 
           <div class="card swiper-slide">
@@ -169,12 +168,11 @@
                   class="card-img">
               </div>
             </div>
-
             <div class="card-content">
               <h2 class="name">A era da conectividade</h2>
               <p class="description font-montserrat">{{ translate.eraConectividadeDescription }}</p>
-              <a (click)="openModalDetailed(listProjectModal[1])" class="button">{{translate.viewMore}}</a>
             </div>
+            <a (click)="openModalDetailed(listProjectModal[1])" class="button">{{translate.viewMore}}</a>
           </div>
 
           <div class="card swiper-slide">
@@ -184,12 +182,11 @@
                 <img loading="lazy" src="https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782398185/valinorIcon_vjsoxv.png" class="card-img">
               </div>
             </div>
-
             <div class="card-content">
-              <h2 class="name">Valinor </h2>
-              <p class="description"> {{translate.valinorDescription}} </p>
-              <a (click)="openModalDetailed(listProjectModal[2])" class="button">{{translate.viewMore}}</a>
+              <h2 class="name">Valinor</h2>
+              <p class="description">{{translate.valinorDescription}}</p>
             </div>
+            <a (click)="openModalDetailed(listProjectModal[2])" class="button">{{translate.viewMore}}</a>
           </div>
 
           <div class="card swiper-slide">
@@ -199,29 +196,25 @@
                 <img loading="lazy" src="https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782399437/PicPayChallenge_maz0yo.png" class="card-img">
               </div>
             </div>
-
             <div class="card-content">
-              <h2 class="name"> GotyaBank </h2>
-              <p class="description"> {{translate.gotyaBankDescription}} </p>
-              <a (click)="openModalDetailed(listProjectModal[3])" class="button">{{translate.viewMore}}</a>
+              <h2 class="name">GotyaBank</h2>
+              <p class="description">{{translate.gotyaBankDescription}}</p>
             </div>
+            <a (click)="openModalDetailed(listProjectModal[3])" class="button">{{translate.viewMore}}</a>
           </div>
 
           <div class="card swiper-slide">
             <div class="image-content">
               <span class="overlay" style="background: #55753e;"></span>
-
               <div class="card-image">
                 <img loading="lazy" src="https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782398185/tirodeguerra_mxumd3.webp" class="card-img">
               </div>
             </div>
-
             <div class="card-content">
-              <h2 class="name"> Tiro de Guerra </h2>
-              <p class="description"> {{ translate.tiroDeGuerraDescription }}</p>
-
-              <a (click)="openModalDetailed(listProjectModal[4])" class="button">{{translate.viewMore}}</a>
+              <h2 class="name">Tiro de Guerra</h2>
+              <p class="description">{{ translate.tiroDeGuerraDescription }}</p>
             </div>
+            <a (click)="openModalDetailed(listProjectModal[4])" class="button">{{translate.viewMore}}</a>
           </div>
 
           <div class="card swiper-slide">
@@ -231,12 +224,11 @@
                 <img loading="lazy" src="https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782398185/Taskmanagement_wnt3hy.png" class="card-img">
               </div>
             </div>
-
             <div class="card-content">
-              <h2 class="name">Task Management </h2>
-              <p class="description"> {{ translate.taskManagementDescription }} </p>
-              <a (click)="openModalDetailed(listProjectModal[5])" class="button">{{translate.viewMore}}</a>
+              <h2 class="name">Task Management</h2>
+              <p class="description">{{ translate.taskManagementDescription }}</p>
             </div>
+            <a (click)="openModalDetailed(listProjectModal[5])" class="button">{{translate.viewMore}}</a>
           </div>
 
           <div class="card swiper-slide">
@@ -247,12 +239,11 @@
                   class="card-img">
               </div>
             </div>
-
             <div class="card-content">
-              <h2 class="name"> Sorvete's Cream </h2>
-              <p class="description font-montserrat"> {{ translate.sorvetesCreamDescription}}</p>
-              <a (click)="openModalDetailed(listProjectModal[6])" class="button">{{translate.viewMore}}</a>
+              <h2 class="name">Sorvete's Cream</h2>
+              <p class="description font-montserrat">{{ translate.sorvetesCreamDescription }}</p>
             </div>
+            <a (click)="openModalDetailed(listProjectModal[6])" class="button">{{translate.viewMore}}</a>
           </div>
 
           <div class="card swiper-slide">
@@ -263,12 +254,11 @@
                   class="card-img">
               </div>
             </div>
-
             <div class="card-content">
-              <h2 class="name">Hit it Harder </h2>
-              <p class="description"> {{ translate.hitItHarderDescription}} </p>
-              <a (click)="openModalDetailed(listProjectModal[7])" class="button">{{translate.viewMore}}</a>
+              <h2 class="name">Hit it Harder</h2>
+              <p class="description">{{ translate.hitItHarderDescription }}</p>
             </div>
+            <a (click)="openModalDetailed(listProjectModal[7])" class="button">{{translate.viewMore}}</a>
           </div>
 
           <div class="card swiper-slide">
@@ -278,12 +268,11 @@
                 <img loading="lazy" src="https://res.cloudinary.com/dw5vgi1w1/image/upload/v1782398184/github_yf6fpq.webp" class="card-img">
               </div>
             </div>
-
             <div class="card-content">
-              <h2 class="name">GitHub Repositories </h2>
-              <p class="description"> {{translate.gitHubDescription}} </p>
-              <a (click)="openModalDetailed(listProjectModal[8])" class="button">{{translate.viewMore}}</a>
+              <h2 class="name">GitHub Repositories</h2>
+              <p class="description">{{translate.gitHubDescription}}</p>
             </div>
+            <a (click)="openModalDetailed(listProjectModal[8])" class="button">{{translate.viewMore}}</a>
           </div>
 
         </div>
