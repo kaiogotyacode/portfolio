@@ -956,94 +956,49 @@ html {
 .film-loop-slide .film-eyebrow  { font-size: clamp(12px, 1.56vw, 17px); }
 .film-loop-slide .film-scroll-hint { font-size: clamp(10px, 1.3vw, 14px); }
 
-/* ── Scroll-down arrows – 3 independent portal arrows ──────────────────────
-   Each arrow is its own entity: enters P1 (top), descends, exits P2 (bottom),
-   snaps invisibly back above P1. No groups.
-
-   3 arrows offset by T/3 = 3s → at any moment each is at a different
-   point in the cycle, creating the "snake through portal" split effect.
-
-   Velocity profile: scale = 110/3530 ≈ 0.031 (user-spec integrated).
-   Slow start (gravity from rest), fast mid, slow end (approaching P2).
-*/
-.film-scroll-arrows {
+/* ── Dot Arrow – fixed downward arrow with directional wave blink ──────── */
+.dot-arrow {
   position: absolute;
-  top: calc(100% + 10px);
+  top: calc(100% + 12px);
   left: 50%;
   transform: translateX(-50%);
-  width: 20px;
-  height: 110px;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
 }
 
-.film-scroll-arrow {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  display: block;
-  width: 10px;
-  height: 10px;
-  border-right: 1.5px solid rgba(220, 210, 200, 0.9);
-  border-bottom: 1.5px solid rgba(220, 210, 200, 0.9);
+.dot-arrow-row {
+  display: flex;
+  gap: 5px;
   opacity: 0;
+  animation: dotArrowWave 3.5s ease-in-out infinite;
+  animation-fill-mode: backwards;
 }
 
-/*
-  Cycle 20s — each arrow visible for 45% (~9s), invisible 55% (~11s).
-  With 2 arrows at T/2 = -10s offset, they alternate with no overlap:
-    Arrow 1 visible: 0.7s–9.7s | Arrow 2 visible: 10.7s–19.7s | ~1s gap each.
+.dot-arrow-row:nth-child(1)  { animation-delay: 0s; }
+.dot-arrow-row:nth-child(2)  { animation-delay: 0.25s; }
+.dot-arrow-row:nth-child(3)  { animation-delay: 0.5s; }
+.dot-arrow-row:nth-child(4)  { animation-delay: 0.75s; }
+.dot-arrow-row:nth-child(5)  { animation-delay: 1s; }
+.dot-arrow-row:nth-child(6)  { animation-delay: 1.25s; }
+.dot-arrow-row:nth-child(7)  { animation-delay: 1.5s; }
+.dot-arrow-row:nth-child(8)  { animation-delay: 1.75s; }
+.dot-arrow-row:nth-child(9)  { animation-delay: 2s; }
+.dot-arrow-row:nth-child(10) { animation-delay: 2.25s; }
 
-  Velocity profile (absolute durations identical to before):
-    3.5–6%:    8px/s   slow creep  (0.5s)
-    6–6.75%:   33px/s  accel step 1
-    6.75–7.5%: 87px/s  accel step 2
-    7.5–8.75%: 144px/s BULLET PEAK (18× slow)
-    8.75–10%:  72px/s  post-bullet
-    10–11%:    30px/s  decel step 1
-    11–14%:    10px/s  decel step 2
-    14–20%:    5px/s   decel step 3
-    20–27.5%:  3.3px/s decel step 4
-    27.5–34%:  3.1px/s decel step 5
-    34–39.5%:  2.7px/s decel step 6
-    39.5–44%:  2.2px/s decel step 7
-    44–47%:    1.7px/s bleeds to stop
-*/
-.film-scroll-arrows .film-scroll-arrow:nth-child(1) { animation: filmArrowPortal 20s linear 0s   infinite; }
-.film-scroll-arrows .film-scroll-arrow:nth-child(2) { animation: filmArrowPortal 20s linear -10s  infinite; }
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: rgba(220, 210, 200, 0.9);
+}
 
-@keyframes filmArrowPortal {
-  /* entering P1 */
-  0%     { transform: translateX(-50%) translateY(-14px) rotate(45deg); opacity: 0; }
-  3.5%   { transform: translateX(-50%) translateY(0px)   rotate(45deg); opacity: 1; }
-
-  /* slow creep: 0→4px */
-  4.75%  { transform: translateX(-50%) translateY(2px)   rotate(45deg); }
-  6%     { transform: translateX(-50%) translateY(4px)   rotate(45deg); }
-
-  /* acceleration into bullet */
-  6.75%  { transform: translateX(-50%) translateY(9px)   rotate(45deg); }
-  7.5%   { transform: translateX(-50%) translateY(22px)  rotate(45deg); }
-
-  /* BULLET PEAK: 22→58px */
-  8.75%  { transform: translateX(-50%) translateY(58px)  rotate(45deg); }
-
-  /* post-bullet + stepped deceleration */
-  10%    { transform: translateX(-50%) translateY(76px)  rotate(45deg); }
-  11%    { transform: translateX(-50%) translateY(82px)  rotate(45deg); }
-  14%    { transform: translateX(-50%) translateY(88px)  rotate(45deg); }
-  20%    { transform: translateX(-50%) translateY(94px)  rotate(45deg); }
-  27.5%  { transform: translateX(-50%) translateY(99px)  rotate(45deg); }
-  34%    { transform: translateX(-50%) translateY(103px) rotate(45deg); }
-  39.5%  { transform: translateX(-50%) translateY(106px) rotate(45deg); }
-  44%    { transform: translateX(-50%) translateY(108px) rotate(45deg); }
-  47%    { transform: translateX(-50%) translateY(109px) rotate(45deg); opacity: 1; }
-
-  /* exiting P2 */
-  48.5%  { transform: translateX(-50%) translateY(110px) rotate(45deg); opacity: 0; }
-
-  /* invisible — snap back above P1, wait for next cycle */
-  50%    { transform: translateX(-50%) translateY(-14px) rotate(45deg); opacity: 0; }
-  100%   { transform: translateX(-50%) translateY(-14px) rotate(45deg); opacity: 0; }
+@keyframes dotArrowWave {
+  0%   { opacity: 0; }
+  20%  { opacity: 1; }
+  75%  { opacity: 0; }
+  100% { opacity: 0; }
 }
 
 /* ── Work History Section ───────────────────────────────────────── */
