@@ -815,6 +815,8 @@ html {
   position: absolute;
   inset: 0;
   z-index: 60;
+  animation: none;
+  opacity: 1;
 }
 
 .film-text-wrapper {
@@ -906,6 +908,17 @@ html {
   100% { opacity: 1; }
 }
 
+/* ── Filmmaker paint sweep (intro → loop transition) — animated by GSAP ── */
+.film-paint-overlay {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  z-index: 65;
+  pointer-events: none;
+  opacity: 0;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+}
+
 /* ── Hero loop slides (30s cycle: KR 3s + WELCOME 27s) ── */
 
 .film-loop-slide {
@@ -918,31 +931,48 @@ html {
   opacity: 0;
 }
 
-/* KR: 0-3s (0-10%) — enter 0.8s, stay 1.4s, exit 0.8s, hidden 27s */
+/* KR: 0-3s (0-10%) — enter 0.33s expo-out, hold 2.1s, exit 0.27s expo-in */
 .film-text-loop-kr {
   animation: filmLoopKr 30s linear infinite;
 }
 
-/* WELCOME: 3-30s (10-100%) — hidden 3s, enter 0.8s, stay 25.4s, exit 0.8s */
+/* WELCOME: 3-30s (10-100%) — enter 0.33s expo-out, hold ~25.8s, exit 0.27s expo-in */
 .film-text-loop-welcome {
   animation: filmLoopWelcome 30s linear infinite;
 }
 
 @keyframes filmLoopKr {
-  0%     { opacity: 0; transform: translateX(-60px); }
-  2.67%  { opacity: 1; transform: translateX(0); }
-  7.33%  { opacity: 1; transform: translateX(0); }
-  10%    { opacity: 0; transform: translateX(60px); }
-  10.01% { opacity: 0; transform: translateX(-60px); }
-  100%   { opacity: 0; transform: translateX(-60px); }
+  0% {
+    opacity: 0;
+    transform: translateX(-160px);
+    animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  }
+  1.1%  { opacity: 1; transform: translateX(0); }
+  8.1% {
+    opacity: 1;
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0.9, 0, 1, 0.15);
+  }
+  9%    { opacity: 0; transform: translateX(120px); }
+  9.01% { opacity: 0; transform: translateX(-160px); }
+  100%  { opacity: 0; transform: translateX(-160px); }
 }
 
 @keyframes filmLoopWelcome {
-  0%     { opacity: 0; transform: translateX(-60px); }
-  10%    { opacity: 0; transform: translateX(-60px); }
-  12.67% { opacity: 1; transform: translateX(0); }
-  97.33% { opacity: 1; transform: translateX(0); }
-  100%   { opacity: 0; transform: translateX(60px); }
+  0%  { opacity: 0; transform: translateX(-160px); }
+  10% {
+    opacity: 0;
+    transform: translateX(-160px);
+    animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  }
+  11.1%  { opacity: 1; transform: translateX(0); }
+  97.1% {
+    opacity: 1;
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0.9, 0, 1, 0.15);
+  }
+  98%  { opacity: 0; transform: translateX(120px); }
+  100% { opacity: 0; transform: translateX(120px); }
 }
 
 .film-scroll-hint {
@@ -1174,49 +1204,34 @@ html {
   }
 }
 
-/* ── Dot Arrow – fixed downward arrow with directional wave blink ──────── */
-.dot-arrow {
+/* ── Scroll Mouse – standard creative/filmmaker scroll indicator ── */
+.scroll-mouse {
   position: absolute;
-  top: calc(100% + 12px);
+  top: calc(100% + 16px);
   left: 50%;
   transform: translateX(-50%);
+  width: 22px;
+  height: 36px;
+  border: 1.5px solid rgba(220, 210, 200, 0.45);
+  border-radius: 11px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
+  justify-content: center;
 }
 
-.dot-arrow-row {
-  display: flex;
-  gap: 5px;
-  opacity: 0;
-  animation: dotArrowWave 3.5s ease-in-out infinite;
-  animation-fill-mode: backwards;
+.scroll-mouse__wheel {
+  width: 3px;
+  height: 7px;
+  background: rgba(220, 210, 200, 0.8);
+  border-radius: 2px;
+  margin-top: 5px;
+  animation: scrollMouseWheel 1.9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
-.dot-arrow-row:nth-child(1)  { animation-delay: 0s; }
-.dot-arrow-row:nth-child(2)  { animation-delay: 0.25s; }
-.dot-arrow-row:nth-child(3)  { animation-delay: 0.5s; }
-.dot-arrow-row:nth-child(4)  { animation-delay: 0.75s; }
-.dot-arrow-row:nth-child(5)  { animation-delay: 1s; }
-.dot-arrow-row:nth-child(6)  { animation-delay: 1.25s; }
-.dot-arrow-row:nth-child(7)  { animation-delay: 1.5s; }
-.dot-arrow-row:nth-child(8)  { animation-delay: 1.75s; }
-.dot-arrow-row:nth-child(9)  { animation-delay: 2s; }
-.dot-arrow-row:nth-child(10) { animation-delay: 2.25s; }
-
-.dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: rgba(220, 210, 200, 0.9);
-}
-
-@keyframes dotArrowWave {
-  0%   { opacity: 0; }
-  20%  { opacity: 1; }
-  75%  { opacity: 0; }
-  100% { opacity: 0; }
+@keyframes scrollMouseWheel {
+  0%   { opacity: 1; transform: translateY(0); }
+  60%  { opacity: 0; transform: translateY(14px); }
+  61%  { opacity: 0; transform: translateY(0); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 /* ── Work History Section ───────────────────────────────────────── */

@@ -1,6 +1,7 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ProjectModal } from 'src/models/projectModal';
 import { Translate } from 'src/models/translate';
+import { gsap } from 'gsap';
 
 @Component({
   selector: 'app-root',
@@ -21,16 +22,36 @@ export class AppComponent implements OnInit {
           setTimeout(() => loader.remove(), 300);
         }
       }, 100);
-      // After the full intro ends (6000ms) + 10s, start the hero loop
+      // Start paint sweep as the KR intro begins fading (92% of 6s = 5520ms)
       setTimeout(() => {
-        this.filmHeroLoop = true;
-      }, 6000 + 10000);
+        this.filmPaintOverlay = true;
+        setTimeout(() => {
+          const el = document.querySelector('.film-paint-overlay') as HTMLElement;
+          if (!el) return;
+          const tl = gsap.timeline({
+            onComplete: () => {
+              setTimeout(() => { this.filmHeroLoop = true; }, 0);
+              gsap.to(el, {
+                opacity: 0, duration: 0.4, ease: 'power1.in',
+                onComplete: () => { setTimeout(() => { this.filmPaintOverlay = false; }, 0); }
+              });
+            }
+          });
+          tl.to(el, { opacity: 1, duration: 0.35, ease: 'power1.in' });
+          tl.fromTo(el,
+            { clipPath: 'polygon(0% 0%, 100% 0%, 100% 3%, 88% 0%, 76% 4%, 64% 1%, 52% 5%, 38% 0%, 24% 3%, 12% 7%, 4% 2%, 0% 5%)' },
+            { clipPath: 'polygon(0% 0%, 100% 0%, 100% 106%, 88% 102%, 76% 108%, 64% 103%, 52% 107%, 38% 102%, 24% 108%, 12% 103%, 4% 107%, 0% 110%)', duration: 2.2, ease: 'power2.inOut' },
+            '<'
+          );
+        }, 50);
+      }, 5500);
     }, 600);
   }
 
   filmIntro: boolean = false;
   filmIntroFull: boolean = false;
   filmHeroLoop: boolean = false;
+  filmPaintOverlay: boolean = false;
   typingText: string = '';
   showCursor: boolean = false;
   filmElevateZoom: boolean = false;
