@@ -308,19 +308,77 @@ export class AppComponent implements OnInit {
   }
 
   showScrollTop: boolean = false;
+  private snapTimer: any = null;
+  private isSnapping = false;
 
   @HostListener('window:scroll')
   onWindowScroll() {
     this.showScrollTop = window.scrollY > 300;
+    if (this.isSnapping) return;
+    clearTimeout(this.snapTimer);
+    this.snapTimer = setTimeout(() => this.performSnap(), 150);
+  }
+
+  private getSnapPoints(): number[] {
+    const sectionIds = ['presentation', 'projects', 'work-history', 'contact'];
+    const sections = sectionIds
+      .map(id => document.getElementById(id))
+      .filter(Boolean) as HTMLElement[];
+
+    const viewH = window.innerHeight;
+    const targets = sections.map(sec => {
+      const secH = sec.offsetHeight;
+      // Center section in viewport so both dividers above/below are equally visible.
+      // For sections taller than viewport, fall back to plain offsetTop.
+      if (secH >= viewH) return sec.offsetTop;
+      return Math.max(0, sec.offsetTop - (viewH - secH) / 2);
+    });
+
+    return [0, ...targets];
+  }
+
+  private performSnap(): void {
+    if (document.body.style.overflow === 'hidden') return;
+    if (this.dropModal) return;
+
+    const scrollY = window.scrollY;
+    const threshold = window.innerHeight * 0.2;
+    const snapPoints = this.getSnapPoints();
+
+    let nearest: number | null = null;
+    let nearestDist = Infinity;
+
+    for (const point of snapPoints) {
+      const dist = Math.abs(point - scrollY);
+      if (dist < threshold && dist < nearestDist) {
+        nearestDist = dist;
+        nearest = point;
+      }
+    }
+
+    if (nearest !== null) this.snapTo(nearest);
+  }
+
+  private snapTo(targetY: number): void {
+    if (Math.abs(window.scrollY - targetY) < 5) return;
+    this.isSnapping = true;
+    window.scrollTo({ top: targetY, behavior: 'smooth' });
+    setTimeout(() => { this.isSnapping = false; }, 1000);
   }
 
   scrollToTop() {
+    this.isSnapping = true;
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => { this.isSnapping = false; }, 1000);
   }
 
   scrollToSection(id: string) {
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (el) {
+      this.isSnapping = true;
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(() => { this.isSnapping = false; }, 1000);
+    }
   }
 
   dropdownMenu() {
@@ -338,17 +396,11 @@ export class AppComponent implements OnInit {
     this.dropModal = true;
     this.currentProjectModal = modal;
     this.ModalDetailed();
-    (window as any).swiperModalOpen = true;
-    (window as any).projectSwiper?.autoplay.stop();
   }
 
   closeModalDetailed() {
     this.dropModal = !this.dropModal;
     this.currentProjectModal = undefined;
-    (window as any).swiperModalOpen = false;
-    if ((window as any).swiperSectionVisible) {
-      (window as any).projectSwiper?.autoplay.start();
-    }
   }
 
   ModalDetailed() {
