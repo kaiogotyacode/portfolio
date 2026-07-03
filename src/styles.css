@@ -143,14 +143,58 @@ html {
     text-shadow: 0 0 14px rgba(255, 255, 255, 0.7);
 }
 
-.modal-mobile {
-  @apply absolute w-full h-auto min-h-[600px] z-20 flex flex-col items-center justify-start;
+/* ── Modal overlay backdrop ────────────────────────────────────── */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.modal-panel {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
   background: linear-gradient(160deg, rgba(14, 10, 7, 0.98) 0%, rgba(6, 4, 3, 1) 100%);
   border: 1px solid rgba(200, 185, 170, 0.2);
   box-shadow:
     0 0 60px rgba(0, 0, 0, 0.85),
     0 0 120px rgba(0, 0, 0, 0.6),
     inset 0 0 40px rgba(0, 0, 0, 0.4);
+  transform: scale(0.96) translateY(10px);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(200, 185, 170, 0.2) transparent;
+}
+
+.modal-panel::-webkit-scrollbar {
+  width: 4px;
+}
+
+.modal-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-panel::-webkit-scrollbar-thumb {
+  background: rgba(200, 185, 170, 0.2);
+  border-radius: 2px;
+}
+
+.modal-active .modal-panel {
+  transform: scale(1) translateY(0);
 }
 
 /* ── Navbar brand text ─────────────────────────────────────────── */
@@ -1589,24 +1633,31 @@ html {
 
 @media screen and (max-width: 600px) {
   .wh-timeline {
-    padding: 0 12px;
+    padding: 0 16px;
   }
 
+  /* Hide the decorative timeline line and dot column — too much horizontal waste */
   .wh-timeline::before {
-    left: 31px; /* 12px + 19px (centre of 38px marker) */
+    display: none;
   }
 
   .wh-entry-marker {
-    width: 38px;
+    display: none;
   }
 
-  .wh-logo {
-    width: 42px;
-    height: 42px;
+  .wh-entry {
+    display: block;
+    margin-bottom: 20px;
   }
 
   .wh-card {
-    padding: 14px 12px 12px;
+    margin-left: 0;
+    padding: 16px;
+  }
+
+  .wh-logo {
+    width: 44px;
+    height: 44px;
   }
 
   .wh-role-title {
@@ -1614,8 +1665,7 @@ html {
   }
 
   .wh-expand-trigger {
-    padding-left: 50px; /* 38px marker + 12px gap */
-    justify-content: flex-start;
+    justify-content: center;
   }
 }
 
@@ -1625,8 +1675,6 @@ html {
   display: flex;
   justify-content: center;
   padding: 4px 0 20px;
-  /* sits between marker col and card, aligned with cards */
-  padding-left: 64px; /* 46px marker + 18px gap */
 }
 
 .wh-expand-btn {

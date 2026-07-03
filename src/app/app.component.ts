@@ -395,12 +395,13 @@ export class AppComponent implements OnInit {
   openModalDetailed(modal: ProjectModal) {
     this.dropModal = true;
     this.currentProjectModal = modal;
-    this.ModalDetailed();
+    document.body.style.overflow = 'hidden';
   }
 
   closeModalDetailed() {
-    this.dropModal = !this.dropModal;
+    this.dropModal = false;
     this.currentProjectModal = undefined;
+    document.body.style.overflow = '';
   }
 
   ModalDetailed() {

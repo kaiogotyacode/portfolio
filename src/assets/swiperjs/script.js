@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
     loop: false,
     centerSlide: 'true',
     fade: 'true',
-    grabCursor: 'true',
+    grabCursor: true,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
