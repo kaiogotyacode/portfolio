@@ -6,7 +6,7 @@
     <span class="film-line"></span>
   </div>
   <div class="film-elevate-wrapper" [class.film-elevate-zoom]="filmElevateZoom">
-    <span>{{ typingText }}</span><span class="film-type-cursor" [class.film-cursor-visible]="showCursor">_</span>
+    <span class="film-elevate-text">{{ typingText }}<span class="film-type-cursor" [class.film-cursor-visible]="showCursor">_</span></span>
   </div>
 </div>
 
@@ -75,6 +75,7 @@
   <!-- Paint sweep overlay – filmmaker top-to-bottom reveal -->
   <div *ngIf="filmPaintOverlay" class="film-paint-overlay"></div>
   <!-- Film intro overlay – hero loop (CSS-driven: KR 3s / WELCOME 27s) -->
+  <div class="section-fade-bottom"></div>
   <div *ngIf="filmHeroLoop" class="film-overlay film-overlay--hero">
     <div class="film-loop-slide film-text-loop-kr">
       <span class="film-eyebrow">PRESENTS</span>
@@ -98,6 +99,7 @@
 
 <!-- [2] -->
 <div id="presentation" class="w-full min-h-[80vh] bg-gray-500 relative overflow-hidden flex flex-col justify-center py-10">
+  <div class="section-fade-top"></div>
   <!-- Dark section overlay -->
   <div class="section-dark-overlay"></div>
   <p
@@ -146,13 +148,14 @@
       </div>
     </div>
   </div>
-
+  <div class="section-fade-bottom"></div>
 </div>
 
 <div class="section-divider"></div>
 
 <!-- [3] -->
 <div id="projects" class="w-full h-[88vh] bg-gray-500 relative overflow-hidden flex flex-col justify-center">
+  <div class="section-fade-top"></div>
   <!-- Dark section overlay -->
   <div class="section-dark-overlay"></div>
   <div class="w-full z-10">
@@ -392,14 +395,14 @@
     </div>
 
   </div>
-
+  <div class="section-fade-bottom"></div>
 </div>
 
 <div class="section-divider"></div>
 
 <!-- [work-history] -->
 <div id="work-history" class="w-full bg-black relative overflow-hidden py-20">
-
+  <div class="section-fade-top"></div>
   <!-- Section title -->
   <p class="font-extrabold text-center text-white font-montserrat uppercase w-full text-4xl md:text-6xl pointer-events-none neon-title mb-16 relative z-10 px-4">
     {{ translate.workHistoryTitle }}
@@ -572,12 +575,14 @@
 
   </div><!-- /wh-collapsible -->
   </div><!-- /wh-timeline -->
+  <div class="section-fade-bottom"></div>
 </div><!-- /work-history -->
 
 <div class="section-divider"></div>
 
 <!-- 4 -->
 <div id="contact" class="w-full min-h-[80vh] bg-gray-500 relative flex flex-col justify-center items-center overflow-hidden">
+  <div class="section-fade-top"></div>
   <!-- Dark section overlay -->
   <div class="section-dark-overlay"></div>
 

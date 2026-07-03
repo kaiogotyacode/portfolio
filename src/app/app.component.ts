@@ -11,6 +11,9 @@ import { gsap } from 'gsap';
 export class AppComponent implements OnInit {
 
   ngOnInit(): void {
+    history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+    document.body.style.overflow = 'hidden';
     this.translate = this.englishLanguage;
     setTimeout(() => {
       this.triggerFilmIntro(true);
@@ -30,7 +33,10 @@ export class AppComponent implements OnInit {
           if (!el) return;
           const tl = gsap.timeline({
             onComplete: () => {
-              setTimeout(() => { this.filmHeroLoop = true; }, 0);
+              setTimeout(() => {
+                this.filmHeroLoop = true;
+                setTimeout(() => { document.body.style.overflow = ''; }, 3000);
+              }, 0);
               gsap.to(el, {
                 opacity: 0, duration: 0.4, ease: 'power1.in',
                 onComplete: () => { setTimeout(() => { this.filmPaintOverlay = false; }, 0); }
@@ -145,8 +151,8 @@ export class AppComponent implements OnInit {
     viewMore: "Ver mais",
 
     dubBadgeTitle: "Dublagem",
-    dubBadgeLine1: "Versão EN dublada por mim,",
-    dubBadgeLine2: "baseada no original PT-BR.",
+    dubBadgeLine1: "Versão em inglês dublada por mim,",
+    dubBadgeLine2: "baseada no original em português.",
 
     whShowMore: "Ver experiências anteriores",
     whShowLess: "Recolher",
@@ -186,7 +192,7 @@ export class AppComponent implements OnInit {
 
     dubBadgeTitle: "Voice-over",
     dubBadgeLine1: "Dubbed by me, based on the",
-    dubBadgeLine2: "original PT-BR version.",
+    dubBadgeLine2: "original Portuguese version.",
 
     whShowMore: "Show earlier experience",
     whShowLess: "Collapse",
