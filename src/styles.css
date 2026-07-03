@@ -956,6 +956,224 @@ html {
 .film-loop-slide .film-eyebrow  { font-size: clamp(12px, 1.56vw, 17px); }
 .film-loop-slide .film-scroll-hint { font-size: clamp(10px, 1.3vw, 14px); }
 
+@media (max-width: 640px) {
+  /* "KR INNOVATION LAB" — 18 chars com letter-spacing alto: reduz fonte e espaçamento em small devices */
+  .film-loop-slide .film-brand {
+    font-size: clamp(13px, 3.8vw, 20px);
+    letter-spacing: 0.3em;
+  }
+  .film-loop-slide .film-eyebrow     { font-size: clamp(9px,  1.8vw, 13px); }
+  .film-loop-slide .film-scroll-hint { font-size: clamp(8px,  2vw,   11px); }
+}
+
+/* ── Presentation language switcher ───────────────────────────────────── */
+
+.lang-switcher {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  background: rgba(6, 4, 2, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(200, 185, 170, 0.22);
+  border-radius: 50px;
+  padding: 7px 10px 7px 12px;
+  box-shadow:
+    0 6px 36px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.03),
+    inset 0 0 20px rgba(0, 0, 0, 0.35);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lang-switcher:hover {
+  border-color: rgba(200, 185, 170, 0.3);
+  box-shadow:
+    0 6px 36px rgba(0, 0, 0, 0.65),
+    0 0 20px rgba(255, 255, 255, 0.03),
+    inset 0 0 20px rgba(0, 0, 0, 0.35);
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px;
+  border-radius: 34px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: rgba(140, 128, 115, 0.55);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.lang-btn:hover {
+  color: rgba(200, 190, 180, 0.75);
+}
+
+.lang-btn--active {
+  background: rgba(255, 255, 255, 0.065);
+  color: rgba(240, 235, 230, 0.9);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.lang-flag {
+  height: 20px;
+  width: auto;
+  border-radius: 3px;
+  opacity: 0.45;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+  pointer-events: none;
+}
+
+.lang-btn:hover .lang-flag {
+  opacity: 0.72;
+}
+
+.lang-btn--active .lang-flag {
+  opacity: 1;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.22));
+}
+
+.lang-label {
+  line-height: 1;
+  pointer-events: none;
+}
+
+.lang-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(200, 185, 170, 0.16);
+  flex-shrink: 0;
+  margin: 0 3px;
+}
+
+/* ── Dub info badge ── */
+
+.lang-dub-badge {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+  cursor: help;
+  outline: none;
+}
+
+.lang-dub-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(175, 140, 90, 0.45);
+  font-size: 11px;
+  font-style: italic;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: rgba(175, 140, 90, 0.7);
+  line-height: 1;
+  user-select: none;
+  transition: border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.lang-dub-badge:hover .lang-dub-icon,
+.lang-dub-badge:focus .lang-dub-icon {
+  border-color: rgba(220, 180, 110, 0.75);
+  color: rgba(228, 190, 125, 0.95);
+  box-shadow: 0 0 8px rgba(200, 155, 80, 0.3);
+}
+
+/* Tooltip */
+.lang-dub-tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  right: -4px;
+  min-width: 176px;
+  pointer-events: none;
+  background: rgba(6, 4, 2, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(200, 185, 170, 0.18);
+  border-radius: 10px;
+  padding: 10px 13px;
+  opacity: 0;
+  transform: translateY(6px) scale(0.97);
+  transform-origin: bottom right;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+/* Arrow outer (border colour) */
+.lang-dub-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 7px;
+  border: 5px solid transparent;
+  border-top-color: rgba(200, 185, 170, 0.18);
+}
+
+/* Arrow inner (fill) */
+.lang-dub-tooltip::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 8px;
+  border: 4px solid transparent;
+  border-top-color: rgba(6, 4, 2, 0.96);
+  z-index: 1;
+}
+
+.lang-dub-badge:hover .lang-dub-tooltip,
+.lang-dub-badge:focus .lang-dub-tooltip {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.lang-dub-line {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.lang-dub-line--title {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(200, 160, 90, 0.9);
+  margin-bottom: 7px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid rgba(200, 185, 170, 0.12);
+}
+
+.lang-dub-line:not(.lang-dub-line--title) {
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: rgba(178, 168, 158, 0.8);
+  line-height: 1.65;
+}
+
+/* Mobile: remove backdrop-filter */
+@media (max-width: 768px) {
+  .lang-switcher {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(6, 4, 2, 0.95);
+  }
+
+  .lang-dub-tooltip {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(6, 4, 2, 0.98);
+  }
+}
+
 /* ── Dot Arrow – fixed downward arrow with directional wave blink ──────── */
 .dot-arrow {
   position: absolute;

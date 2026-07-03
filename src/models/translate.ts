@@ -25,6 +25,10 @@ export interface Translate {
     contactTitle: string
     viewMore: string
 
+    dubBadgeTitle: string
+    dubBadgeLine1: string
+    dubBadgeLine2: string
+
     whShowMore: string
     whShowLess: string
     whMantyzDesc: string

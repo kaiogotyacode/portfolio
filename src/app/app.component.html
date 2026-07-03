@@ -104,7 +104,7 @@
 
 
 <!-- [2] -->
-<div id="presentation" class="w-full h-[80vh] bg-gray-500 relative overflow-hidden flex flex-col justify-center">
+<div id="presentation" class="w-full min-h-[80vh] bg-gray-500 relative overflow-hidden flex flex-col justify-center py-10">
   <!-- Dark section overlay -->
   <div class="section-dark-overlay"></div>
   <p
@@ -121,6 +121,37 @@
     <iframe *ngIf="translate.language == 'english'" loading="lazy" fetchpriority="auto"
       src="https://www.youtube.com/embed/IVPdjYeRUPU" frameborder="0" allowfullscreen
       class="aspect-video w-[80vw] max-w-[1000px]"></iframe>
+  </div>
+
+  <!-- Language switcher – centred below video -->
+  <div class="w-full z-10 flex justify-center mt-6 mb-2">
+    <div class="lang-switcher">
+      <button
+        class="lang-btn"
+        [class.lang-btn--active]="translate.language === 'portuguese'"
+        (click)="switchLang('portuguese')"
+        aria-label="Português">
+        <img src="../assets/img/first-content/brazil.webp" class="lang-flag" alt="BR" loading="lazy">
+        <span class="lang-label">PT</span>
+      </button>
+      <div class="lang-divider"></div>
+      <button
+        class="lang-btn"
+        [class.lang-btn--active]="translate.language === 'english'"
+        (click)="switchLang('english')"
+        aria-label="English">
+        <img src="../assets/img/first-content/usa.webp" class="lang-flag" alt="EN" loading="lazy">
+        <span class="lang-label">EN</span>
+      </button>
+      <div class="lang-dub-badge" tabindex="0" aria-label="English version is a voice-over recorded by me, based on the PT-BR original">
+        <span class="lang-dub-icon" aria-hidden="true">i</span>
+        <div class="lang-dub-tooltip" role="tooltip">
+          <span class="lang-dub-line lang-dub-line--title">{{translate.dubBadgeTitle}}</span>
+          <span class="lang-dub-line">{{translate.dubBadgeLine1}}</span>
+          <span class="lang-dub-line">{{translate.dubBadgeLine2}}</span>
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>

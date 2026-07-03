@@ -123,6 +123,10 @@ export class AppComponent implements OnInit {
     contactTitle: "Contato",
     viewMore: "Ver mais",
 
+    dubBadgeTitle: "Dublagem",
+    dubBadgeLine1: "Versão EN dublada por mim,",
+    dubBadgeLine2: "baseada no original PT-BR.",
+
     whShowMore: "Ver experiências anteriores",
     whShowLess: "Recolher",
     whMantyzDesc: "Desenvolvimento de soluções back-end com foco na criação de novas funcionalidades, integrações internas e externas, entregando aplicações seguras e escaláveis alinhadas aos objetivos estratégicos do negócio.",
@@ -158,6 +162,10 @@ export class AppComponent implements OnInit {
 
     contactTitle: "Contact",
     viewMore: "View more",
+
+    dubBadgeTitle: "Voice-over",
+    dubBadgeLine1: "Dubbed by me, based on the",
+    dubBadgeLine2: "original PT-BR version.",
 
     whShowMore: "Show earlier experience",
     whShowLess: "Collapse",
