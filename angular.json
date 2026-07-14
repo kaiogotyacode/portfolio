@@ -28,8 +28,8 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/assets/swiperjs/script.js",
-              "src/assets/swiperjs/swiper-bundle.min.js"
+              "src/assets/swiperjs/swiper-bundle.min.js",
+              "src/assets/swiperjs/script.js"
             ]
           },
           "configurations": {

@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, NgZone, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ProjectModal } from 'src/models/projectModal';
 import { Translate } from 'src/models/translate';
 import { gsap } from 'gsap';
@@ -8,7 +8,11 @@ import { gsap } from 'gsap';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
+
+  private _scrollListener!: () => void;
+
+  constructor(private ngZone: NgZone) {}
 
   ngOnInit(): void {
     history.scrollRestoration = 'manual';
@@ -16,6 +20,7 @@ export class AppComponent implements OnInit {
     document.body.style.overflow = 'hidden';
     this.translate = this.englishLanguage;
     this.setupPixelGrid();
+    this.registerScrollListener();
     setTimeout(() => {
       this.triggerFilmIntro(true);
       // Remove the pre-loader only after the film overlay (opacity:1) is guaranteed rendered
@@ -322,13 +327,27 @@ export class AppComponent implements OnInit {
   private snapTimer: any = null;
   private isSnapping = false;
 
-  @HostListener('window:scroll')
-  onWindowScroll() {
-    this.showScrollTop = window.scrollY > 300;
-    if (this.isSnapping) return;
-    clearTimeout(this.snapTimer);
-    this.snapTimer = setTimeout(() => this.performSnap(), 150);
+  // Passive listener — browser can scroll immediately without waiting for JS
+  private registerScrollListener(): void {
+    this.ngZone.runOutsideAngular(() => {
+      this._scrollListener = () => {
+        const shouldShow = window.scrollY > 300;
+        if (shouldShow !== this.showScrollTop) {
+          this.ngZone.run(() => { this.showScrollTop = shouldShow; });
+        }
+        if (this.isSnapping) return;
+        clearTimeout(this.snapTimer);
+        this.snapTimer = setTimeout(() => this.performSnap(), 150);
+      };
+      window.addEventListener('scroll', this._scrollListener, { passive: true });
+    });
   }
+
+  ngOnDestroy(): void {
+    window.removeEventListener('scroll', this._scrollListener);
+  }
+
+  onWindowScroll() { /* kept for compatibility – logic moved to registerScrollListener */ }
 
   private getSnapPoints(): number[] {
     const sectionIds = ['presentation', 'projects', 'work-history', 'contact'];

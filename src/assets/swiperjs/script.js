@@ -21,12 +21,18 @@ window.addEventListener("load", () => {
     breakpoints: {
       0: {
         slidesPerView: 1,
+        // Native CSS scroll on mobile — hardware-accelerated, eliminates JS-driven swipe jank
+        cssMode: true,
       },
       750: {
         slidesPerView: 2,
+        // Keep native scroll on tablet as well
+        cssMode: true,
       },
       1500: {
         slidesPerView: 3,
+        // Desktop: JS mode keeps grab cursor and smooth easing
+        cssMode: false,
       },
     },
   });

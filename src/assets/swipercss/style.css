@@ -1,5 +1,4 @@
-/* Google Fonts - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+/* Poppins is loaded non-blocking via <link> in index.html */
 
 .slide-container {
   max-width: 1120px;
@@ -13,6 +12,8 @@
   margin: 0 40px;
   overflow: hidden;
   border-radius: 25px;
+  /* Let the browser handle vertical scroll natively; horizontal is owned by Swiper */
+  touch-action: pan-y pinch-zoom;
 }
 
 .card {
@@ -280,5 +281,45 @@
   }
   .description {
     -webkit-line-clamp: 5;
+  }
+  /* Lighter shadow on mobile — fewer GPU compositing layers */
+  .card {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.65);
+  }
+}
+
+/* Disable hover animations on touch-only devices (avoids stuck hover states and GPU overdraw) */
+@media (hover: none) {
+  .card:hover {
+    transform: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.65);
+    border-color: rgba(200, 185, 170, 0.15);
+  }
+  .card:hover::before {
+    opacity: 0;
+  }
+  .card:hover .card-image {
+    box-shadow:
+      0 0 22px rgba(255, 255, 255, 0.1),
+      0 0 44px rgba(180, 150, 120, 0.07),
+      inset 0 0 15px rgba(0, 0, 0, 0.6);
+  }
+  .card:hover .card-img {
+    border-color: rgba(200, 185, 170, 0.35);
+  }
+  .card:hover .name {
+    text-shadow:
+      0 0 10px rgba(255, 255, 255, 0.5),
+      0 0 20px rgba(200, 180, 160, 0.2);
+    color: #e8e0d8;
+  }
+  .button:hover::after {
+    left: -100%;
+  }
+  .button:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(80, 60, 40, 0.08));
+    color: #c8bdb0;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
   }
 }
