@@ -50,39 +50,19 @@
   [class.animate-switchLanguageAnimator]="languageAnimation"></div>
 
 <!-- [1] -->
-<div id="hero" class="h-[80vh] bg-gray-400 overflow-hidden flex justify-center items-center relative pointer-events-none">
-
-  <img loading="eager" fetchpriority="high" srcset="../assets/img/first-content/art-mobile.webp 500w, ../assets/img/first-content/art_wide.webp 1200w"
-    class="h-full w-full object-cover pointer-events-none" />
-
-  <img loading="eager" fetchpriority="high" src="../assets/img/first-content/rainfall.webp"
-    class="h-full w-full object-cover absolute z-30 animate-snowFalling" />
-
-  <img loading="eager" fetchpriority="high" src="../assets/img/first-content/thunder.webp"
-    class="top-0 right-0 absolute z-40 animate-thunderOne" />
-
-  <img loading="eager" fetchpriority="high" src="../assets/img/first-content/thunder.webp"
-    class="top-0 left-0 absolute z-40 animate-thunderTwo" />
+<div id="hero" class="h-[80vh] bg-black overflow-hidden flex justify-center items-center relative pointer-events-none">
 
   <!-- Neon scanlines overlay -->
   <div class="absolute inset-0 z-20 pointer-events-none neon-scanlines"></div>
-  <!-- Hero dark overlay -->
-  <div class="absolute inset-0 z-10 pointer-events-none" style="background:rgba(0,0,0,0.42)"></div>
   <!-- Neon bottom glow -->
   <div class="absolute bottom-0 left-0 right-0 z-50 pointer-events-none neon-hero-glow"></div>
   <!-- Neon top border -->
   <div class="absolute top-0 left-0 right-0 z-50 pointer-events-none neon-hero-top-glow"></div>
-  <!-- Paint sweep overlay – filmmaker top-to-bottom reveal -->
-  <div *ngIf="filmPaintOverlay" class="film-paint-overlay"></div>
-  <!-- Film intro overlay – hero loop (CSS-driven: KR 3s / WELCOME 27s) -->
   <div class="section-fade-bottom"></div>
-  <div *ngIf="filmHeroLoop" class="film-overlay film-overlay--hero">
-    <div class="film-loop-slide film-text-loop-kr">
-      <span class="film-eyebrow">PRESENTS</span>
-      <span class="film-brand">KR INNOVATION LAB</span>
-      <span class="film-line"></span>
-    </div>
-    <div class="film-loop-slide film-text-loop-welcome">
+
+  <!-- Welcome display (visible after intro) -->
+  <div *ngIf="filmHeroLoop" class="welcome-display" [class.welcome-white-mode]="filmWelcomeWhite">
+    <div class="welcome-slide-content">
       <span class="film-brand">{{ translate.language === 'portuguese' ? 'BEM-VINDO' : 'WELCOME' }}</span>
       <span class="film-line"></span>
       <span class="film-eyebrow film-scroll-hint">{{ translate.language === 'portuguese' ? 'Role para baixo para mais detalhes' : 'Scroll down for more details' }}</span>
@@ -90,6 +70,11 @@
         <div class="scroll-mouse__wheel"></div>
       </div>
     </div>
+  </div>
+
+  <!-- Pixel dissolve grid (white squares that dismantle to reveal dark hero) -->
+  <div *ngIf="pixelTransitionActive" class="pixel-dissolve-overlay">
+    <div *ngFor="let i of pixelItems" class="pixel-dissolve-item"></div>
   </div>
 </div>
 

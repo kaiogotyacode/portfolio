@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
     window.scrollTo(0, 0);
     document.body.style.overflow = 'hidden';
     this.translate = this.englishLanguage;
+    this.setupPixelGrid();
     setTimeout(() => {
       this.triggerFilmIntro(true);
       // Remove the pre-loader only after the film overlay (opacity:1) is guaranteed rendered
@@ -25,39 +26,49 @@ export class AppComponent implements OnInit {
           setTimeout(() => loader.remove(), 300);
         }
       }, 100);
-      // Start paint sweep as the KR intro begins fading (92% of 6s = 5520ms)
+      // As the KR intro begins fading (92% of 6s = 5520ms): show white welcome + pixel grid
       setTimeout(() => {
-        this.filmPaintOverlay = true;
-        setTimeout(() => {
-          const el = document.querySelector('.film-paint-overlay') as HTMLElement;
-          if (!el) return;
-          const tl = gsap.timeline({
-            onComplete: () => {
-              setTimeout(() => {
-                this.filmHeroLoop = true;
-                setTimeout(() => { document.body.style.overflow = ''; }, 3000);
-              }, 0);
-              gsap.to(el, {
-                opacity: 0, duration: 0.4, ease: 'power1.in',
-                onComplete: () => { setTimeout(() => { this.filmPaintOverlay = false; }, 0); }
-              });
-            }
-          });
-          tl.to(el, { opacity: 1, duration: 0.35, ease: 'power1.in' });
-          tl.fromTo(el,
-            { clipPath: 'polygon(0% 0%, 100% 0%, 100% 3%, 88% 0%, 76% 4%, 64% 1%, 52% 5%, 38% 0%, 24% 3%, 12% 7%, 4% 2%, 0% 5%)' },
-            { clipPath: 'polygon(0% 0%, 100% 0%, 100% 106%, 88% 102%, 76% 108%, 64% 103%, 52% 107%, 38% 102%, 24% 108%, 12% 103%, 4% 107%, 0% 110%)', duration: 2.2, ease: 'power2.inOut' },
-            '<'
-          );
-        }, 50);
+        this.filmWelcomeWhite = true;
+        this.filmHeroLoop = true;
+        this.pixelTransitionActive = true;
+        // Brief pause on white frame, then dissolve
+        setTimeout(() => this.runPixelTransition(), 800);
       }, 5500);
     }, 600);
+  }
+
+  private setupPixelGrid() {
+    this.pixelItems = Array.from({ length: 25 * 15 }, (_, i) => i);
+  }
+
+  private runPixelTransition() {
+    setTimeout(() => {
+      const pixels = document.querySelectorAll('.pixel-dissolve-item');
+      if (!pixels.length) return;
+      // Start text color transition at 60% of the dissolve so it lands with the last pixels
+      setTimeout(() => { this.filmWelcomeWhite = false; }, 1100);
+      gsap.to(Array.from(pixels), {
+        opacity: 0,
+        scale: 0,
+        duration: 0.15,
+        stagger: { each: 0.005, from: 'random' },
+        ease: 'expo.in',
+        onComplete: () => {
+          setTimeout(() => {
+            this.pixelTransitionActive = false;
+            setTimeout(() => { document.body.style.overflow = ''; }, 300);
+          }, 0);
+        }
+      });
+    }, 50);
   }
 
   filmIntro: boolean = false;
   filmIntroFull: boolean = false;
   filmHeroLoop: boolean = false;
-  filmPaintOverlay: boolean = false;
+  filmWelcomeWhite: boolean = false;
+  pixelTransitionActive: boolean = false;
+  pixelItems: number[] = [];
   typingText: string = '';
   showCursor: boolean = false;
   filmElevateZoom: boolean = false;

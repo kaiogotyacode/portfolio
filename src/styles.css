@@ -36,6 +36,9 @@ html {
   /* Firefox scrollbar */
   scrollbar-width: thin;
   scrollbar-color: rgba(220, 210, 200, 0.6) #0a0806;
+  /* Always reserve scrollbar gutter space so layout doesn't shift
+     when the scrollbar appears/disappears during the intro animation */
+  scrollbar-gutter: stable;
 }
 
 /* You can add global styles to this file, and also import other style files */
@@ -1726,6 +1729,102 @@ html {
 .wh-collapsible--open {
   max-height: 2400px; /* large enough to contain all inner content */
   opacity: 1;
+}
+
+/* ── Welcome display (replaces hero loop after intro) ──────────── */
+
+.welcome-display {
+  position: absolute;
+  inset: 0;
+  z-index: 67;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.welcome-slide-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Font sizes matching the old loop-slide overrides (+30%) */
+.welcome-slide-content .film-brand         { font-size: clamp(23px, 5.2vw, 55px); }
+.welcome-slide-content .film-eyebrow       { font-size: clamp(12px, 1.56vw, 17px); }
+.welcome-slide-content .film-scroll-hint   { font-size: clamp(10px, 1.3vw, 14px); }
+
+@media (max-width: 640px) {
+  .welcome-slide-content .film-brand {
+    font-size: clamp(13px, 3.8vw, 20px);
+    letter-spacing: 0.3em;
+  }
+  .welcome-slide-content .film-eyebrow     { font-size: clamp(9px, 1.8vw, 13px); }
+  .welcome-slide-content .film-scroll-hint { font-size: clamp(8px, 2vw, 11px); }
+}
+
+/* Color transitions: text goes black→white as white-mode is removed */
+.welcome-slide-content .film-brand,
+.welcome-slide-content .film-eyebrow,
+.welcome-slide-content .film-scroll-hint {
+  transition: color 0.8s ease, text-shadow 0.8s ease;
+}
+
+.welcome-slide-content .film-line {
+  transition: background 0.8s ease;
+}
+
+.welcome-slide-content .scroll-mouse {
+  transition: border-color 0.8s ease;
+}
+
+.welcome-slide-content .scroll-mouse__wheel {
+  transition: background 0.8s ease;
+}
+
+/* ── White mode overrides (initial frame: black text on white bg) ── */
+
+.welcome-white-mode .film-brand {
+  color: #111 !important;
+  text-shadow: none !important;
+}
+
+.welcome-white-mode .film-eyebrow,
+.welcome-white-mode .film-scroll-hint {
+  color: rgba(20, 15, 10, 0.65) !important;
+  text-shadow: none !important;
+  animation: none !important;
+}
+
+.welcome-white-mode .film-line {
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.3), transparent) !important;
+}
+
+.welcome-white-mode .scroll-mouse {
+  border-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.welcome-white-mode .scroll-mouse__wheel {
+  background: rgba(0, 0, 0, 0.65) !important;
+}
+
+/* ── Pixel dissolve grid ─────────────────────────────────────────── */
+
+.pixel-dissolve-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 65;
+  display: grid;
+  grid-template-columns: repeat(25, 1fr);
+  grid-template-rows: repeat(15, 1fr);
+  pointer-events: none;
+}
+
+.pixel-dissolve-item {
+  background: #ffffff;
+  will-change: transform, opacity;
 }
 
 /* ── Performance: mobile / all devices ─────────────────────────── */
