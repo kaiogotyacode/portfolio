@@ -1,3 +1,10 @@
+<!-- H1 semantico da pagina. Fica invisivel (sr-only) porque a hero visual eh
+     o filme intro + carousel — mas garante que crawlers (Google, Bing,
+     LinkedIn scraper) leiam o titulo real, nao o texto do intro. -->
+<h1 class="sr-only">
+  Kaio Maciel — Software Development Engineer (SDE) at KR Innovation Lab | Backend Systems, Data Structures and Algorithms, Python and C#
+</h1>
+
 <!-- Film intro overlay – fullscreen (first run only) -->
 <div *ngIf="filmIntro && filmIntroFull" class="film-overlay film-overlay--full">
   <div class="film-text-wrapper film-text-wrapper--full">

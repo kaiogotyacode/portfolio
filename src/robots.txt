@@ -1,0 +1,7 @@
+# KR Innovation Lab — portfolio crawling rules.
+# SPA de rota unica: liberamos tudo e apontamos o sitemap.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://krinnovation.com.br/sitemap.xml
